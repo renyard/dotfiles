@@ -16,3 +16,6 @@
 [submodule "vim/bundle/supertab"]
 	path = vim/bundle/supertab
 	url = git://github.com/ervandew/supertab.git
+[submodule "vim/bundle/css_color.vim"]
+	path = vim/bundle/css_color.vim
+	url = git://github.com/vim-scripts/css_color.vim.git
