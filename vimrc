@@ -14,16 +14,19 @@ filetype plugin on
 if has("gui_running")
 	colorscheme koehler
 	set lines=60 columns=100
+
+	" Command line gives misspelled words a nasty background colour.
+	set spell
 endif
 
 syntax on 
 
+set hidden
 set tabstop=4
 set number
 set smartindent
-set spell
 set nopaste
+set dir=~/.vim/swp
 
 " Completion
 set ofu=syntaxcomplete#Complete
-

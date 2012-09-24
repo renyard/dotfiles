@@ -1,5 +1,7 @@
+# Default options for ls.
 alias ls='ls --color=auto'
 alias ll='ls -l'
 
+# Use Vim in place of Vi.
 alias vi='vim'
 

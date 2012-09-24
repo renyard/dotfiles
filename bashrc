@@ -13,3 +13,5 @@ fi
 PS1='[\u@\h \W]\$ '
 EDITOR=/usr/bin/vim
 
+# Disable history for commands prepended with a space and exit command.
+export HISTIGNORE="&:[ ]*:exit"
