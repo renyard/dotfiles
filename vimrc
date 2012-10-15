@@ -34,6 +34,7 @@ set number
 set smartindent
 set incsearch
 set nopaste
+set laststatus=2
 set dir=~/.vim/swp
 
 " Completion
