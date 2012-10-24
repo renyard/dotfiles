@@ -13,5 +13,9 @@ fi
 PS1='[\u@\h \W]\$ '
 EDITOR=/usr/bin/vim
 
+# Append history on each command, rather than when the shell exits.
+shopt -s histappend
+PROMT_COMMAND='history -a'
+
 # Disable history for commands prepended with a space and exit command.
 export HISTIGNORE="&:[ ]*:exit"
