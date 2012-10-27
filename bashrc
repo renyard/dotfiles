@@ -13,6 +13,10 @@ fi
 PS1='[\u@\h \W]\$ '
 EDITOR=/usr/bin/vim
 
+# Set completion options.
+set completion-ignore-case on
+set visible-stats on
+
 # Append history on each command, rather than when the shell exits.
 shopt -s histappend
 PROMT_COMMAND='history -a'
