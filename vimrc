@@ -48,6 +48,7 @@ set incsearch
 set hlsearch
 set nopaste
 set laststatus=2
+set guioptions -=T
 set dir=~/.vim/swp
 
 " Completion
