@@ -15,9 +15,6 @@ if has("gui_running")
 	colorscheme koehler
 	set lines=60 columns=100
 
-	" Command line gives misspelled words a nasty background colour.
-	set spell
-
 	" Prevent cursor moving to click location on window focus.
 	augroup NO_CURSOR_MOVE_ON_FOCUS
 		au!
@@ -28,6 +25,18 @@ endif
 
 syntax on 
 
+" Spell Checking.
+set spell spelllang=en_gb
+hi clear SpellBad
+hi clear SpellCap
+hi clear SpellRare
+hi clear SpellLocal
+hi SpellBad term=underline cterm=underline
+hi SpellCap term=underline cterm=underline
+hi SpellRare term=underline cterm=underline
+hi SpellLocal term=underline cterm=underline
+
+" Misc. Options.
 set hidden
 set fileformats=unix,dos,mac
 setglobal fileformat=unix
@@ -36,6 +45,7 @@ set shiftwidth=4
 set number
 set smartindent
 set incsearch
+set hlsearch
 set nopaste
 set laststatus=2
 set dir=~/.vim/swp
