@@ -3,11 +3,13 @@
 # Exit on error.
 set -e
 
+default_dir=~/dotfiles
 repo="https://github.com/renyard/dotfiles.git"
-
+bashrc="~/.bashrc"
+vimrc="~/.vimrc"
 
 # Prompt for install location.
-read -e -p "Install path: " -i ~/dotfiles dt_dir
+read -e -p "Install path: " -i $default_dir dt_dir
 
 # Create install location if it doesn't exist.
 if [ ! -d $dt_dir ]; then
@@ -16,7 +18,7 @@ if [ ! -d $dt_dir ]; then
 fi
 
 echo 'Cloning Git Repo...'
-git clone https://github.com/renyard/dotfiles.git $dt_dir
+git clone $repo $dt_dir
 
 cd $dt_dir
 
