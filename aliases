@@ -1,8 +1,8 @@
 # Default options for ls.
 # ls on OSX does not appear to support the color option.
-ls --color=auto > /dev/null
+ls --color=auto > /dev/null 2>&1
 LS_EXIT=$?
-if [ $LS_EXIT ]; then
+if [ $LS_EXIT -eq 0 ]; then
 	alias ls='ls --color=auto'
 fi
 alias ll='ls -l'
