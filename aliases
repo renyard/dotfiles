@@ -1,5 +1,10 @@
 # Default options for ls.
-alias ls='ls --color=auto'
+# ls on OSX does not appear to support the color option.
+ls --color=auto > /dev/null
+LS_EXIT=$?
+if [ $LS_EXIT ]; then
+	alias ls='ls --color=auto'
+fi
 alias ll='ls -l'
 
 # Use Vim in place of Vi.
