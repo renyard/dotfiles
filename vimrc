@@ -15,6 +15,9 @@ if has("gui_running")
 	colorscheme koehler
 	set lines=60 columns=100
 
+	" Hide toolbar.
+	set guioptions -=T
+
 	" Prevent cursor moving to click location on window focus.
 	augroup NO_CURSOR_MOVE_ON_FOCUS
 		au!
@@ -48,7 +51,6 @@ set incsearch
 set hlsearch
 set nopaste
 set laststatus=2
-set guioptions -=T
 set dir=~/.vim/swp
 
 " Completion
