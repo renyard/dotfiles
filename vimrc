@@ -40,9 +40,14 @@ set smartindent
 set incsearch
 set hlsearch
 set nopaste
+set showcmd
 set laststatus=2
 set whichwrap-=<,>,[,],h,l,~
 set dir=~/.vim/swp
+
+" Path Completion.
+set wildmode=longest,list,full
+set wildmenu
 
 " Spell Checking.
 set spell spelllang=en_gb
