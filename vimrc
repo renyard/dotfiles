@@ -44,10 +44,14 @@ set showcmd
 set laststatus=2
 set whichwrap-=<,>,[,],h,l,~
 set dir=~/.vim/swp
+set backspace=indent,eol,start
 
 " Path Completion.
 set wildmode=longest,list,full
 set wildmenu
+
+" Sometimes we can't avoid Windows, attempt to make usable under Cygwin.
+" set term=builtin_ansi
 
 " Spell Checking.
 set spell spelllang=en_gb
@@ -62,3 +66,18 @@ hi SpellLocal term=underline cterm=underline
 
 " Completion
 set ofu=syntaxcomplete#Complete
+
+"When editing a file, make screen display the name of the file you are editing
+function! SetTitle()
+  if $TERM =~ "^screen"
+    let l:title = 'vim: ' . expand('%:t')        
+    
+    if (l:title != 'vim: __Tag_List__')
+      let l:truncTitle = strpart(l:title, 0, 30)
+      silent exe '!echo -e -n "\033k' . l:truncTitle . '\033\\"'     
+    endif
+  endif
+endfunction
+
+" Run it every time we change buffers
+autocmd BufEnter,BufFilePost * call SetTitle()
