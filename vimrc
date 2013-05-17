@@ -19,6 +19,11 @@ if has("gui_running")
 	" Hide toolbar.
 	set guioptions -=T
 
+	" Set tranparency.
+	if has("transparency")
+		set transparency=10
+	endif
+
 	" Prevent cursor moving to click location on window focus.
 	augroup NO_CURSOR_MOVE_ON_FOCUS
 		au!
