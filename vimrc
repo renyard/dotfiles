@@ -69,6 +69,12 @@ hi SpellCap term=underline cterm=underline
 hi SpellRare term=underline cterm=underline
 hi SpellLocal term=underline cterm=underline
 
+" Mode dependant cursors.
+let &t_ti.="\e[1 q"
+let &t_SI.="\e[5 q"
+let &t_EI.="\e[1 q"
+let &t_te.="\e[0 q"
+
 " Completion
 set ofu=syntaxcomplete#Complete
 

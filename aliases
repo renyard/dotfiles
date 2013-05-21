@@ -5,8 +5,9 @@ LS_EXIT=$?
 if [ $LS_EXIT -eq 0 ]; then
 	alias ls='ls --color=auto'
 fi
+
 alias ll='ls -l'
+alias la='ls -la'
 
 # Use Vim in place of Vi.
 alias vi='vim'
-

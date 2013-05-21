@@ -9,6 +9,9 @@ if [ -f $DIR/aliases ]; then
 	source $DIR/aliases
 fi
 
+# Add script dir to PATH.
+export PATH=$PATH:$DIR/bin
+
 # Set defaults.
 PS1='[\u@\h \W]\$ '
 EDITOR=/usr/bin/vim
