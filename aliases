@@ -11,3 +11,6 @@ alias la='ls -la'
 
 # Use Vim in place of Vi.
 alias vi='vim'
+
+# Use vimdiff for SVN diff, without affecting default options.
+alias sdiff='svn diff --diff-cmd=diffwrap.sh'
