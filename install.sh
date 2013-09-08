@@ -9,18 +9,18 @@ bashrc="~/.bashrc"
 vimrc="~/.vimrc"
 
 # Prompt for install location.
-read -e -p "Install path: " -i $default_dir dt_dir
+read -e -p "Install path: " -i $default_dir df_dir
 
 # Create install location if it doesn't exist.
-if [ ! -d $dt_dir ]; then
-	echo "Creating $dt_dir..."
-	mkdir -p $dt_dir
+if [ ! -d $df_dir ]; then
+	echo "Creating $df_dir..."
+	mkdir -p $df_dir
 fi
 
 echo 'Cloning Git Repo...'
-git clone $repo $dt_dir
+git clone $repo $df_dir
 
-cd $dt_dir
+cd $df_dir
 
 echo 'Initializing Submodules...'
 git submodule init
@@ -29,6 +29,21 @@ echo 'Updating Submodules...'
 git submodule update
 
 # Update .*rc files.
+
+# .zshrc
+
+# Create .zshrc if required.
+if [ ! -e ~/.zshrc ]; then
+	echo 'Creating ~/.zshrc...'
+	touch ~/.zshrc
+fi
+
+# Add source lines to .bashrc
+echo 'Linking .bashrc...'
+zshrc="if [ -f $df_dir ]; then . $df_dir/zshrc fi";
+if ! grep -Fxq "$zshrc" ~/.zsh; then
+	echo $zshrc >> ~/.zshrc
+fi
 
 # .bashrc
 
@@ -40,7 +55,7 @@ fi
 
 # Add source lines to .bashrc
 echo 'Linking .bashrc...'
-bashrc="if [ -f $dt_dir ]; then . $dt_dir/bashrc fi";
+bashrc="if [ -f $df_dir ]; then . $df_dir/bashrc fi";
 if ! grep -Fxq "$bashrc" ~/.bashrc; then
 	echo $bashrc >> ~/.bashrc
 fi
@@ -55,7 +70,7 @@ fi
 
 # Add source lines to .vimrc.
 echo 'Linking .vimrc...'
-vimrc="source $dt_dir/vimrc"
+vimrc="source $df_dir/vimrc"
 if ! grep -Fxq "$vimrc" ~/.vimrc; then
 	echo $vimrc >> ~/.vimrc
 fi

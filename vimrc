@@ -19,7 +19,7 @@ if has("gui_running")
 	" Hide toolbar.
 	set guioptions -=T
 
-	" Set tranparency.
+	" Set tranparency. (MacVim specific option)
 	if has("transparency")
 		set transparency=10
 	endif

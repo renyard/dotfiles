@@ -6,6 +6,13 @@ if [ $LS_EXIT -eq 0 ]; then
 	alias ls='ls --color=auto'
 fi
 
+# Set up space prepended aliases to ignore commands in history
+ignore_commands=(exit logout)
+for i in "${ignore_commands[@]}"; do
+	alias $i=' '$i
+done
+
+# Common commands.
 alias ll='ls -l'
 alias la='ls -la'
 
