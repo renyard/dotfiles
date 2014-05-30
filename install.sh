@@ -7,6 +7,8 @@ script=$(readlink -f $0)
 df_dir=$(dirname "$script")
 bashrc="~/.bashrc"
 vimrc="~/.vimrc"
+bash_re="/bash$/"
+zsh_re="/zsh$/"
 
 echo 'Initializing Submodules...'
 git submodule init
@@ -59,4 +61,11 @@ echo 'Linking .vimrc...'
 vimrc="source $df_dir/vimrc"
 if ! grep -Fxq "$vimrc" ~/.vimrc; then
 	echo $vimrc >> ~/.vimrc
+fi
+
+# Source shell config.
+if [ $SHELL =~ $bash_re ]; then
+	source ~/.bashrc
+elif [ $SHELL =~ $zsh_re ]; then
+	source ~/.zshrc
 fi

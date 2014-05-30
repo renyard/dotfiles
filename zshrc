@@ -13,7 +13,7 @@ EDITOR=vim
 bindkey -e
 
 # Add script dir to PATH.
-export PATH=/usr/local/bin:$PATH:$DIR/bin
+export PATH=/usr/local/bin:/usr/local/share/npm/bin:$PATH:$DIR/bin
 
 # Tab completion
 autoload -U compinit

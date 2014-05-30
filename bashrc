@@ -10,7 +10,7 @@ if [ -f $DIR/aliases ]; then
 fi
 
 # Add script dir to PATH.
-export PATH=/usr/local/bin:$PATH:$DIR/bin
+export PATH=/usr/local/bin:/usr/local/share/npm/bin:$PATH:$DIR/bin
 
 # Set defaults.
 PS1='[\u@\h \W]\$ '
