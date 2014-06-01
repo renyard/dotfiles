@@ -28,7 +28,7 @@ fi
 
 # Add source lines to .zshrc.
 echo 'Linking .zshrc...'
-zshrc="if [ -f $df_dir ]; then . $df_dir/zshrc fi";
+zshrc="[ -d $df_dir ] && . $df_dir/zshrc";
 if ! grep -Fxq "$zshrc" ~/.zshrc; then
 	echo $zshrc >> ~/.zshrc
 fi
@@ -43,7 +43,7 @@ fi
 
 # Add source lines to .bashrc.
 echo 'Linking .bashrc...'
-bashrc="if [ -f $df_dir ]; then . $df_dir/bashrc fi";
+bashrc="[ -d $df_dir ] && . $df_dir/bashrc";
 if ! grep -Fxq "$bashrc" ~/.bashrc; then
 	echo $bashrc >> ~/.bashrc
 fi
@@ -64,8 +64,8 @@ if ! grep -Fxq "$vimrc" ~/.vimrc; then
 fi
 
 # Source shell config.
-if [ $SHELL =~ $bash_re ]; then
+if [[ $SHELL =~ "$bash_re" ]]; then
 	source ~/.bashrc
-elif [ $SHELL =~ $zsh_re ]; then
+elif [[ $SHELL =~ "$zsh_re" ]]; then
 	source ~/.zshrc
 fi

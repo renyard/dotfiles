@@ -2,10 +2,15 @@
 [[ -z "$PS1" ]] && return
 
 # Get the script path.
-DOTFILES_DIR="$( cd "$( dirname "$0" )" && pwd )"
+DF_DIR="$( cd "$( dirname "$0" )" && pwd )"
 
-if [ -f $DOTFILES_DIR/zsh_functions ]; then
-	. $DOTFILES_DIR/zsh_functions
+# Source oh my zsh config.
+if [ -f $DF_DIR/oh-my-zshrc ]; then
+	. $DF_DIR/oh-my-zshrc
+fi
+
+if [ -f $DF_DIR/zsh_functions ]; then
+	. $DF_DIR/zsh_functions
 fi
 
 # Set defaults.
@@ -57,12 +62,12 @@ if function_exists vcs_info; then
 fi
 
 # Custom prompt.
-setopt prompt_subst
-PS1="[%n@%m %c]${vcs_info_msg_0_}$ "
+#setopt prompt_subst
+#PS1="[%n@%m %c]${vcs_info_msg_0_}$ "
 
 # Misc. options.
 setopt auto_cd
 
-if [ -f $DOTFILES_DIR/aliases ]; then
-	. $DOTFILES_DIR/aliases
+if [ -f $DF_DIR/aliases ]; then
+	. $DF_DIR/aliases
 fi
