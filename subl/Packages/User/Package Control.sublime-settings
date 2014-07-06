@@ -1,0 +1,11 @@
+{
+	"installed_packages":
+	[
+		"DashDoc",
+		"Git",
+		"Glue",
+		"SublimeLinter",
+		"SublimeLinter-jshint",
+		"Vintageous"
+	]
+}
