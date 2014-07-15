@@ -3,7 +3,7 @@
 # Exit on error.
 set -e
 
-script=$(readlink -f $0)
+script="~/dotfiles"
 df_dir=$(dirname "$script")
 bashrc="~/.bashrc"
 vimrc="~/.vimrc"

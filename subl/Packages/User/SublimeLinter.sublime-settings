@@ -22,7 +22,7 @@
 				]
 			}
 		},
-		"mark_style": "outline",
+		"mark_style": "stippled underline",
 		"no_column_highlights_line": false,
 		"paths":
 		{
