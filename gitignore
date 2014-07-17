@@ -12,3 +12,5 @@ Thumbs.db
 #####################
 *.sublime-project
 *.sublime-workspace
+Package Control.last-run
+subl/Packages/User/Package Control.cache
