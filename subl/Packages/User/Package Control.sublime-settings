@@ -3,7 +3,9 @@
 	[
 		"DashDoc",
 		"Git",
+		"GitGutter",
 		"Glue",
+		"SublimeCodeIntel",
 		"SublimeLinter",
 		"SublimeLinter-jshint",
 		"Vintageous"
