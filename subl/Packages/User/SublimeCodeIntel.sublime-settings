@@ -1,0 +1,9 @@
+{
+    "codeintel_scan_exclude_dir":
+    {
+        "JavaScript":["/build/", "/min/", "/dist/"]
+    },
+    "codeintel_config": {
+        
+    }
+}

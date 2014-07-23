@@ -2,12 +2,15 @@
 	"installed_packages":
 	[
 		"DashDoc",
+		"DocBlockr",
 		"Git",
 		"GitGutter",
 		"Glue",
+		"JavaScript Snippets",
 		"SublimeCodeIntel",
 		"SublimeLinter",
 		"SublimeLinter-jshint",
+		"Theme - Phoenix",
 		"Vintageous"
 	]
 }
