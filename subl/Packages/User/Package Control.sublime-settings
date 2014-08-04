@@ -10,6 +10,7 @@
 		"SublimeCodeIntel",
 		"SublimeLinter",
 		"SublimeLinter-jshint",
+		"SublimeLinter-pylint",
 		"Theme - Phoenix",
 		"Vintageous"
 	]
