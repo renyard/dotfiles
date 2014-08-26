@@ -1,6 +1,7 @@
 {
 	"installed_packages":
 	[
+		"Color Highlighter",
 		"DashDoc",
 		"DocBlockr",
 		"Git",
