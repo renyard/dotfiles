@@ -5,15 +5,13 @@
 	"highlight_modified_tabs": false,
 	"ignored_packages":
 	[
-		"DocBlockr",
 		"Glue",
-		"Git",
+		"Vintage",
 		"Vintageous",
-		"Vintage"
+		"DocBlockr",
+		"Git"
 	],
-	"phoenix_color_blue": true,
-	"phoenix_solid_current_tab": true,
 	"spell_check": true,
-	"theme": "Phoenix Dark.sublime-theme",
+	"theme": "Soda Dark 3.sublime-theme",
 	"translate_tabs_to_spaces": true
 }

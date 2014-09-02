@@ -48,6 +48,7 @@ set nopaste
 set showcmd
 set laststatus=2
 set whichwrap-=<,>,[,],h,l,~
+set nowrap
 set dir=~/.vim/swp
 set backspace=indent,eol,start
 

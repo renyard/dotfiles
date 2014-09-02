@@ -11,6 +11,16 @@
                 "@disable": false,
                 "args": [],
                 "excludes": []
+            },
+            "pylint": {
+                "@disable": false,
+                "args": [],
+                "disable": "",
+                "enable": "",
+                "excludes": [],
+                "paths": [],
+                "rcfile": "",
+                "show-codes": false
             }
         },
         "mark_style": "stippled underline",

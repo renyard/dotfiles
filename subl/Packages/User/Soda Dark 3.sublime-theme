@@ -1,0 +1,20 @@
+[
+    // Taller tabs.
+    {
+        "class": "tabset_control",
+        "tab_height": 30
+    },
+    // Remove folder icons from side bar.
+    {
+        "class": "icon_file_type",
+        "content_margin": [0,0]
+    },
+    {
+        "class": "icon_folder",
+        "content_margin": [0,0]
+    },
+    {
+        "class": "icon_folder_loading",
+        "content_margin": [0,0]
+    }
+]
