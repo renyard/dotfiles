@@ -3,23 +3,10 @@
     {
         "class": "tabset_control",
         "layer0.texture": "Theme - Soda/Soda Light/tabset-background.png",
-        "layer0.inner_margin": [1, 7],
-        "layer0.opacity": 1.0,
-        "content_margin": [-4, 0, -4, 3],
-        "tab_overlap": 5,
-        "tab_width": 180,
-        "tab_min_width": 45,
-        "tab_height": 25,
-        "mouse_wheel_switch": false
     },
     {
         "class": "tab_control",
-        "content_margin": [12, 3, 12, 3],
-        "max_margin_trim": 0,
-        "hit_test_level": 0.0,
         "layer0.texture": "Theme - Soda/Soda Light/tab-inactive.png",
-        "layer0.inner_margin": [5, 5],
-        "layer0.opacity": 1.0
     },
     // Tab hover state
     {
@@ -36,22 +23,17 @@
     // Tab close button
     {
         "class": "tab_close_button",
-        "content_margin": [0, 0],
         "layer0.texture": "Theme - Soda/Soda Light/tab-close-inactive.png",
-        "layer0.opacity": 1.0,
-        "layer0.inner_margin": 0
     },
-     {
+    {
         "class": "tab_close_button",
         "parents": [{"class": "tab_control", "attributes": ["hover"]}],
         "layer0.texture": "Theme - Soda/Soda Light/tab-close.png",
-        "layer0.opacity": 0.85
     },
     {
         "class": "tab_close_button",
         "parents": [{"class": "tab_control", "attributes": ["selected"]}],
         "layer0.texture": "Theme - Soda/Soda Light/tab-close.png",
-        "layer0.opacity": 1.0
     },
     // Tab dirty button
     {
@@ -97,11 +79,9 @@
 
     {
         "class": "tab_label",
-        "fade": true,
         "fg": [50, 50, 50],
         "shadow_color": [235, 235, 235],
         "shadow_offset": [0, 1],
-        "font.italic": false
     },
     {
         "class": "tab_label",
@@ -115,11 +95,7 @@
         "fg": [0, 0, 0],
         "shadow_color": [255, 255, 255]
     },
-    {
-        "class": "tab_label",
-        "attributes": ["transient"],
-        "font.italic": true
-    },
+
 
     // Taller tabs.
     {
