@@ -8,19 +8,19 @@
         "class": "tab_control",
         "layer0.texture": "Theme - Soda/Soda Light/tab-inactive.png",
     },
-    // Tab hover state
+    // Tab hover state.
     {
         "class": "tab_control",
         "attributes": ["hover"],
         "layer0.texture": "Theme - Soda/Soda Light/tab-hover.png"
     },
-    // Tab active state
+    // Tab active state.
     {
         "class": "tab_control",
         "attributes": ["selected"],
         "layer0.texture": "Theme - Soda/Soda Light/tab-active.png"
     },
-    // Tab close button
+    // Tab close button.
     {
         "class": "tab_close_button",
         "layer0.texture": "Theme - Soda/Soda Light/tab-close-inactive.png",
@@ -35,7 +35,7 @@
         "parents": [{"class": "tab_control", "attributes": ["selected"]}],
         "layer0.texture": "Theme - Soda/Soda Light/tab-close.png",
     },
-    // Tab dirty button
+    // Tab dirty button.
     {
         "class": "tab_close_button",
         "parents": [{"class": "tab_control", "attributes": ["dirty"]}],
@@ -46,7 +46,7 @@
         "parents": [{"class": "tab_control", "attributes": ["dirty", "selected"]}],
         "layer0.texture": "Theme - Soda/Soda Light/tab-dirty.png"
     },
-    // Tab highlight button
+    // Tab highlight button.
     {
         "class": "tab_close_button",
         "settings": ["highlight_modified_tabs"],
@@ -59,24 +59,22 @@
         "parents": [{"class": "tab_control", "attributes": ["dirty", "selected"]}],
         "layer0.texture": "Theme - Soda/Soda Light/tab-highlight.png"
     },
-    // Tab close button hover
+    // Tab close button hover.
     {
         "class": "tab_close_button",
         "settings": ["show_tab_close_buttons"],
         "attributes": ["hover"],
         "layer0.texture": "Theme - Soda/Soda Light/tab-close-hover.png"
     },
-    // Tab close button pressed
+    // Tab close button pressed.
     {
         "class": "tab_close_button",
         "settings": ["show_tab_close_buttons"],
         "attributes": ["pressed"],
         "layer0.texture": "Theme - Soda/Soda Light/tab-close-pressed.png"
     },
-    //
-    // TAB LABELS
-    //
 
+    // Tab labels.
     {
         "class": "tab_label",
         "fg": [50, 50, 50],
@@ -96,14 +94,11 @@
         "shadow_color": [255, 255, 255]
     },
 
-
     // Taller tabs.
     {
         "class": "tabset_control",
         "tab_height": 30
     },
-
-
 
     // Remove folder icons from side bar.
     {
