@@ -7,7 +7,7 @@
         "JavaScript": {
             "javascriptExtraPaths": [],
             "codeintel_scan_files_in_project": true,
-            "codeintel_max_recursive_dir_depth": 10
-        },
+            "codeintel_max_recursive_dir_depth": 5
+        }
     }
 }
