@@ -21,3 +21,6 @@
     includeCompletionsFromAllBuffers: true
   minimap:
     scrollAnimation: true
+  "highlight-selected":
+    highlightBackground: true
+    lightTheme: true
