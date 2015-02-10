@@ -1,0 +1,23 @@
+"*":
+  editor:
+    invisibles: {}
+    fontSize: 12
+    showIndentGuide: true
+    tabLength: 4
+  core:
+    themes: [
+      "one-light-ui"
+      "atom-light-syntax"
+    ]
+  "exception-reporting":
+    userId: "0e7988ed-a7d1-6779-ba29-50155a3d8a3e"
+  welcome:
+    showOnStartup: false
+  linter:
+    lintOnChange: false
+  "vim-mode":
+    startInInsertMode: true
+  "autocomplete-plus":
+    includeCompletionsFromAllBuffers: true
+  minimap:
+    scrollAnimation: true
