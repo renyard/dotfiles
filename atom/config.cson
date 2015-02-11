@@ -24,3 +24,7 @@
   "highlight-selected":
     highlightBackground: true
     lightTheme: true
+  "spell-check": {}
+  "save-session":
+    dataSaveFolder: "/Users/irenyard/dotfiles/atom/packages/save-session/projects"
+    project: "/Users/irenyard/workspace/html-reference-applications"
