@@ -19,6 +19,7 @@
     startInInsertMode: true
   "autocomplete-plus":
     includeCompletionsFromAllBuffers: true
+    confirmCompletion: "tab and enter"
   minimap:
     scrollAnimation: true
   "highlight-selected":
@@ -28,3 +29,15 @@
   "save-session":
     dataSaveFolder: "/Users/irenyard/dotfiles/atom/packages/save-session/projects"
     project: "/Users/irenyard/workspace/html-reference-applications"
+    windowX: 415
+    windowY: 22
+    windowWidth: 1024
+    windowHeight: 878
+  "linter-jshint": {}
+  "atom-beautify":
+    analytics: false
+    css_newline_between_rules: true
+    css_selector_separator_newline: true
+    html_end_with_newline: true
+    js_end_with_newline: true
+    js_keep_array_indentation: true
