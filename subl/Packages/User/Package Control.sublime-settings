@@ -1,16 +1,16 @@
 {
+	"in_process_packages":
+	[
+	],
 	"installed_packages":
 	[
 		"Color Highlighter",
 		"DashDoc",
-		"DocBlockr",
 		"FileDiffs",
-		"Git",
 		"GitGutter",
-		"Glue",
-		"HTML5",
 		"JavaScript Snippets",
 		"JsFormat",
+		"Package Control",
 		"SublimeCodeIntel",
 		"SublimeLinter",
 		"SublimeLinter-jshint",

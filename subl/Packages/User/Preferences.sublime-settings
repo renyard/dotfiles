@@ -5,12 +5,11 @@
 	"highlight_modified_tabs": false,
 	"ignored_packages":
 	[
-		"Git",
-		"Markdown",
-		"DocBlockr",
-		"Vintage",
-		"HTML5",
-		"Glue"
+		"Theme - Phoenix",
+		"Theme - Soda",
+		"SublimeCodeIntel",
+		"FileDiffs",
+		"Vintageous"
 	],
 	"show_tab_close_buttons": false,
 	"spell_check": true,

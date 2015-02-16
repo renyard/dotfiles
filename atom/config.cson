@@ -41,3 +41,5 @@
     html_end_with_newline: true
     js_end_with_newline: true
     js_keep_array_indentation: true
+  "file-icons":
+    coloured: false
