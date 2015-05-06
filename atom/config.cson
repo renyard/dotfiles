@@ -1,13 +1,19 @@
 "*":
   editor:
     invisibles: {}
-    fontSize: 12
     showIndentGuide: true
     tabLength: 4
+    fontSize: 12
   core:
+    disabledPackages: [
+      "autocomplete"
+      "linter-shellcheck"
+      "deprecation-cop"
+      "git-diff-details"
+    ]
     themes: [
       "one-light-ui"
-      "atom-light-syntax"
+      "one-light-syntax"
     ]
   "exception-reporting":
     userId: "0e7988ed-a7d1-6779-ba29-50155a3d8a3e"
@@ -15,6 +21,9 @@
     showOnStartup: false
   linter:
     lintOnChange: false
+    subtleLinterErrors: [
+      "jshint"
+    ]
   "vim-mode":
     startInInsertMode: true
   "autocomplete-plus":
@@ -22,17 +31,13 @@
     confirmCompletion: "tab and enter"
   minimap:
     scrollAnimation: true
+    plugins:
+      "highlight-selected": true
+      "color-highlight": true
   "highlight-selected":
     highlightBackground: true
     lightTheme: true
   "spell-check": {}
-  "save-session":
-    dataSaveFolder: "/Users/irenyard/dotfiles/atom/packages/save-session/projects"
-    project: "/Users/irenyard/workspace/html-reference-applications"
-    windowX: 415
-    windowY: 22
-    windowWidth: 1024
-    windowHeight: 878
   "linter-jshint": {}
   "atom-beautify":
     analytics: false
@@ -43,3 +48,18 @@
     js_keep_array_indentation: true
   "file-icons":
     coloured: false
+  "git-diff":
+    showIconsInEditorGutter: true
+  "linter-csslint": {}
+  "remember-session":
+    x: 415
+    y: 22
+    width: 1024
+    height: 878
+    treeWidth: 200
+  "linter-pylint":
+    executable: "/usr/local/bin/pylint"
+  emmet: {}
+  "git-plus":
+    openInPane: false
+  "merge-conflicts": {}

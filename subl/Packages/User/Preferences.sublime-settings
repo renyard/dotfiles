@@ -5,11 +5,15 @@
 	"highlight_modified_tabs": false,
 	"ignored_packages":
 	[
+		"FileDiffs",
+		"SublimeCodeIntel",
 		"Theme - Phoenix",
 		"Theme - Soda",
-		"SublimeCodeIntel",
-		"FileDiffs",
-		"Vintageous"
+		"Vintageous",
+		"Color Highlighter",
+		"JavaScript Snippets",
+		"JsFormat",
+		"SublimeLinter"
 	],
 	"show_tab_close_buttons": false,
 	"spell_check": true,

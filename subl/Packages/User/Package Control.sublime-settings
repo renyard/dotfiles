@@ -1,6 +1,10 @@
 {
 	"in_process_packages":
 	[
+		"Color Highlighter",
+		"JavaScript Snippets",
+		"JsFormat",
+		"SublimeLinter"
 	],
 	"installed_packages":
 	[

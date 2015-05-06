@@ -13,8 +13,8 @@ filetype plugin on
 colorscheme koehler
 
 if has("gui_running")
-	" Set window size for GVim.
-	set lines=60 columns=100
+	" Set window size for MacVim/GVim.
+	set lines=60 columns=132
 
 	" Hide toolbar.
 	set guioptions -=T
@@ -79,7 +79,7 @@ let &t_te.="\e[0 q"
 " Completion
 set ofu=syntaxcomplete#Complete
 
-"When editing a file, make screen display the name of the file you are editing
+" When editing a file, make screen display the name of the file you are editing
 function! SetTitle()
   if $TERM =~ "^screen"
     let l:title = 'vim: ' . expand('%:t')        
@@ -93,3 +93,21 @@ endfunction
 
 " Run it every time we change buffers
 autocmd BufEnter,BufFilePost * call SetTitle()
+
+" Automatically show NERD tree and close if only NERD tree is open.
+autocmd vimenter * NERDTree
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+
+" Automatically highlight file of current buffer in NERD tree.
+autocmd BufEnter * if &modifiable | NERDTreeFind | wincmd p | endif
+
+" Syntastic config.
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
