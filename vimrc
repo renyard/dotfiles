@@ -3,7 +3,9 @@ let s:root = expand("<sfile>:h")
 
 " Set the path to Pathogen and bundles.
 let s:pathogen_path = s:root . '/vim/pathogen/autoload/pathogen.vim'
-let s:bundle_path = s:root . '/vim/bundle'
+let s:bundle_path = s:root . '/vim/bundle/{}'
+
+let g:pathogen_disabled = ['vimacs', 'vim-signify']
 
 " Initialise Pathogen.
 exec "source " s:pathogen_path
@@ -94,12 +96,14 @@ endfunction
 " Run it every time we change buffers
 autocmd BufEnter,BufFilePost * call SetTitle()
 
-" Automatically show NERD tree and close if only NERD tree is open.
-autocmd vimenter * NERDTree
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+if has("gui_running")
+	" Automatically show NERD tree and close if only NERD tree is open.
+	autocmd vimenter * NERDTree
+	autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
-" Automatically highlight file of current buffer in NERD tree.
-autocmd BufEnter * if &modifiable | NERDTreeFind | wincmd p | endif
+	" Automatically highlight file of current buffer in NERD tree.
+	autocmd BufEnter * if &modifiable | NERDTreeFind | wincmd p | endif
+endif
 
 " Syntastic config.
 set statusline+=%#warningmsg#
@@ -112,3 +116,19 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
 let g:VM_Enabled = 1
+
+" Key bindings
+
+" Navigation
+map! <C-b> <Left>
+map! <C-f> <Right>
+"cnoremap <M-f> <S-Right>
+"cnoremap <M-b> <S-Left>
+
+" Go to first non-whitespace and end of line.
+map! <C-a> <Esc>I
+map! <C-e> <Esc>A
+
+" Delete to the end of the line.
+map! <C-k> <Esc>l"_d$a
+" map! <S-C-K> <Esc>"_ddi
