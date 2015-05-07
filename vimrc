@@ -42,7 +42,9 @@ set fileformats=unix,dos,mac
 setglobal fileformat=unix
 set tabstop=4
 set shiftwidth=4
+set expandtab
 set number
+set cursorline
 set smartindent
 set incsearch
 set hlsearch
@@ -96,14 +98,14 @@ endfunction
 " Run it every time we change buffers
 autocmd BufEnter,BufFilePost * call SetTitle()
 
-if has("gui_running")
+" if has("gui_running")
 	" Automatically show NERD tree and close if only NERD tree is open.
-	autocmd vimenter * NERDTree
-	autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+	" autocmd vimenter * NERDTree
+	" autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
 	" Automatically highlight file of current buffer in NERD tree.
-	autocmd BufEnter * if &modifiable | NERDTreeFind | wincmd p | endif
-endif
+	" autocmd BufEnter * if &modifiable | NERDTreeFind | wincmd p | endif
+" endif
 
 " Syntastic config.
 set statusline+=%#warningmsg#
@@ -132,3 +134,6 @@ map! <C-e> <Esc>A
 " Delete to the end of the line.
 map! <C-k> <Esc>l"_d$a
 " map! <S-C-K> <Esc>"_ddi
+
+" Dash
+map <C-h> :Dash<Return>
