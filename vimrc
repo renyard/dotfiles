@@ -45,7 +45,7 @@ set shiftwidth=4
 set expandtab
 set number
 set cursorline
-set smartindent
+set cindent
 set incsearch
 set hlsearch
 set nopaste
@@ -130,6 +130,14 @@ map! <C-f> <Right>
 " Go to first non-whitespace and end of line.
 map! <C-a> <Esc>I
 map! <C-e> <Esc>A
+
+" Move line up and down.
+nnoremap <C-j> :m .+1<CR>==
+nnoremap <C-k> :m .-2<CR>==
+inoremap <C-j> <Esc>:m .+1<CR>==gi
+inoremap <C-k> <Esc>:m .-2<CR>==gi
+vnoremap <C-j> :m '>+1<CR>gv=gv
+vnoremap <C-k> :m '<-2<CR>gv=gv
 
 " Delete to the end of the line.
 map! <C-k> <Esc>l"_d$a
