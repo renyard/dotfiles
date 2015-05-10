@@ -7,6 +7,13 @@ let s:bundle_path = s:root . '/vim/bundle/{}'
 
 let g:pathogen_disabled = ['minibufexpl', 'vimacs', 'vim-powerline', 'vim-signify']
 
+if has("gui_running")
+	call add(g:pathogen_disabled, 'supertab')
+else
+	call add(g:pathogen_disabled, 'neocomplete')
+	call add(g:pathogen_disabled, 'neosnippet')
+endif
+
 " Initialise Pathogen.
 exec "source " s:pathogen_path
 call pathogen#infect(s:bundle_path)
@@ -19,7 +26,7 @@ set guifont=Droid\ Sans\ Mono\ for\ Powerline:h12
 
 if has("gui_running")
 	" Set window size for MacVim/GVim.
-	set lines=60 columns=120
+	set lines=60 columns=100
 
 	" Hide toolbar.
 	set guioptions -=T
@@ -154,3 +161,32 @@ map <C-h> :Dash<Return>
 
 " ctrlp.vim
 map <C-p> :CtrlP<Return>
+
+" Neocomplete
+let g:neocomplete#enable_at_startup = 1
+let g:neocomplete#enable_smart_case = 1
+" <TAB>: completion.
+inoremap <expr><TAB>  pumvisible() ? "\<C-n>" :
+    \ <SID>check_back_space() ? "\<TAB>" :
+    \ neocomplete#start_manual_complete()
+function! s:check_back_space() "{{{
+    let col = col('.') - 1
+    return !col || getline('.')[col - 1]  =~ '\s'
+endfunction"}}}
+" Enable omni completion.
+autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
+autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+
+" Neosnippet
+let g:neosnippet#enable_snipmate_compatibility = 1
+let g:neosnippet#snippets_directory='~/dotfiles/vim/bundle/vim-snippets/snippets'
+" SuperTab like snippets behavior.
+imap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+\ "\<Plug>(neosnippet_expand_or_jump)"
+\: pumvisible() ? "\<C-n>" : "\<TAB>"
+smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+\ "\<Plug>(neosnippet_expand_or_jump)"
+\: "\<TAB>"
