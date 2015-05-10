@@ -5,7 +5,7 @@ let s:root = expand("<sfile>:h")
 let s:pathogen_path = s:root . '/vim/pathogen/autoload/pathogen.vim'
 let s:bundle_path = s:root . '/vim/bundle/{}'
 
-let g:pathogen_disabled = ['vimacs', 'vim-powerline', 'vim-signify']
+let g:pathogen_disabled = ['minibufexpl', 'vimacs', 'vim-powerline', 'vim-signify']
 
 " Initialise Pathogen.
 exec "source " s:pathogen_path
@@ -151,3 +151,6 @@ map! <C-k> <Esc>l"_d$a
 
 " Dash
 map <C-h> :Dash<Return>
+
+" ctrlp.vim
+map <C-p> :CtrlP<Return>
