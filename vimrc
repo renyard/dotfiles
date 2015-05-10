@@ -7,11 +7,11 @@ let s:bundle_path = s:root . '/vim/bundle/{}'
 
 let g:pathogen_disabled = ['minibufexpl', 'vimacs', 'vim-powerline', 'vim-signify']
 
-if has("gui_running")
-	call add(g:pathogen_disabled, 'supertab')
+if has("lua")
+    call add(g:pathogen_disabled, 'supertab')
 else
-	call add(g:pathogen_disabled, 'neocomplete')
-	call add(g:pathogen_disabled, 'neosnippet')
+    call add(g:pathogen_disabled, 'neocomplete')
+    call add(g:pathogen_disabled, 'neosnippet')
 endif
 
 " Initialise Pathogen.
