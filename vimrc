@@ -5,7 +5,7 @@ let s:root = expand("<sfile>:h")
 let s:pathogen_path = s:root . '/vim/pathogen/autoload/pathogen.vim'
 let s:bundle_path = s:root . '/vim/bundle/{}'
 
-let g:pathogen_disabled = ['vimacs', 'vim-signify']
+let g:pathogen_disabled = ['vimacs', 'vim-powerline', 'vim-signify']
 
 " Initialise Pathogen.
 exec "source " s:pathogen_path
@@ -14,9 +14,12 @@ filetype plugin on
 
 colorscheme koehler
 
+" Font and text size.
+set guifont=Droid\ Sans\ Mono\ for\ Powerline:h12
+
 if has("gui_running")
 	" Set window size for MacVim/GVim.
-	set lines=60 columns=132
+	set lines=60 columns=120
 
 	" Hide toolbar.
 	set guioptions -=T
@@ -32,6 +35,9 @@ if has("gui_running")
 		au FocusLost * let g:oldmouse=&mouse | set mouse=
 		au FocusGained * if exists('g:oldmouse') | let &mouse=g:oldmouse | unlet g:oldmouse | endif
 	augroup END
+
+    " Airline config.
+    let g:airline_powerline_fonts = 1
 endif
 
 syntax on 
