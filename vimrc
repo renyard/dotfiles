@@ -216,4 +216,5 @@ smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
 " Fugitive
 command Gst Gstatus
 command Gc Gcommit -v
+command Gca Gcommit -av
 command Gd Gvdiff
