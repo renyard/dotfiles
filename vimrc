@@ -72,8 +72,10 @@ set wildmenu
 
 " Files to ignore in path completion.
 set wildignore+=*/node_modules/*,*\\node_modules\\*
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
-set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe  " Windows
+set wildignore+=*/bower_modules/*,*\\bower_modules\\*
+set wildignore+=*/dist/*,*\\dist\\*
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,.DS_Store " MacOSX/Linux
+set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe        " Windows
 
 " Sometimes we can't avoid Windows, attempt to make usable under Cygwin.
 " set term=builtin_ansi
