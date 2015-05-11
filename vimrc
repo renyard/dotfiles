@@ -5,7 +5,7 @@ let s:root = expand("<sfile>:h")
 let s:pathogen_path = s:root . '/vim/pathogen/autoload/pathogen.vim'
 let s:bundle_path = s:root . '/vim/bundle/{}'
 
-let g:pathogen_disabled = ['minibufexpl', 'vimacs', 'vim-powerline', 'vim-signify']
+let g:pathogen_disabled = ['vim-powerline', 'vim-signify']
 
 if has("lua")
     call add(g:pathogen_disabled, 'supertab')
@@ -22,11 +22,11 @@ filetype plugin on
 colorscheme koehler
 
 " Font and text size.
-set guifont=Droid\ Sans\ Mono\ for\ Powerline:h12
+set guifont=Monaco:h12
 
 if has("gui_running")
 	" Set window size for MacVim/GVim.
-	set lines=60 columns=100
+	set lines=60 columns=120
 
 	" Hide toolbar.
 	set guioptions -=T
@@ -42,9 +42,6 @@ if has("gui_running")
 		au FocusLost * let g:oldmouse=&mouse | set mouse=
 		au FocusGained * if exists('g:oldmouse') | let &mouse=g:oldmouse | unlet g:oldmouse | endif
 	augroup END
-
-    " Airline config.
-    let g:airline_powerline_fonts = 1
 endif
 
 syntax on 
@@ -72,6 +69,11 @@ set backspace=indent,eol,start
 " Path Completion.
 set wildmode=longest,list,full
 set wildmenu
+
+" Files to ignore in path completion.
+set wildignore+=*/node_modules/*,*\\node_modules\\*
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
+set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe  " Windows
 
 " Sometimes we can't avoid Windows, attempt to make usable under Cygwin.
 " set term=builtin_ansi
@@ -132,7 +134,7 @@ let g:syntastic_check_on_wq = 0
 
 let g:VM_Enabled = 1
 
-" Key bindings
+" Native feature key bindings.
 
 " Navigation
 map! <C-b> <Left>
@@ -155,6 +157,26 @@ vnoremap <C-k> :m '<-2<CR>gv=gv
 " Delete to the end of the line.
 map! <C-k> <Esc>l"_d$a
 " map! <S-C-K> <Esc>"_ddi
+
+" Plugin config & key bindings.
+
+" Airline
+if !exists('g:airline_symbols')
+    let g:airline_symbols = {}
+  endif
+
+let g:airline_left_sep = ''
+let g:airline_left_sep = ''
+let g:airline_right_sep = ''
+let g:airline_right_sep = ''
+let g:airline_symbols.linenr = '␊'
+let g:airline_symbols.linenr = '␤'
+let g:airline_symbols.linenr = '¶'
+let g:airline_symbols.branch = '⎇'
+let g:airline_symbols.paste = 'ρ'
+let g:airline_symbols.paste = 'Þ'
+let g:airline_symbols.paste = '∥'
+let g:airline_symbols.whitespace = 'Ξ'
 
 " Dash
 map <C-h> :Dash<Return>
@@ -190,3 +212,8 @@ imap <expr><TAB> neosnippet#expandable_or_jumpable() ?
 smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
 \ "\<Plug>(neosnippet_expand_or_jump)"
 \: "\<TAB>"
+
+" Fugitive
+command Gst Gstatus
+command Gc Gcommit -v
+command Gd Gvdiff
