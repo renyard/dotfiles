@@ -25,26 +25,26 @@ colorscheme koehler
 set guifont=Monaco:h12
 
 if has("gui_running")
-	" Set window size for MacVim/GVim.
-	set lines=60 columns=120
+    " Set window size for MacVim/GVim.
+    set lines=60 columns=120
 
-	" Hide toolbar.
-	set guioptions -=T
+    " Hide toolbar.
+    set guioptions -=T
 
-	" Set tranparency. (MacVim specific option)
-	if has("transparency")
-		set transparency=10
-	endif
+    " Set tranparency. (MacVim specific option)
+    if has("transparency")
+        set transparency=10
+    endif
 
-	" Prevent cursor moving to click location on window focus.
-	augroup NO_CURSOR_MOVE_ON_FOCUS
-		au!
-		au FocusLost * let g:oldmouse=&mouse | set mouse=
-		au FocusGained * if exists('g:oldmouse') | let &mouse=g:oldmouse | unlet g:oldmouse | endif
-	augroup END
+    " Prevent cursor moving to click location on window focus.
+    augroup NO_CURSOR_MOVE_ON_FOCUS
+        au!
+        au FocusLost * let g:oldmouse=&mouse | set mouse=
+        au FocusGained * if exists('g:oldmouse') | let &mouse=g:oldmouse | unlet g:oldmouse | endif
+    augroup END
 endif
 
-syntax on 
+syntax on
 
 " Misc. Options.
 set hidden
@@ -102,26 +102,26 @@ set ofu=syntaxcomplete#Complete
 
 " When editing a file, make screen display the name of the file you are editing
 function! SetTitle()
-  if $TERM =~ "^screen"
-    let l:title = 'vim: ' . expand('%:t')        
-    
-    if (l:title != 'vim: __Tag_List__')
-      let l:truncTitle = strpart(l:title, 0, 30)
-      silent exe '!echo -e -n "\033k' . l:truncTitle . '\033\\"'     
+    if $TERM =~ "^screen"
+        let l:title = 'vim: ' . expand('%:t')
+
+        if (l:title != 'vim: __Tag_List__')
+            let l:truncTitle = strpart(l:title, 0, 30)
+            silent exe '!echo -e -n "\033k' . l:truncTitle . '\033\\"'
+        endif
     endif
-  endif
 endfunction
 
 " Run it every time we change buffers
 autocmd BufEnter,BufFilePost * call SetTitle()
 
 " if has("gui_running")
-	" Automatically show NERD tree and close if only NERD tree is open.
-	" autocmd vimenter * NERDTree
-	" autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+    " Automatically show NERD tree and close if only NERD tree is open.
+    " autocmd vimenter * NERDTree
+    " autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
-	" Automatically highlight file of current buffer in NERD tree.
-	" autocmd BufEnter * if &modifiable | NERDTreeFind | wincmd p | endif
+    " Automatically highlight file of current buffer in NERD tree.
+    " autocmd BufEnter * if &modifiable | NERDTreeFind | wincmd p | endif
 " endif
 
 " Syntastic config.
@@ -165,7 +165,7 @@ map! <C-k> <Esc>l"_d$a
 " Airline
 if !exists('g:airline_symbols')
     let g:airline_symbols = {}
-  endif
+endif
 
 let g:airline_left_sep = ''
 let g:airline_left_sep = ''
@@ -209,11 +209,11 @@ let g:neosnippet#enable_snipmate_compatibility = 1
 let g:neosnippet#snippets_directory='~/dotfiles/vim/bundle/vim-snippets/snippets'
 " SuperTab like snippets behavior.
 imap <expr><TAB> neosnippet#expandable_or_jumpable() ?
-\ "\<Plug>(neosnippet_expand_or_jump)"
-\: pumvisible() ? "\<C-n>" : "\<TAB>"
+    \ "\<Plug>(neosnippet_expand_or_jump)"
+    \: pumvisible() ? "\<C-n>" : "\<TAB>"
 smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
-\ "\<Plug>(neosnippet_expand_or_jump)"
-\: "\<TAB>"
+    \ "\<Plug>(neosnippet_expand_or_jump)"
+    \: "\<TAB>"
 
 " Fugitive
 command Gst Gstatus
