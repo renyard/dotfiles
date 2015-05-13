@@ -160,6 +160,10 @@ vnoremap <C-k> :m '<-2<CR>gv=gv
 map! <C-k> <Esc>l"_d$a
 " map! <S-C-K> <Esc>"_ddi
 
+" Move between buffers.
+map <C-Tab> :bn<CR>
+map <C-S-Tab> :bp<CR>
+
 " Plugin config & key bindings.
 
 " Airline
