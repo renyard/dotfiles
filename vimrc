@@ -5,7 +5,7 @@ let s:root = expand("<sfile>:h")
 let s:pathogen_path = s:root . '/vim/pathogen/autoload/pathogen.vim'
 let s:bundle_path = s:root . '/vim/bundle/{}'
 
-let g:pathogen_disabled = ['vim-powerline', 'vim-signify']
+let g:pathogen_disabled = ['indentLine', 'vim-powerline', 'vim-signify']
 
 if has("lua")
     call add(g:pathogen_disabled, 'supertab')
