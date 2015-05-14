@@ -15,8 +15,14 @@ fi
 
 # Set defaults.
 EDITOR=vim
+
+# Set Vim key bindings.
 bindkey -v
 export KEYTIMEOUT=1
+# Ctrl-r acts the same as the default emacs bindings.
+bindkey '^r' history-incremental-search-backward
+# Bind / to incremental search in normal mode.
+bindkey -M vicmd '/' history-incremental-search-backward
 
 # Add script dir to PATH.
 export PATH=/usr/local/bin:/usr/local/share/npm/bin:$PATH:$DIR/bin
