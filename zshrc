@@ -15,7 +15,8 @@ fi
 
 # Set defaults.
 EDITOR=vim
-bindkey -e
+bindkey -v
+export KEYTIMEOUT=1
 
 # Add script dir to PATH.
 export PATH=/usr/local/bin:/usr/local/share/npm/bin:$PATH:$DIR/bin
