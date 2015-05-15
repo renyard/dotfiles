@@ -193,9 +193,9 @@ if !exists('g:airline_symbols')
 endif
 
 let g:airline_left_sep = ''
-let g:airline_left_sep = ''
+let g:airline_left_alt_sep = ''
 let g:airline_right_sep = ''
-let g:airline_right_sep = ''
+let g:airline_right_alt_sep = ''
 let g:airline_symbols.linenr = ''
 let g:airline_symbols.branch = '⎇'
 let g:airline_symbols.paste = 'ρ'
@@ -207,9 +207,13 @@ let g:airline#extensions#tabline#enabled = 1
 " Don't count trailing whitespace.
 let g:airline#extensions#whitespace#enabled = 0
 
+" Only show the tail of the Git branch. e.g. "feature/foo" becomes "foo".
+let g:airline#extensions#branch#format = 1
+
+" Custom statusline layout. Removes Git status from left to the right of file data.
 let g:airline_section_b = ''
 let g:airline_section_x = '%{airline#util#wrap(airline#parts#filetype(),0)} %{airline#util#wrap(airline#parts#ffenc(),0)}'
-let g:airline_section_y = '%{airline#util#wrap(airline#extensions#hunks#get_hunks(),0)}%{airline#util#wrap(airline#extensions#branch#get_head(),0)}'
+let g:airline_section_y = '%{airline#util#wrap(airline#extensions#hunks#get_hunks(),0)} %{airline#util#wrap(airline#extensions#branch#get_head(),0)}'
 
 " Dash
 map <C-h> :Dash<Return>
