@@ -86,10 +86,10 @@ hi clear SpellBad
 hi clear SpellCap
 hi clear SpellRare
 hi clear SpellLocal
-hi SpellBad term=underline cterm=underline
-hi SpellCap term=underline cterm=underline
-hi SpellRare term=underline cterm=underline
-hi SpellLocal term=underline cterm=underline
+hi SpellBad gui=underline term=underline cterm=underline
+hi SpellCap gui=underline term=underline cterm=underline
+hi SpellRare gui=underline term=underline cterm=underline
+hi SpellLocal gui=underline term=underline cterm=underline
 
 " Mode dependant cursors.
 let &t_ti.="\e[1 q"
@@ -135,6 +135,27 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
 let g:VM_Enabled = 1
+
+" Toggles maximize and return to split window layout.
+nnoremap <C-W>O :call MaximizeToggle()<CR>
+nnoremap <C-W>o :call MaximizeToggle()<CR>
+nnoremap <C-W><C-O> :call MaximizeToggle()<CR>
+
+function! MaximizeToggle()
+    if exists("s:maximize_session")
+        exec "source " . s:maximize_session
+        call delete(s:maximize_session)
+        unlet s:maximize_session
+        let &hidden=s:maximize_hidden_save
+        unlet s:maximize_hidden_save
+    else
+        let s:maximize_hidden_save = &hidden
+        let s:maximize_session = tempname()
+        set hidden
+        exec "mksession! " . s:maximize_session
+        only
+    endif
+endfunction
 
 " Native feature key bindings.
 
