@@ -5,7 +5,7 @@ let s:root = expand("<sfile>:h")
 let s:pathogen_path = s:root . '/vim/pathogen/autoload/pathogen.vim'
 let s:bundle_path = s:root . '/vim/bundle/{}'
 
-let g:pathogen_disabled = ['indentLine', 'vim-powerline', 'vim-signify']
+let g:pathogen_disabled = ['indentLine', 'nerdcommenter', 'vim-powerline', 'vim-signify']
 
 if has("lua")
     call add(g:pathogen_disabled, 'supertab')
@@ -63,7 +63,8 @@ set showcmd
 set laststatus=2
 set whichwrap-=<,>,[,],h,l,~
 set nowrap
-set dir=~/.vim/swp
+set noswapfile
+" set dir=~/.vim/swp
 set backspace=indent,eol,start
 
 " Path Completion.
@@ -221,6 +222,9 @@ map <C-h> :Dash<Return>
 " ctrlp.vim
 map <C-p> :CtrlP<Return>
 
+" Gundo
+nnoremap <C-g> :GundoToggle<CR>
+
 " Neocomplete
 let g:neocomplete#enable_at_startup = 1
 let g:neocomplete#enable_smart_case = 1
@@ -251,7 +255,7 @@ smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
     \: "\<TAB>"
 
 " Fugitive
-command Gst Gstatus
-command Gc Gcommit -v
-command Gca Gcommit -av
-command Gd Gvdiff
+command! Gst Gstatus
+command! Gc Gcommit -v
+command! Gca Gcommit -av
+command! Gd Gvdiff
