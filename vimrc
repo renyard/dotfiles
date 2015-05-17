@@ -209,7 +209,8 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#whitespace#enabled = 0
 
 " Only show the tail of the Git branch. e.g. "feature/foo" becomes "foo".
-let g:airline#extensions#branch#format = 1
+" let g:airline#extensions#branch#format = 1
+let g:airline#extensions#branch#format = 'Git_flow_branch_format'
 
 " Custom statusline layout. Removes Git status from left to the right of file data.
 let g:airline_section_b = ''
