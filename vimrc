@@ -63,9 +63,15 @@ set showcmd
 set laststatus=2
 set whichwrap-=<,>,[,],h,l,~
 set nowrap
-set noswapfile
-" set dir=~/.vim/swp
 set backspace=indent,eol,start
+set noswapfile
+
+" Create the directory for storing undo files.
+silent !mkdir -p ~/.vim/undo/
+set undofile
+set undodir=~/.vim/undo/
+set undolevels=1000
+set undoreload=10000
 
 " Path Completion.
 set wildmode=longest,list,full
