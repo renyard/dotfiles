@@ -1,5 +1,5 @@
 set nocompatible
-filetype of
+filetype off
 
 " Get the path of the this script.
 let s:root = expand("<sfile>:h")
@@ -25,6 +25,7 @@ Plugin 'Raimondi/delimitMate'
 Plugin 'pangloss/vim-javascript'
 Plugin 'Shougo/neocomplete'
 Plugin 'Shougo/neosnippet.vim'
+Plugin 'Shougo/neosnippet-snippets'
 Plugin 'honza/vim-snippets'
 Plugin 'xolox/vim-session'
 Plugin 'tomtom/tcomment_vim'
@@ -247,7 +248,13 @@ map <C-h> :Dash<Return>
 map <C-p> :CtrlP<Return>
 
 " Gundo
+let g:gundo_right = 1
+let g:gundo_preview_bottom = 1
+let g:gundo_close_on_revert = 1
 nnoremap <C-g> :GundoToggle<CR>
+
+" NERDTree
+nnoremap <C-t> :NERDTreeToggle<CR>
 
 " Neocomplete
 let g:neocomplete#enable_at_startup = 1
@@ -283,3 +290,6 @@ command! Gst Gstatus
 command! Gc Gcommit -v
 command! Gca Gcommit -av
 command! Gd Gvdiff
+
+" Session
+let g:session_autosave = 'no'
