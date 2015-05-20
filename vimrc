@@ -1,22 +1,40 @@
+set nocompatible
+filetype off
+
 " Get the path of the this script.
 let s:root = expand("<sfile>:h")
 
-" Set the path to Pathogen and bundles.
-let s:pathogen_path = s:root . '/vim/pathogen/autoload/pathogen.vim'
-let s:bundle_path = s:root . '/vim/bundle/{}'
+" set the runtime path to include Vundle and initialize
+set rtp+=~/dotfiles/vim/vundle
+call vundle#begin()
 
-let g:pathogen_disabled = ['indentLine', 'nerdcommenter', 'vim-powerline', 'vim-signify']
+Plugin 'bling/vim-airline'
+Plugin 'renyard/vim-git-flow-format'
+Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-sleuth'
+Plugin 'kien/ctrlp.vim'
+Plugin 'mhinz/vim-signify'
+Plugin 'scrooloose/syntastic'
+Plugin 'sjl/gundo.vim'
+Plugin 'rizzatti/dash.vim'
+Plugin 'scrooloose/nerdtree'
+Plugin 'Xuyuanp/nerdtree-git-plugin'
+Plugin 'neilagabriel/vim-geeknote'
+Plugin 'Raimondi/delimitMate'
+Plugin 'pangloss/vim-javascript'
+Plugin 'Shougo/neocomplete'
+Plugin 'Shougo/neosnippet.vim'
+Plugin 'Shougo/neosnippet-snippets'
+Plugin 'honza/vim-snippets'
+Plugin 'xolox/vim-session'
+Plugin 'tomtom/tcomment_vim'
 
-if has("lua")
-    call add(g:pathogen_disabled, 'supertab')
-else
-    call add(g:pathogen_disabled, 'neocomplete')
-    call add(g:pathogen_disabled, 'neosnippet')
-endif
+" Libraries required by other plugins.
+Plugin 'xolox/vim-misc'
+Plugin 'rizzatti/funcoo.vim'
 
-" Initialise Pathogen.
-exec "source " s:pathogen_path
-call pathogen#infect(s:bundle_path)
+call vundle#end()
 filetype plugin on
 
 colorscheme koehler
@@ -230,7 +248,13 @@ map <C-h> :Dash<Return>
 map <C-p> :CtrlP<Return>
 
 " Gundo
+let g:gundo_right = 1
+let g:gundo_preview_bottom = 1
+let g:gundo_close_on_revert = 1
 nnoremap <C-g> :GundoToggle<CR>
+
+" NERDTree
+nnoremap <C-t> :NERDTreeToggle<CR>
 
 " Neocomplete
 let g:neocomplete#enable_at_startup = 1
@@ -266,3 +290,6 @@ command! Gst Gstatus
 command! Gc Gcommit -v
 command! Gca Gcommit -av
 command! Gd Gvdiff
+
+" Session
+let g:session_autosave = 'no'
