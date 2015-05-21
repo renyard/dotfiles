@@ -10,9 +10,11 @@ call vundle#begin()
 
 Plugin 'bling/vim-airline'
 Plugin 'renyard/vim-git-flow-format'
+Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-sleuth'
+Plugin 'tpope/vim-repeat'
 Plugin 'kien/ctrlp.vim'
 Plugin 'mhinz/vim-signify'
 Plugin 'scrooloose/syntastic'
@@ -28,7 +30,6 @@ Plugin 'Shougo/neosnippet.vim'
 Plugin 'Shougo/neosnippet-snippets'
 Plugin 'honza/vim-snippets'
 Plugin 'xolox/vim-session'
-Plugin 'tomtom/tcomment_vim'
 
 " Libraries required by other plugins.
 Plugin 'xolox/vim-misc'
@@ -159,8 +160,6 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
-let g:VM_Enabled = 1
-
 " Toggles maximize and return to split window layout.
 nnoremap <C-W>O :call MaximizeToggle()<CR>
 nnoremap <C-W>o :call MaximizeToggle()<CR>
@@ -233,7 +232,6 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#whitespace#enabled = 0
 
 " Only show the tail of the Git branch. e.g. "feature/foo" becomes "foo".
-" let g:airline#extensions#branch#format = 1
 let g:airline#extensions#branch#format = 'Git_flow_branch_format'
 
 " Custom statusline layout. Removes Git status from left to the right of file data.
