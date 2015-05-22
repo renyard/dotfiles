@@ -60,6 +60,7 @@ set incsearch
 set hlsearch
 set nopaste
 set showcmd
+set confirm
 set laststatus=2
 set whichwrap-=<,>,[,],h,l,~
 set nowrap
