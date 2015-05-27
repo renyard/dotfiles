@@ -15,6 +15,7 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-sleuth'
 Plugin 'tpope/vim-repeat'
+Plugin 'Lokaltog/vim-easymotion'
 Plugin 'kien/ctrlp.vim'
 Plugin 'mhinz/vim-signify'
 Plugin 'scrooloose/syntastic'
@@ -22,6 +23,7 @@ Plugin 'sjl/gundo.vim'
 Plugin 'rizzatti/dash.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
+Plugin 'severin-lemaignan/vim-minimap'
 Plugin 'neilagabriel/vim-geeknote'
 Plugin 'Raimondi/delimitMate'
 Plugin 'pangloss/vim-javascript'
@@ -48,7 +50,11 @@ if has("gui_running")
     set lines=60 columns=120
 
     " Hide toolbar.
-    set guioptions -=T
+    set guioptions-=T
+
+    " Hide scroll bars.
+    set guioptions-=r
+    set guioptions-=L
 
     " Set tranparency. (MacVim specific option)
     if has("transparency")
@@ -187,6 +193,11 @@ endfunction
 " Navigation
 map! <C-b> <Left>
 map! <C-f> <Right>
+" Disable arrow navigation.
+nmap <Up> <Nop>
+nmap <Down> <Nop>
+nmap <Left> <Nop>
+nmap <Right> <Nop>
 "cnoremap <M-f> <S-Right>
 "cnoremap <M-b> <S-Left>
 
@@ -240,6 +251,10 @@ let g:airline_section_b = ''
 let g:airline_section_x = '%{airline#util#wrap(airline#parts#filetype(),0)} %{airline#util#wrap(airline#parts#ffenc(),0)}'
 let g:airline_section_y = '%{airline#util#wrap(airline#extensions#hunks#get_hunks(),0)} %{airline#util#wrap(airline#extensions#branch#get_head(),0)}'
 
+" Minimap
+let g:minimap_highlight='Visual'
+" autocmd! VimEnter * Minimap
+
 " Dash
 map <C-h> :Dash<Return>
 
@@ -275,7 +290,7 @@ autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 
 " Neosnippet
 let g:neosnippet#enable_snipmate_compatibility = 1
-let g:neosnippet#snippets_directory='~/dotfiles/vim/bundle/vim-snippets/snippets'
+let g:neosnippet#snippets_directory='~/.vim/bundle/vim-snippets/snippets'
 " SuperTab like snippets behavior.
 imap <expr><TAB> neosnippet#expandable_or_jumpable() ?
     \ "\<Plug>(neosnippet_expand_or_jump)"
