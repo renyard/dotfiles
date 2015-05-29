@@ -17,7 +17,7 @@ fi
 EDITOR=vim
 
 # Set Vi key bindings.
-bindkey -v
+# bindkey -v
 export KEYTIMEOUT=1
 # Ctrl-r acts the same as the default emacs bindings.
 bindkey '^r' history-incremental-search-backward
