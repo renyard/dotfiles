@@ -32,6 +32,8 @@ Plugin 'Shougo/neosnippet.vim'
 Plugin 'Shougo/neosnippet-snippets'
 Plugin 'honza/vim-snippets'
 Plugin 'xolox/vim-session'
+Plugin 'reedes/vim-lexical'
+Plugin 'reedes/vim-pencil'
 
 " Libraries required by other plugins.
 Plugin 'xolox/vim-misc'
@@ -194,10 +196,10 @@ endfunction
 map! <C-b> <Left>
 map! <C-f> <Right>
 " Disable arrow navigation.
-nmap <Up> <Nop>
-nmap <Down> <Nop>
-nmap <Left> <Nop>
-nmap <Right> <Nop>
+" nmap <Up> <Nop>
+" nmap <Down> <Nop>
+" nmap <Left> <Nop>
+" nmap <Right> <Nop>
 "cnoremap <M-f> <S-Right>
 "cnoremap <M-b> <S-Left>
 
