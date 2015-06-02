@@ -17,6 +17,7 @@ Plugin 'tpope/vim-sleuth'
 Plugin 'tpope/vim-repeat'
 Plugin 'Lokaltog/vim-easymotion'
 Plugin 'kien/ctrlp.vim'
+" Plugin 'Shougo/unite.vim'
 Plugin 'mhinz/vim-signify'
 Plugin 'scrooloose/syntastic'
 Plugin 'sjl/gundo.vim'
@@ -32,8 +33,10 @@ Plugin 'Shougo/neosnippet.vim'
 Plugin 'Shougo/neosnippet-snippets'
 Plugin 'honza/vim-snippets'
 Plugin 'xolox/vim-session'
-Plugin 'reedes/vim-lexical'
+
+" Writing plugins
 Plugin 'reedes/vim-pencil'
+" Plugin 'reedes/vim-lexical'
 
 " Libraries required by other plugins.
 Plugin 'xolox/vim-misc'
@@ -263,6 +266,9 @@ map <C-h> :Dash<Return>
 " ctrlp.vim
 map <C-p> :CtrlP<Return>
 
+" Unite
+" map <C-p> :Unite file buffer<Return>
+
 " Gundo
 let g:gundo_right = 1
 let g:gundo_preview_bottom = 1
@@ -309,3 +315,13 @@ command! Gd Gvdiff
 
 " Session
 let g:session_autosave = 'no'
+
+" Writing plugins
+augroup pencil
+    autocmd!
+    autocmd FileType markdown,mkd call pencil#init({'wrap': 'soft'})
+                            " \ | call lexical#init()
+                            " \ | call litecorrect#init()
+                            " \ | call textobj#quote#init()
+                            " \ | call textobj#sentence#init()
+augroup END
