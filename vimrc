@@ -35,6 +35,9 @@ Plugin 'xolox/vim-session'
 Plugin 'reedes/vim-lexical'
 Plugin 'reedes/vim-pencil'
 
+" Depends on http://ctags.sourceforge.net/ and https://github.com/ramitos/jsctags for JS.
+Plugin 'majutsushi/tagbar'
+
 " Libraries required by other plugins.
 Plugin 'xolox/vim-misc'
 Plugin 'rizzatti/funcoo.vim'
@@ -270,7 +273,10 @@ let g:gundo_close_on_revert = 1
 nnoremap <C-g> :GundoToggle<CR>
 
 " NERDTree
-nnoremap <C-t> :NERDTreeToggle<CR>
+nnoremap <C-o> :NERDTreeToggle<CR>
+
+" TagBar
+nnoremap <C-t> :Tagbar<CR>
 
 " Neocomplete
 let g:neocomplete#enable_at_startup = 1
