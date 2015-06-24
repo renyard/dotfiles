@@ -18,21 +18,16 @@ Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-speeddating'
 Plugin 'Lokaltog/vim-easymotion'
 Plugin 'kien/ctrlp.vim'
-" Plugin 'Shougo/unite.vim'
 Plugin 'mhinz/vim-signify'
 Plugin 'scrooloose/syntastic'
 Plugin 'sjl/gundo.vim'
 Plugin 'Chiel92/vim-autoformat'
 Plugin 'rizzatti/dash.vim'
 Plugin 'scrooloose/nerdtree'
-" Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'severin-lemaignan/vim-minimap'
 Plugin 'neilagabriel/vim-geeknote'
 Plugin 'Raimondi/delimitMate'
 Plugin 'pangloss/vim-javascript'
-" Plugin 'Shougo/neocomplete'
-" Plugin 'Shougo/neosnippet.vim'
-" Plugin 'Shougo/neosnippet-snippets'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
@@ -100,9 +95,12 @@ set showcmd
 set confirm
 set laststatus=2
 set whichwrap-=<,>,[,],h,l,~
-set nowrap
 set backspace=indent,eol,start
 set noswapfile
+
+" Soft wrap on word boundaries.
+set wrap
+set linebreak
 
 " Create the directory for storing undo files.
 silent !mkdir -p ~/.vim/undo/
