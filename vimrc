@@ -298,6 +298,11 @@ nnoremap <C-t> :Tagbar<CR>
 "     return !col || getline('.')[col - 1]  =~ '\s'
 " endfunction"}}}
 " Enable omni completion.
+
+" YouCompleteMe
+let g:ycm_autoclose_preview_window_after_completion = 1
+
+set completeopt = preview,menuone
 autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
 autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
 autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
