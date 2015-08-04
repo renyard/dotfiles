@@ -331,7 +331,8 @@ command! Gca Gcommit -av
 command! Gd Gvdiff
 
 " Session
-let g:session_autosave = 'no'
+let g:session_autosave = 'yes'
+let g:session_autoload = 'yes'
 
 " Writing plugins
 augroup pencil
