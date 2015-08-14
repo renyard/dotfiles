@@ -34,7 +34,7 @@ Plugin 'honza/vim-snippets'
 Plugin 'xolox/vim-session'
 
 " Writing plugins
-Plugin 'reedes/vim-pencil'
+" Plugin 'reedes/vim-pencil'
 " Plugin 'reedes/vim-lexical'
 
 " Depends on http://ctags.sourceforge.net/ and https://github.com/ramitos/jsctags for JS.
