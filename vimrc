@@ -99,6 +99,10 @@ set backspace=indent,eol,start
 set noswapfile
 set ignorecase
 
+" Enable project specific .vimrc files.
+set exrc
+set secure
+
 " Soft wrap on word boundaries.
 set wrap
 set linebreak
