@@ -4,6 +4,9 @@
 # Get the script path.
 DF_DIR="$( cd "$( dirname "$0" )" && pwd )"
 
+# Syntax highlighting config.
+ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets root)
+
 # Source oh my zsh config.
 if [ -f $DF_DIR/oh-my-zshrc ]; then
 	. $DF_DIR/oh-my-zshrc
