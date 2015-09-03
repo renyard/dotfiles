@@ -99,6 +99,9 @@ set backspace=indent,eol,start
 set noswapfile
 set ignorecase
 
+" Enable the mouse in terminal mode.
+set mouse=a
+
 " Enable project specific .vimrc files.
 set exrc
 set secure
@@ -307,7 +310,7 @@ nnoremap <C-t> :Tagbar<CR>
 " YouCompleteMe
 let g:ycm_autoclose_preview_window_after_completion = 1
 
-set completeopt = preview,menuone
+set completeopt=longest,menuone
 autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
 autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
 autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
