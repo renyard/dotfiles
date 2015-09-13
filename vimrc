@@ -31,6 +31,7 @@ Plugin 'Valloric/YouCompleteMe'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 Plugin 'xolox/vim-session'
+Plugin 'tmux-plugins/vim-tmux-focus-events'
 
 " Writing plugins
 " Plugin 'reedes/vim-pencil'
