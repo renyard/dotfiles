@@ -238,6 +238,8 @@ map! <C-k> <Esc>l"_d$a
 " Move between buffers.
 map <C-Tab> :bn<CR>
 map <C-S-Tab> :bp<CR>
+map gn :bn<CR>
+map gp :bp<CR>
 
 " Plugin config & key bindings.
 
