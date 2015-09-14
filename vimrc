@@ -329,8 +329,8 @@ autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 "     \: "\<TAB>"
 
 " UltiSnips
-let g:UltiSnipsExpandTrigger = "<c-tab>"
-let g:UltiSnipsListSnippets = ""
+" let g:UltiSnipsExpandTrigger = "<c-tab>"
+" let g:UltiSnipsListSnippets = ""
 
 " Fugitive
 command! Gst Gstatus
