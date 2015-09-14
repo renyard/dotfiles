@@ -30,7 +30,7 @@ Plugin 'pangloss/vim-javascript'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
-Plugin 'xolox/vim-session'
+" Plugin 'xolox/vim-session'
 Plugin 'tmux-plugins/vim-tmux-focus-events'
 
 " Writing plugins
