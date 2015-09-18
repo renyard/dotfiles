@@ -32,6 +32,8 @@ Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 " Plugin 'xolox/vim-session'
 Plugin 'tmux-plugins/vim-tmux-focus-events'
+Plugin 'tpope/vim-obsession'
+Plugin 'dhruvasagar/vim-prosession'
 
 " Writing plugins
 " Plugin 'reedes/vim-pencil'
