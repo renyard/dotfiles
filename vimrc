@@ -100,9 +100,9 @@ set backspace=indent,eol,start
 set noswapfile
 set ignorecase
 
-# Current line highlight.
+" Current line highlight.
 set cursorline
-:highlight CursorLine cterm=bold ctermbg=237
+:highlight CursorLine cterm=none ctermbg=237
 
 " Enable the mouse in terminal mode.
 set mouse=a
