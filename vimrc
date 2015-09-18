@@ -88,7 +88,6 @@ set tabstop=4
 set shiftwidth=4
 set expandtab
 set number
-set cursorline
 set cindent
 set incsearch
 set hlsearch
@@ -100,6 +99,10 @@ set whichwrap-=<,>,[,],h,l,~
 set backspace=indent,eol,start
 set noswapfile
 set ignorecase
+
+# Current line highlight.
+set cursorline
+:highlight CursorLine cterm=bold ctermbg=237
 
 " Enable the mouse in terminal mode.
 set mouse=a
