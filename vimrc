@@ -13,6 +13,7 @@ Plugin 'renyard/vim-git-flow-format'
 Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-dispatch'
 " Plugin 'tpope/vim-sleuth'
 Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-speeddating'
@@ -31,9 +32,12 @@ Plugin 'Valloric/YouCompleteMe'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 " Plugin 'xolox/vim-session'
-Plugin 'tmux-plugins/vim-tmux-focus-events'
 Plugin 'tpope/vim-obsession'
 Plugin 'dhruvasagar/vim-prosession'
+
+" tmux integration
+Plugin 'tmux-plugins/vim-tmux-focus-events'
+Plugin 'christoomey/vim-tmux-navigator'
 
 " Writing plugins
 " Plugin 'reedes/vim-pencil'
