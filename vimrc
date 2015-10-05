@@ -349,6 +349,8 @@ command! Gst Gstatus
 command! Gc Gcommit -v
 command! Gca Gcommit -av
 command! Gd Gvdiff
+command! Gl Gpull
+command! Gp Gpush
 
 " Session
 let g:session_autosave = 'yes'
