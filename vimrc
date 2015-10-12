@@ -174,7 +174,7 @@ function! SetTitle()
 endfunction
 
 " Run it every time we change buffers
-autocmd BufEnter,BufFilePost * call SetTitle()
+" autocmd BufEnter,BufFilePost * call SetTitle()
 
 " if has("gui_running")
     " Automatically show NERD tree and close if only NERD tree is open.
