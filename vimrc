@@ -270,6 +270,7 @@ let g:airline_symbols.whitespace = 'Ξ'
 
 " Turn on tabline.
 let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#fnamemod = ':p:t'
 
 " Don't count trailing whitespace.
 let g:airline#extensions#whitespace#enabled = 0
