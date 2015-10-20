@@ -94,7 +94,7 @@ set tabstop=4
 set shiftwidth=4
 set expandtab
 set number
-set cindent
+set autoindent
 set incsearch
 set hlsearch
 set nopaste
