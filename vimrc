@@ -94,7 +94,6 @@ set tabstop=4
 set shiftwidth=4
 set expandtab
 set number
-set autoindent
 set incsearch
 set hlsearch
 set nopaste
@@ -105,6 +104,10 @@ set whichwrap-=<,>,[,],h,l,~
 set backspace=indent,eol,start
 set noswapfile
 set ignorecase
+
+" Indentation.
+set autoindent
+filetype plugin indent on
 
 " Current line highlight.
 set cursorline
