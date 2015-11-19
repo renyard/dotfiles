@@ -31,6 +31,7 @@ Plugin 'neilagabriel/vim-geeknote'
 Plugin 'Raimondi/delimitMate'
 Plugin 'pangloss/vim-javascript'
 Plugin 'Valloric/YouCompleteMe'
+Plugin 'dkprice/vim-easygrep'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 " Plugin 'xolox/vim-session'
@@ -47,6 +48,7 @@ Plugin 'christoomey/vim-tmux-navigator'
 
 " Depends on http://ctags.sourceforge.net/ and https://github.com/ramitos/jsctags for JS.
 Plugin 'majutsushi/tagbar'
+Plugin 'ternjs/tern_for_vim'
 
 " Libraries required by other plugins.
 Plugin 'xolox/vim-misc'
@@ -238,12 +240,12 @@ map! <C-a> <Esc>I
 map! <C-e> <Esc>A
 
 " Move line up and down.
-nnoremap <C-j> :m .+1<CR>==
-nnoremap <C-k> :m .-2<CR>==
-inoremap <C-j> <Esc>:m .+1<CR>==gi
-inoremap <C-k> <Esc>:m .-2<CR>==gi
-vnoremap <C-j> :m '>+1<CR>gv=gv
-vnoremap <C-k> :m '<-2<CR>gv=gv
+" nnoremap <C-j> :m .+1<CR>==
+" nnoremap <C-k> :m .-2<CR>==
+" inoremap <C-j> <Esc>:m .+1<CR>==gi
+" inoremap <C-k> <Esc>:m .-2<CR>==gi
+" vnoremap <C-j> :m '>+1<CR>gv=gv
+" vnoremap <C-k> :m '<-2<CR>gv=gv
 
 " Delete to the end of the line.
 map! <C-k> <Esc>l"_d$a
@@ -252,8 +254,10 @@ map! <C-k> <Esc>l"_d$a
 " Move between buffers.
 map <C-Tab> :bn<CR>
 map <C-S-Tab> :bp<CR>
-map gn :bn<CR>
-map gp :bp<CR>
+map gn :bnext<CR>
+map gp :bprev<CR>
+noremap <C-k> :bnext<CR>
+noremap <C-j> :bprev<CR>
 
 " Plugin config & key bindings.
 
@@ -285,6 +289,13 @@ let g:airline#extensions#branch#format = 'Git_flow_branch_format'
 let g:airline_section_b = ''
 let g:airline_section_x = '%{airline#util#wrap(airline#parts#filetype(),0)} %{airline#util#wrap(airline#parts#ffenc(),0)}'
 let g:airline_section_y = '%{airline#util#wrap(airline#extensions#hunks#get_hunks(),0)} %{airline#util#wrap(airline#extensions#branch#get_head(),0)}'
+
+" tmux navigator.
+" let g:tmux_navigator_no_mappings = 1
+" nnoremap <silent> <C-Left> :TmuxNavigateLeft<CR>
+" nnoremap <silent> <C-Down> :TmuxNavigateDown<CR>
+" nnoremap <silent> <C-Up> :TmuxNavigateUp<CR>
+" nnoremap <silent> <C-Right> :TmuxNavigateRight<CR>
 
 " Minimap
 let g:minimap_highlight='Visual'
