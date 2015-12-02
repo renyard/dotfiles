@@ -318,6 +318,7 @@ nnoremap <C-g> :GundoToggle<CR>
 
 " NERDTree
 nnoremap <C-o> :NERDTreeToggle<CR>
+let NERDTreeQuitOnOpen = 1
 
 " TagBar
 nnoremap <C-t> :Tagbar<CR>
