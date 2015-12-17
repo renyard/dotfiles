@@ -317,8 +317,13 @@ let g:gundo_close_on_revert = 1
 nnoremap <C-g> :GundoToggle<CR>
 
 " NERDTree
-nnoremap <C-o> :NERDTreeToggle<CR>
+" nnoremap <C-o> :NERDTreeToggle<CR>
 let NERDTreeQuitOnOpen = 1
+
+" netrw
+nnoremap <C-o> :Explore<CR>
+" Default to tree style view.
+let g:netrw_liststyle = 3
 
 " TagBar
 nnoremap <C-t> :Tagbar<CR>
