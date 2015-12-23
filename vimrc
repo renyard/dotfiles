@@ -379,11 +379,11 @@ let g:session_autosave = 'yes'
 let g:session_autoload = 'yes'
 
 " Writing plugins
-augroup pencil
-    autocmd!
-    autocmd FileType markdown,mkd call pencil#init({'wrap': 'soft'})
-                            " \ | call lexical#init()
-                            " \ | call litecorrect#init()
-                            " \ | call textobj#quote#init()
-                            " \ | call textobj#sentence#init()
-augroup END
+" augroup pencil
+"     autocmd!
+"     autocmd FileType markdown,mkd call pencil#init({'wrap': 'soft'})
+"                             " \ | call lexical#init()
+"                             " \ | call litecorrect#init()
+"                             " \ | call textobj#quote#init()
+"                             " \ | call textobj#sentence#init()
+" augroup END
