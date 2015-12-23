@@ -107,6 +107,9 @@ set backspace=indent,eol,start
 set noswapfile
 set ignorecase
 
+" Check for file changes when focusing Vim.
+set autoread
+
 " Indentation.
 set autoindent
 filetype plugin indent on
