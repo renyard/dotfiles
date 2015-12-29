@@ -259,8 +259,8 @@ map <C-Tab> :bn<CR>
 map <C-S-Tab> :bp<CR>
 map gn :bnext<CR>
 map gp :bprev<CR>
-noremap <C-k> :bnext<CR>
-noremap <C-j> :bprev<CR>
+map <C-k> :bnext<CR>
+map <C-j> :bprev<CR>
 
 " Plugin config & key bindings.
 
@@ -305,7 +305,7 @@ let g:minimap_highlight='Visual'
 " autocmd! VimEnter * Minimap
 
 " Dash
-map <C-h> :Dash<Return>
+map h :Dash<Return>
 
 " ctrlp.vim
 map <C-p> :CtrlP<Return>
@@ -346,6 +346,7 @@ nnoremap <C-t> :Tagbar<CR>
 
 " YouCompleteMe
 let g:ycm_autoclose_preview_window_after_completion = 1
+let g:ycm_complete_in_comments = 1
 
 set completeopt=longest,menuone
 autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
@@ -366,8 +367,7 @@ autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 "     \: "\<TAB>"
 
 " UltiSnips
-" let g:UltiSnipsExpandTrigger = "<c-tab>"
-" let g:UltiSnipsListSnippets = ""
+let g:UltiSnipsExpandTrigger = "<C-k>"
 
 " Fugitive
 command! Gst Gstatus
