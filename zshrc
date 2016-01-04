@@ -41,6 +41,9 @@ compinit
 # Tab completion from both ends.
 setopt completeinword
 
+# Enable completion cache.
+zstyle ':completion:*' use-cache yes
+
 # Case insensitive completion.
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
 
