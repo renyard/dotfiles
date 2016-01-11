@@ -42,10 +42,16 @@ compinit
 setopt completeinword
 
 # Enable completion cache.
-zstyle ':completion:*' use-cache yes
+zstyle ':completion:*' use-cache on
+zstyle ':completion:*' cache-path ~/.zsh/cache
 
 # Case insensitive completion.
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
+
+# Fuzzy matching for completion.
+zstyle ':completion:*' completer _complete _match _approximate
+zstyle ':completion:*:match:*' original only
+zstyle ':completion:*:approximate:*' max-errors 1 numeric
 
 # Better completion for killall.
 zstyle ':completion:*:killall:*' command 'ps -u $USER -o cmd'
