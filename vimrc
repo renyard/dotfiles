@@ -263,6 +263,10 @@ map gp :bprev<CR>
 map <C-k> :bnext<CR>
 map <C-j> :bprev<CR>
 
+" Open a horizontal or vertical split.
+map <LEADER>- :split<CR>
+map <LEADER>\| :vsplit<CR>
+
 " Plugin config & key bindings.
 
 " Airline
