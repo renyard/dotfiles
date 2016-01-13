@@ -36,6 +36,7 @@ Plugin 'dkprice/vim-easygrep'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 " Plugin 'xolox/vim-session'
+Plugin 'editorconfig/editorconfig-vim'
 Plugin 'tpope/vim-obsession'
 Plugin 'dhruvasagar/vim-prosession'
 
@@ -370,6 +371,9 @@ autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 " smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
 "     \ "\<Plug>(neosnippet_expand_or_jump)"
 "     \: "\<TAB>"
+
+" EditorConfig
+let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']
 
 " UltiSnips
 let g:UltiSnipsExpandTrigger = "<C-k>"
