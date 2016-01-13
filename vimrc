@@ -14,7 +14,6 @@ Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-dispatch'
 Plugin 'tpope/vim-eunuch'
 Plugin 'tpope/vim-fugitive'
-" Plugin 'tpope/vim-sleuth'
 Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-speeddating'
 Plugin 'tpope/vim-surround'
@@ -35,7 +34,6 @@ Plugin 'Valloric/YouCompleteMe'
 Plugin 'dkprice/vim-easygrep'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
-" Plugin 'xolox/vim-session'
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'tpope/vim-obsession'
 Plugin 'dhruvasagar/vim-prosession'
@@ -43,10 +41,6 @@ Plugin 'dhruvasagar/vim-prosession'
 " tmux integration
 Plugin 'tmux-plugins/vim-tmux-focus-events'
 Plugin 'christoomey/vim-tmux-navigator'
-
-" Writing plugins
-" Plugin 'reedes/vim-pencil'
-" Plugin 'reedes/vim-lexical'
 
 " Depends on http://ctags.sourceforge.net/ and https://github.com/ramitos/jsctags for JS.
 Plugin 'majutsushi/tagbar'
@@ -187,15 +181,6 @@ endfunction
 " Run it every time we change buffers
 " autocmd BufEnter,BufFilePost * call SetTitle()
 
-" if has("gui_running")
-    " Automatically show NERD tree and close if only NERD tree is open.
-    " autocmd vimenter * NERDTree
-    " autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
-
-    " Automatically highlight file of current buffer in NERD tree.
-    " autocmd BufEnter * if &modifiable | NERDTreeFind | wincmd p | endif
-" endif
-
 " Syntastic config.
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
@@ -232,25 +217,10 @@ endfunction
 " Navigation
 map! <C-b> <Left>
 map! <C-f> <Right>
-" Disable arrow navigation.
-" nmap <Up> <Nop>
-" nmap <Down> <Nop>
-" nmap <Left> <Nop>
-" nmap <Right> <Nop>
-"cnoremap <M-f> <S-Right>
-"cnoremap <M-b> <S-Left>
 
 " Go to first non-whitespace and end of line.
 map! <C-a> <Esc>I
 map! <C-e> <Esc>A
-
-" Move line up and down.
-" nnoremap <C-j> :m .+1<CR>==
-" nnoremap <C-k> :m .-2<CR>==
-" inoremap <C-j> <Esc>:m .+1<CR>==gi
-" inoremap <C-k> <Esc>:m .-2<CR>==gi
-" vnoremap <C-j> :m '>+1<CR>gv=gv
-" vnoremap <C-k> :m '<-2<CR>gv=gv
 
 " Delete to the end of the line.
 map! <C-k> <Esc>l"_d$a
@@ -299,13 +269,6 @@ let g:airline_section_b = ''
 let g:airline_section_x = '%{airline#util#wrap(airline#parts#filetype(),0)} %{airline#util#wrap(airline#parts#ffenc(),0)}'
 let g:airline_section_y = '%{airline#util#wrap(airline#extensions#hunks#get_hunks(),0)} %{airline#util#wrap(airline#extensions#branch#get_head(),0)}'
 
-" tmux navigator.
-" let g:tmux_navigator_no_mappings = 1
-" nnoremap <silent> <C-Left> :TmuxNavigateLeft<CR>
-" nnoremap <silent> <C-Down> :TmuxNavigateDown<CR>
-" nnoremap <silent> <C-Up> :TmuxNavigateUp<CR>
-" nnoremap <silent> <C-Right> :TmuxNavigateRight<CR>
-
 " Minimap
 let g:minimap_highlight='Visual'
 " autocmd! VimEnter * Minimap
@@ -337,19 +300,6 @@ let g:netrw_liststyle = 3
 " TagBar
 nnoremap <C-t> :Tagbar<CR>
 
-" Neocomplete
-" let g:neocomplete#enable_at_startup = 1
-" let g:neocomplete#enable_smart_case = 1
-" " <TAB>: completion.
-" inoremap <expr><TAB>  pumvisible() ? "\<C-n>" :
-"     \ <SID>check_back_space() ? "\<TAB>" :
-"     \ neocomplete#start_manual_complete()
-" function! s:check_back_space() "{{{
-"     let col = col('.') - 1
-"     return !col || getline('.')[col - 1]  =~ '\s'
-" endfunction"}}}
-" Enable omni completion.
-
 " YouCompleteMe
 let g:ycm_autoclose_preview_window_after_completion = 1
 let g:ycm_complete_in_comments = 1
@@ -360,17 +310,6 @@ autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
 autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
-
-" Neosnippet
-" let g:neosnippet#enable_snipmate_compatibility = 1
-" let g:neosnippet#snippets_directory='~/.vim/bundle/vim-snippets/snippets'
-" " SuperTab like snippets behavior.
-" imap <expr><TAB> neosnippet#expandable_or_jumpable() ?
-"     \ "\<Plug>(neosnippet_expand_or_jump)"
-"     \: pumvisible() ? "\<C-n>" : "\<TAB>"
-" smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
-"     \ "\<Plug>(neosnippet_expand_or_jump)"
-"     \: "\<TAB>"
 
 " EditorConfig
 let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']
@@ -389,13 +328,3 @@ command! Gp Gpush
 " Session
 let g:session_autosave = 'yes'
 let g:session_autoload = 'yes'
-
-" Writing plugins
-" augroup pencil
-"     autocmd!
-"     autocmd FileType markdown,mkd call pencil#init({'wrap': 'soft'})
-"                             " \ | call lexical#init()
-"                             " \ | call litecorrect#init()
-"                             " \ | call textobj#quote#init()
-"                             " \ | call textobj#sentence#init()
-" augroup END
