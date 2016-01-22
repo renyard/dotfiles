@@ -270,10 +270,6 @@ let g:airline_section_b = ''
 let g:airline_section_x = '%{airline#util#wrap(airline#parts#filetype(),0)} %{airline#util#wrap(airline#parts#ffenc(),0)}'
 let g:airline_section_y = '%{airline#util#wrap(airline#extensions#hunks#get_hunks(),0)} %{airline#util#wrap(airline#extensions#branch#get_head(),0)}'
 
-" Minimap
-let g:minimap_highlight='Visual'
-" autocmd! VimEnter * Minimap
-
 " Dash
 map h :Dash<Return>
 
