@@ -10,6 +10,7 @@ call vundle#begin()
 
 Plugin 'bling/vim-airline'
 Plugin 'renyard/vim-git-flow-format'
+Plugin 'renyard/vim-rangerexplorer'
 Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-dispatch'
 Plugin 'tpope/vim-eunuch'
