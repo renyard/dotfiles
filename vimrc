@@ -51,10 +51,21 @@ Plugin 'ternjs/tern_for_vim'
 Plugin 'xolox/vim-misc'
 Plugin 'rizzatti/funcoo.vim'
 
+" Colour scheme
+Plugin 'altercation/vim-colors-solarized'
+
 call vundle#end()
 filetype plugin on
 
-colorscheme koehler
+if !system("uname -s") =~ "Darwin"
+    " Not running on OS X.
+    " Use 256 colour palette, as we can't guarantee the terminal theme.
+    let g:solarized_termcolors=256
+endif
+
+syntax on
+set background=dark
+colorscheme solarized
 
 " Font and text size.
 set guifont=Monaco:h12
@@ -82,8 +93,6 @@ if has("gui_running")
         au FocusGained * if exists('g:oldmouse') | let &mouse=g:oldmouse | unlet g:oldmouse | endif
     augroup END
 endif
-
-syntax on
 
 " Misc. Options.
 set hidden
