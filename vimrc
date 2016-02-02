@@ -280,6 +280,9 @@ let g:airline_section_b = ''
 let g:airline_section_x = '%{airline#util#wrap(airline#parts#filetype(),0)} %{airline#util#wrap(airline#parts#ffenc(),0)}'
 let g:airline_section_y = '%{airline#util#wrap(airline#extensions#hunks#get_hunks(),0)} %{airline#util#wrap(airline#extensions#branch#get_head(),0)}'
 
+" Ranger Explorer
+nnoremap <C-o> :RangerExplorer<CR>
+
 " Dash
 map h :Dash<Return>
 
@@ -300,7 +303,7 @@ nnoremap <C-g> :GundoToggle<CR>
 let NERDTreeQuitOnOpen = 1
 
 " netrw
-nnoremap <C-o> :Explore<CR>
+" nnoremap <C-o> :Explore<CR>
 " Default to tree style view.
 let g:netrw_liststyle = 3
 
