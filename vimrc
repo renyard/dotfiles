@@ -8,7 +8,8 @@ let s:root = expand("<sfile>:h")
 set rtp+=~/dotfiles/vim/vundle
 call vundle#begin()
 
-Plugin 'bling/vim-airline'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 Plugin 'renyard/vim-git-flow-format'
 Plugin 'renyard/vim-rangerexplorer'
 Plugin 'tpope/vim-commentary'
