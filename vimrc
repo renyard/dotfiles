@@ -288,6 +288,7 @@ map h :Dash<Return>
 
 " ctrlp.vim
 map <C-p> :CtrlP<Return>
+map <C-t> :CtrlPBuffer<Return>
 
 " Unite
 " map <C-p> :Unite file buffer<Return>
@@ -308,7 +309,7 @@ let NERDTreeQuitOnOpen = 1
 let g:netrw_liststyle = 3
 
 " TagBar
-nnoremap <C-t> :Tagbar<CR>
+" nnoremap <C-t> :Tagbar<CR>
 
 " YouCompleteMe
 let g:ycm_autoclose_preview_window_after_completion = 1
