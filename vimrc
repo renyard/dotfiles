@@ -265,8 +265,11 @@ let g:airline_symbols.branch = '⎇'
 let g:airline_symbols.paste = 'ρ'
 let g:airline_symbols.whitespace = 'Ξ'
 
+" Do not show spell indication.
+let g:airline_detect_spell = 0
+
 " Turn on tabline.
-let g:airline#extensions#tabline#enabled = 1
+" let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#fnamemod = ':p:t'
 
 " Don't count trailing whitespace.
