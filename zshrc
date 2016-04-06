@@ -19,6 +19,9 @@ fi
 # Set defaults.
 EDITOR=vim
 
+# Mouse support in less.
+LESS=RS
+
 # Set Vi key bindings.
 # bindkey -v
 export KEYTIMEOUT=1
