@@ -252,6 +252,10 @@ map <LEADER>\| :vsplit<CR>
 " Plugin config & key bindings.
 
 " Airline
+
+" Only enable required extensions.
+let g:airline_extensions = ['branch', 'ctrlp', 'syntastic', 'ycm']
+
 if !exists('g:airline_symbols')
     let g:airline_symbols = {}
 endif
