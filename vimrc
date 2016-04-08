@@ -121,6 +121,11 @@ set autoread
 set autoindent
 filetype plugin indent on
 
+" Code folding.
+setlocal foldmethod=syntax
+setlocal foldlevel=999
+nnoremap <Space> za
+
 " Current line highlight.
 set cursorline
 :highlight CursorLine cterm=none ctermbg=237
