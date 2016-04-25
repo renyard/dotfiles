@@ -259,11 +259,18 @@ map <LEADER>\| :vsplit<CR>
 " Airline
 
 " Only enable required extensions.
-let g:airline_extensions = ['branch', 'ctrlp', 'syntastic', 'ycm']
+let g:airline_extensions = ['branch', 'ctrlp', 'ycm']
 
 if !exists('g:airline_symbols')
     let g:airline_symbols = {}
 endif
+
+" Short form indication for common modes.
+let g:airline_mode_map = {
+    \ 'n': 'n',
+    \ 'i': 'i',
+    \ 'v': 'v'
+\ }
 
 let g:airline_left_sep = ''
 let g:airline_left_alt_sep = ''
@@ -289,7 +296,7 @@ let g:airline#extensions#branch#format = 'Git_flow_branch_format'
 
 " Custom statusline layout. Removes Git status from left to the right of file data.
 let g:airline_section_b = ''
-let g:airline_section_x = '%{airline#util#wrap(airline#parts#filetype(),0)} %{airline#util#wrap(airline#parts#ffenc(),0)}'
+let g:airline_section_x = '%{airline#util#wrap(airline#parts#filetype(),0)}'
 let g:airline_section_y = '%{airline#util#wrap(airline#extensions#hunks#get_hunks(),0)} %{airline#util#wrap(airline#extensions#branch#get_head(),0)}'
 
 " Ranger Explorer
