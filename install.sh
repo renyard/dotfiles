@@ -69,3 +69,8 @@ if [[ $SHELL =~ "$bash_re" ]]; then
 elif [[ $SHELL =~ "$zsh_re" ]]; then
 	source ~/.zshrc
 fi
+
+# Create .tern-config symlink.
+if [ ! -e ~/.tern-config ]; then
+    ln -s ~/.tern-config $df_dir/tern-config
+fi
