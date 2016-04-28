@@ -122,8 +122,8 @@ set autoindent
 filetype plugin indent on
 
 " Code folding.
-setlocal foldmethod=syntax
-setlocal foldlevel=999
+set foldmethod=syntax
+set foldlevel=999
 nnoremap <Space> za
 
 " Current line highlight.
