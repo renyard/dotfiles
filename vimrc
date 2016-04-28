@@ -96,6 +96,11 @@ if has("gui_running")
     augroup END
 endif
 
+" Use the system clipboard by default in OS X.
+if !system("uname -s") =~ "Darwin"
+    set clipboard=unnamed
+endif
+
 " Misc. Options.
 set hidden
 set fileformats=unix,dos,mac
