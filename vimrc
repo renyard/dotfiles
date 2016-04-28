@@ -28,6 +28,7 @@ Plugin 'mhinz/vim-signify'
 Plugin 'scrooloose/syntastic'
 Plugin 'sjl/gundo.vim'
 Plugin 'Chiel92/vim-autoformat'
+Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'rizzatti/dash.vim'
 Plugin 'neilagabriel/vim-geeknote'
 Plugin 'Raimondi/delimitMate'
@@ -297,10 +298,20 @@ let g:airline#extensions#branch#format = 'Git_flow_branch_format'
 " Custom statusline layout. Removes Git status from left to the right of file data.
 let g:airline_section_b = ''
 let g:airline_section_x = '%{airline#util#wrap(airline#parts#filetype(),0)}'
-let g:airline_section_y = '%{airline#util#wrap(airline#extensions#hunks#get_hunks(),0)} %{airline#util#wrap(airline#extensions#branch#get_head(),0)}'
+let g:airline_section_y = '%{airline#util#wrap(airline#extensions#branch#get_head(),0)}'
 
 " Ranger Explorer
 nnoremap <C-o> :RangerExplorer<CR>
+
+" Indent Guides
+if !has("gui_running")
+    let g:indent_guides_auto_colors = 0
+
+    autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd ctermbg=8
+    autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=black
+endif
+
+let g:indent_guides_enable_on_vim_startup = 1
 
 " Dash
 map h :Dash<Return>
