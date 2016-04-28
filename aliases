@@ -1,5 +1,5 @@
 # Default options for ls.
-# ls on OSX does not appear to support the color option.
+# ls on OS X does not appear to support the color option.
 ls --color=auto > /dev/null 2>&1
 LS_EXIT=$?
 if [ $LS_EXIT -eq 0 ]; then
@@ -21,3 +21,6 @@ alias vi='vim'
 
 # Use vimdiff for SVN diff, without affecting default options.
 alias sdiff='svn diff --diff-cmd=diffwrap.sh'
+
+# Copy the previous command to the OS X clipboard.
+alias cpc='fc -ln -1 | pbcopy'
