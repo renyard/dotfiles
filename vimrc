@@ -101,6 +101,10 @@ if has('clipboard')
     set clipboard=unnamed
 endif
 
+" Send all x deletions to the black hole register.
+noremap x "_x
+vnoremap x "_x
+
 " Misc. Options.
 set hidden
 set fileformats=unix,dos,mac
