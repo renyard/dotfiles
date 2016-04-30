@@ -3,8 +3,7 @@
 # Exit on error.
 set -e
 
-script="~/dotfiles"
-df_dir=$(dirname "$script")
+df_dir="~/dotfiles"
 bashrc="~/.bashrc"
 vimrc="~/.vimrc"
 bash_re="/bash$/"
