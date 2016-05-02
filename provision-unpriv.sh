@@ -1,0 +1,2 @@
+cd ~/dotfiles
+./install.sh

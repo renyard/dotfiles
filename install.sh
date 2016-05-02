@@ -71,5 +71,15 @@ fi
 
 # Create .tern-config symlink.
 if [ ! -e ~/.tern-config ]; then
-    ln -s ~/.tern-config $df_dir/tern-config
+    ln -s $df_dir/tern-config ~/.tern-config
 fi
+
+# Install Vim plugins.
+echo "Installing Vim plugins..."
+vim +PluginInstall +qall > /dev/null
+
+cd ~/.vim/bundle/YouCompleteMe
+./install.py --tern-completer
+
+# Install tpm.
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
