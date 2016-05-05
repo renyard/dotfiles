@@ -21,9 +21,7 @@ Plugin 'tpope/vim-speeddating'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-unimpaired'
 Plugin 'tpope/vim-rsi'
-Plugin 'jlanzarotta/bufexplorer'
-Plugin 'Lokaltog/vim-easymotion'
-Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'Shougo/unite.vim'
 Plugin 'mhinz/vim-signify'
 Plugin 'scrooloose/syntastic'
 Plugin 'sjl/gundo.vim'
@@ -52,6 +50,7 @@ Plugin 'ternjs/tern_for_vim'
 " Libraries required by other plugins.
 Plugin 'xolox/vim-misc'
 Plugin 'rizzatti/funcoo.vim'
+Plugin 'Shougo/vimproc.vim' " Dependency of Shougo/unite.vim
 
 " Colour scheme
 Plugin 'altercation/vim-colors-solarized'
@@ -269,7 +268,7 @@ map <LEADER>\| :vsplit<CR>
 " Airline
 
 " Only enable required extensions.
-let g:airline_extensions = ['branch', 'ctrlp', 'ycm']
+let g:airline_extensions = ['branch', 'unite', 'ycm']
 
 if !exists('g:airline_symbols')
     let g:airline_symbols = {}
@@ -325,12 +324,9 @@ let g:indent_guides_enable_on_vim_startup = 1
 " Dash
 map h :Dash<Return>
 
-" ctrlp.vim
-map <C-p> :CtrlP<Return>
-map <C-t> :CtrlPBuffer<Return>
-
 " Unite
-" map <C-p> :Unite file buffer<Return>
+map <C-p> :Unite file_rec/async -start-insert -auto-preview<Return>
+map <C-t> :Unite buffer -start-insert -auto-preview<Return>
 
 " Gundo
 let g:gundo_right = 1
