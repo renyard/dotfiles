@@ -21,6 +21,7 @@ Plugin 'tpope/vim-speeddating'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-unimpaired'
 Plugin 'tpope/vim-rsi'
+Plugin 'kien/ctrlp.vim'
 Plugin 'Shougo/unite.vim'
 Plugin 'mhinz/vim-signify'
 Plugin 'scrooloose/syntastic'
@@ -268,7 +269,7 @@ map <LEADER>\| :vsplit<CR>
 " Airline
 
 " Only enable required extensions.
-let g:airline_extensions = ['branch', 'unite', 'ycm']
+let g:airline_extensions = ['branch', 'ctrlp', 'unite', 'ycm']
 
 if !exists('g:airline_symbols')
     let g:airline_symbols = {}
@@ -324,9 +325,13 @@ let g:indent_guides_enable_on_vim_startup = 1
 " Dash
 map h :Dash<Return>
 
+" CtrlP
+map <C-p> :CtrlP<Return>
+
 " Unite
-map <C-p> :Unite file_rec/async -start-insert -auto-preview<Return>
-map <C-t> :Unite buffer -start-insert -auto-preview<Return>
+call unite#filters#matcher_default#use(['matcher_fuzzy'])
+" map <C-p> :Unite file_rec/async -start-insert<Return>
+map <C-t> :Unite buffer<Return>
 
 " Gundo
 let g:gundo_right = 1
