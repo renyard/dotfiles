@@ -81,5 +81,6 @@ vim +PluginInstall +qall > /dev/null
 cd ~/.vim/bundle/YouCompleteMe
 ./install.py --tern-completer
 
-# Install tpm.
-git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+# Install tmux plugins.
+cd $df_dir/tmux/plugins/tpm/bin/
+./install_plugins
