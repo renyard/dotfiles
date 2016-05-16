@@ -326,12 +326,19 @@ let g:indent_guides_enable_on_vim_startup = 1
 map h :Dash<Return>
 
 " CtrlP
-map <C-p> :CtrlP<Return>
+if !has("lua")
+    map <C-p> :CtrlP<Return>
+else
+    let g:ctrlp_map = ''
+endif
 
 " Unite
 call unite#filters#matcher_default#use(['matcher_fuzzy'])
-" map <C-p> :Unite file_rec/async -start-insert<Return>
 map <C-t> :Unite buffer<Return>
+if has("lua")
+    " This is slow without lua support.
+    map <C-p> :Unite file_rec -start-insert<Return>
+endif
 
 " Gundo
 let g:gundo_right = 1
