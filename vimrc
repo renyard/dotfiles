@@ -23,6 +23,7 @@ Plugin 'tpope/vim-unimpaired'
 Plugin 'tpope/vim-rsi'
 Plugin 'kien/ctrlp.vim'
 Plugin 'Shougo/unite.vim'
+Plugin 'Shougo/vimfiler.vim'
 Plugin 'mhinz/vim-signify'
 Plugin 'scrooloose/syntastic'
 Plugin 'sjl/gundo.vim'
@@ -310,7 +311,12 @@ let g:airline_section_x = '%{airline#util#wrap(airline#parts#filetype(),0)}'
 let g:airline_section_y = '%{airline#util#wrap(airline#extensions#branch#get_head(),0)}'
 
 " Ranger Explorer
-nnoremap <C-o> :RangerExplorer<CR>
+" nnoremap <C-o> :RangerExplorer<CR>
+
+" Vim Filer
+nnoremap <C-o> :VimFiler<CR>
+" Forces VimFiler to close instead of hide.
+autocmd BufLeave vimfiler :bd
 
 " Indent Guides
 if !has("gui_running")
