@@ -313,11 +313,6 @@ let g:airline_section_y = '%{airline#util#wrap(airline#extensions#branch#get_hea
 " Ranger Explorer
 " nnoremap <C-o> :RangerExplorer<CR>
 
-" Vim Filer
-nnoremap <C-o> :VimFiler<CR>
-" Forces VimFiler to close instead of hide.
-autocmd BufLeave vimfiler :bd
-
 " Indent Guides
 if !has("gui_running")
     let g:indent_guides_auto_colors = 0
@@ -333,6 +328,7 @@ map h :Dash<Return>
 
 " CtrlP
 if !has("lua")
+    " Where lua is supported, Unite is used for buffer switching.
     map <C-p> :CtrlP<Return>
 else
     let g:ctrlp_map = ''
@@ -340,11 +336,17 @@ endif
 
 " Unite
 call unite#filters#matcher_default#use(['matcher_fuzzy'])
+call unite#custom#source('buffer', 'converters', 'converter_word_abbr')
 map <C-t> :Unite buffer<Return>
 if has("lua")
     " This is slow without lua support.
     map <C-p> :Unite file_rec -start-insert<Return>
 endif
+
+" Vim Filer
+nnoremap <C-o> :VimFiler<CR>
+" Forces VimFiler to close instead of hide.
+autocmd FileType vimfiler :autocmd BufLeave <buffer> :bd
 
 " Gundo
 let g:gundo_right = 1
