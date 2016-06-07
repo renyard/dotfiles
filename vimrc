@@ -341,7 +341,6 @@ else
 endif
 
 " Unite
-call unite#filters#matcher_default#use(['matcher_fuzzy'])
 call unite#custom#source('buffer', 'converters', 'converter_word_abbr')
 map <C-t> :Unite buffer<Return>
 if has("lua")
