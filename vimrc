@@ -32,7 +32,6 @@ Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'rizzatti/dash.vim'
 Plugin 'neilagabriel/vim-geeknote'
 Plugin 'Raimondi/delimitMate'
-Plugin 'pangloss/vim-javascript'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'dkprice/vim-easygrep'
 Plugin 'SirVer/ultisnips'
@@ -40,6 +39,11 @@ Plugin 'honza/vim-snippets'
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'tpope/vim-obsession'
 Plugin 'dhruvasagar/vim-prosession'
+
+" Filetype specific plugins
+Plugin 'pangloss/vim-javascript'
+Plugin 'leafgarland/typescript-vim'
+" Plugin 'Quramy/tsuquyomi'
 
 " tmux integration
 Plugin 'tmux-plugins/vim-tmux-focus-events'
@@ -218,6 +222,9 @@ let g:syntastic_auto_loc_list = 0
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
+let g:tsuquyomi_disable_quickfix = 1
+" let g:syntastic_typescript_checkers = ['tsuquyomi']
+
 " Toggles maximize and return to split window layout.
 nnoremap <C-W>O :call MaximizeToggle()<CR>
 nnoremap <C-W>o :call MaximizeToggle()<CR>
@@ -381,6 +388,11 @@ let g:ycm_autoclose_preview_window_after_completion = 1
 let g:ycm_complete_in_comments = 1
 let g:ycm_collect_identifiers_from_comments_and_strings = 1
 let g:ycm_seed_identifiers_with_syntax = 1
+
+if !exists("g:ycm_semantic_triggers")
+  let g:ycm_semantic_triggers = {}
+endif
+let g:ycm_semantic_triggers['typescript'] = ['.']
 
 set completeopt=longest,menuone
 autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
