@@ -412,12 +412,12 @@ let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']
 let g:UltiSnipsExpandTrigger = "<C-k>"
 
 " Fugitive
-command! Gst Gstatus
-command! Gc Gcommit -v
-command! Gca Gcommit -av
-command! Gd Gvdiff
-command! Gl Gpull
-command! Gp Gpush
+command! -nargs=* Gst Gstatus <f-args>
+command! -nargs=* Gc Gcommit -v <f-args>
+command! -nargs=* Gca Gcommit -av <f-args>
+command! -nargs=* Gd Gvdiff <f-args>
+command! -nargs=* Gl Gpull <f-args>
+command! -nargs=* Gp Gpush <f-args>
 
 " Session
 let g:session_autosave = 'yes'
