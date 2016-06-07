@@ -33,7 +33,6 @@ Plugin 'rizzatti/dash.vim'
 Plugin 'neilagabriel/vim-geeknote'
 Plugin 'Raimondi/delimitMate'
 Plugin 'Valloric/YouCompleteMe'
-Plugin 'dkprice/vim-easygrep'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 Plugin 'editorconfig/editorconfig-vim'
@@ -359,6 +358,11 @@ if executable('ag')
 	\ '''.hg'' --ignore ''.svn'' --ignore ''.git'' --ignore ''.bzr'''
 	let g:unite_source_grep_recursive_opt = ''
 endif
+
+" Find in current buffer.
+command! -nargs=* Find :Unite vimgrep:%:<f-args>
+" Grep current working directory.
+command! -nargs=* Grep :Unite grep:.::<f-args>
 
 " Vim Filer
 nnoremap <C-o> :VimFiler<CR>
