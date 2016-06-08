@@ -358,9 +358,9 @@ if executable('ag')
 endif
 
 " Find in current buffer.
-command! -nargs=* Find :Unite vimgrep:%:<f-args>
+command! -nargs=+ Find execute "Unite grep:%::<args>"
 " Grep current working directory.
-command! -nargs=* Grep :Unite grep:.::<f-args>
+command! -nargs=+ Grep execute "Unite grep:.::<args>"
 
 " Vim Filer
 nnoremap <C-o> :VimFiler<CR>
