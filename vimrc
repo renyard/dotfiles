@@ -23,6 +23,7 @@ Plugin 'tpope/vim-rsi'
 Plugin 'kien/ctrlp.vim'
 Plugin 'Shougo/unite.vim'
 Plugin 'Shougo/vimfiler.vim'
+Plugin 'Shougo/neoyank.vim'
 Plugin 'mhinz/vim-signify'
 Plugin 'scrooloose/syntastic'
 Plugin 'sjl/gundo.vim'
@@ -100,9 +101,9 @@ if has("gui_running")
 endif
 
 " Use the system clipboard by default.
-if has('clipboard')
-    set clipboard=unnamed
-endif
+" if has('clipboard')
+"     set clipboard=unnamed
+" endif
 
 " Send all x deletions to the black hole register.
 noremap x "_x
@@ -341,6 +342,7 @@ endif
 
 " Unite
 call unite#custom#source('buffer', 'converters', 'converter_word_abbr')
+
 map <C-t> :Unite buffer<Return>
 if has("lua")
 	" This is slow without lua support.
@@ -357,15 +359,22 @@ if executable('ag')
 	let g:unite_source_grep_recursive_opt = ''
 endif
 
+function! UniteSearch(source, scope, pattern)
+	execute 'Unite ' . a:source . ':' . a:scope . '::' . a:pattern
+endfunction
+
 " Find in current buffer.
-command! -nargs=+ Find execute "Unite grep:%::<args>"
+command! -nargs=+ Find call UniteSearch('grep', '%', '<args>')
 " Grep current working directory.
-command! -nargs=+ Grep execute "Unite grep:.::<args>"
+command! -nargs=+ Grep call UniteSearch('grep', '.', '<args>')
 
 " Vim Filer
 nnoremap <C-o> :VimFiler<CR>
 " Forces VimFiler to close instead of hide.
 autocmd FileType vimfiler :autocmd BufLeave <buffer> :bd
+
+" Signify
+let g:signify_update_on_focusgained = 1
 
 " Gundo
 let g:gundo_right = 1
