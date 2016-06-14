@@ -21,20 +21,23 @@ Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-unimpaired'
 Plugin 'tpope/vim-rsi'
 Plugin 'kien/ctrlp.vim'
+Plugin 'shougo/neocomplete.vim'
+Plugin 'Shougo/neosnippet.vim'
+Plugin 'Shougo/neosnippet-snippets'
 Plugin 'Shougo/unite.vim'
 Plugin 'Shougo/vimfiler.vim'
 Plugin 'Shougo/neoyank.vim'
 Plugin 'mhinz/vim-signify'
+Plugin 'Konfekt/FastFold'
 Plugin 'scrooloose/syntastic'
 Plugin 'sjl/gundo.vim'
 Plugin 'Chiel92/vim-autoformat'
 Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'rizzatti/dash.vim'
-Plugin 'neilagabriel/vim-geeknote'
 Plugin 'Raimondi/delimitMate'
-Plugin 'Valloric/YouCompleteMe'
-Plugin 'SirVer/ultisnips'
-Plugin 'honza/vim-snippets'
+" Plugin 'Valloric/YouCompleteMe'
+" Plugin 'SirVer/ultisnips'
+" Plugin 'honza/vim-snippets'
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'tpope/vim-obsession'
 Plugin 'dhruvasagar/vim-prosession'
@@ -136,7 +139,7 @@ set autoindent
 filetype plugin indent on
 
 " Code folding.
-set foldmethod=syntax
+" set foldmethod=syntax
 set foldlevel=999
 nnoremap <Space> za
 
@@ -395,15 +398,44 @@ let g:netrw_liststyle = 3
 " nnoremap <C-t> :Tagbar<CR>
 
 " YouCompleteMe
-let g:ycm_autoclose_preview_window_after_completion = 1
-let g:ycm_complete_in_comments = 1
-let g:ycm_collect_identifiers_from_comments_and_strings = 1
-let g:ycm_seed_identifiers_with_syntax = 1
+" let g:ycm_autoclose_preview_window_after_completion = 1
+" let g:ycm_complete_in_comments = 1
+" let g:ycm_collect_identifiers_from_comments_and_strings = 1
+" let g:ycm_seed_identifiers_with_syntax = 1
 
-if !exists("g:ycm_semantic_triggers")
-  let g:ycm_semantic_triggers = {}
-endif
-let g:ycm_semantic_triggers['typescript'] = ['.']
+" if !exists("g:ycm_semantic_triggers")
+"   let g:ycm_semantic_triggers = {}
+" endif
+" let g:ycm_semantic_triggers['typescript'] = ['.']
+
+" Neocomplete
+let g:neocomplete#enable_at_startup = 1
+let g:neocomplete#enable_smart_case = 1
+" <TAB>: completion.
+inoremap <expr><TAB>  pumvisible() ? "\<C-n>" :
+    \ <SID>check_back_space() ? "\<TAB>" :
+    \ neocomplete#start_manual_complete()
+function! s:check_back_space() "{{{
+    let col = col('.') - 1
+    return !col || getline('.')[col - 1]  =~ '\s'
+endfunction"}}}
+" Enable omni completion.
+autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
+autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+
+" Neosnippet
+let g:neosnippet#enable_snipmate_compatibility = 1
+let g:neosnippet#snippets_directory='~/.vim/bundle/vim-snippets/snippets'
+" SuperTab like snippets behavior.
+imap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+    \ "\<Plug>(neosnippet_expand_or_jump)"
+    \: pumvisible() ? "\<C-n>" : "\<TAB>"
+smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+    \ "\<Plug>(neosnippet_expand_or_jump)"
+    \: "\<TAB>"
 
 set completeopt=longest,menuone
 autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
