@@ -22,6 +22,7 @@ Plugin 'tpope/vim-unimpaired'
 Plugin 'tpope/vim-rsi'
 Plugin 'kien/ctrlp.vim'
 Plugin 'shougo/neocomplete.vim'
+Plugin 'Shougo/deoplete.nvim'
 Plugin 'Shougo/neosnippet.vim'
 Plugin 'Shougo/neosnippet-snippets'
 Plugin 'Shougo/unite.vim'
@@ -213,6 +214,19 @@ endfunction
 
 " Run it every time we change buffers
 " autocmd BufEnter,BufFilePost * call SetTitle()
+
+" Neovim specific config.
+if has('nvim')
+    " Fix tmux navigation.
+    " https://github.com/christoomey/vim-tmux-navigator#it-doesnt-work-in-neovim-specifically-c-h
+    nnoremap <silent> <BS> :TmuxNavigateLeft<cr>
+
+    " Disable incompatible plugins.
+    let g:loaded_neocomplete = 1
+else
+    " Disable Neovim specific plugins.
+    let g:loaded_deoplete = 1
+endif
 
 " Syntastic config.
 set statusline+=%#warningmsg#
@@ -409,16 +423,35 @@ let g:netrw_liststyle = 3
 " let g:ycm_semantic_triggers['typescript'] = ['.']
 
 " Neocomplete
-let g:neocomplete#enable_at_startup = 1
-let g:neocomplete#enable_smart_case = 1
-" <TAB>: completion.
-inoremap <expr><TAB>  pumvisible() ? "\<C-n>" :
-    \ <SID>check_back_space() ? "\<TAB>" :
-    \ neocomplete#start_manual_complete()
-function! s:check_back_space() "{{{
-    let col = col('.') - 1
-    return !col || getline('.')[col - 1]  =~ '\s'
-endfunction"}}}
+if has('lua')
+    let g:neocomplete#enable_at_startup = 1
+    let g:neocomplete#enable_smart_case = 1
+    " <TAB>: completion.
+    inoremap <expr><TAB>  pumvisible() ? "\<C-n>" :
+        \ <SID>check_back_space() ? "\<TAB>" :
+        \ neocomplete#start_manual_complete()
+    function! s:check_back_space() "{{{
+        let col = col('.') - 1
+        return !col || getline('.')[col - 1]  =~ '\s'
+    endfunction"}}}
+else
+    let g:neocomplete#enable_at_startup = 0
+endif
+
+" Deoplete
+if has('nvim')
+    let g:deoplete#enable_at_startup = 1
+    let g:deoplete#enable_smart_case = 1
+    inoremap <silent><expr> <TAB>
+		\ pumvisible() ? "\<C-n>" :
+		\ <SID>check_back_space() ? "\<TAB>" :
+		\ deoplete#mappings#manual_complete()
+    function! s:check_back_space() abort "{{{
+		let col = col('.') - 1
+		return !col || getline('.')[col - 1]  =~ '\s'
+    endfunction"}}}
+endif
+
 " Enable omni completion.
 autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
 autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
