@@ -217,6 +217,9 @@ endfunction
 
 " Neovim specific config.
 if has('nvim')
+    " Pipe cursor for insert mode.
+    let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
+
     " Fix tmux navigation.
     " https://github.com/christoomey/vim-tmux-navigator#it-doesnt-work-in-neovim-specifically-c-h
     nnoremap <silent> <BS> :TmuxNavigateLeft<cr>
