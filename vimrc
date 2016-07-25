@@ -30,7 +30,8 @@ Plugin 'Shougo/vimfiler.vim'
 Plugin 'Shougo/neoyank.vim'
 Plugin 'mhinz/vim-signify'
 Plugin 'Konfekt/FastFold'
-Plugin 'scrooloose/syntastic'
+" Plugin 'scrooloose/syntastic'
+Plugin 'neomake/neomake'
 Plugin 'sjl/gundo.vim'
 Plugin 'Chiel92/vim-autoformat'
 Plugin 'nathanaelkane/vim-indent-guides'
@@ -243,6 +244,9 @@ let g:syntastic_check_on_wq = 0
 
 let g:tsuquyomi_disable_quickfix = 1
 " let g:syntastic_typescript_checkers = ['tsuquyomi']
+
+" Neomake
+autocmd! BufWritePost,BufEnter * Neomake
 
 " Toggles maximize and return to split window layout.
 nnoremap <C-W>O :call MaximizeToggle()<CR>
