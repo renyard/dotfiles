@@ -46,6 +46,7 @@ Plugin 'dhruvasagar/vim-prosession'
 
 " Filetype specific plugins
 Plugin 'pangloss/vim-javascript'
+Plugin 'elzr/vim-json'
 Plugin 'leafgarland/typescript-vim'
 " Plugin 'Quramy/tsuquyomi'
 
