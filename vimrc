@@ -123,6 +123,7 @@ set tabstop=4
 set shiftwidth=4
 set expandtab
 set number
+set relativenumber
 set incsearch
 set hlsearch
 set nopaste
