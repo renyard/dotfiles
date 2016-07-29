@@ -20,7 +20,7 @@ Plugin 'tpope/vim-speeddating'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-unimpaired'
 Plugin 'tpope/vim-rsi'
-Plugin 'kien/ctrlp.vim'
+" Plugin 'kien/ctrlp.vim'
 Plugin 'shougo/neocomplete.vim'
 Plugin 'Shougo/deoplete.nvim'
 Plugin 'Shougo/neosnippet.vim'
@@ -302,7 +302,7 @@ map <LEADER>\| :vsplit<CR>
 " Airline
 
 " Only enable required extensions.
-let g:airline_extensions = ['branch', 'ctrlp', 'unite', 'ycm']
+let g:airline_extensions = ['branch', 'unite', 'ycm']
 
 if !exists('g:airline_symbols')
     let g:airline_symbols = {}
@@ -359,21 +359,21 @@ let g:indent_guides_enable_on_vim_startup = 1
 map h :Dash<Return>
 
 " CtrlP
-if !has("lua")
-    " Where lua is supported, Unite is used for buffer switching.
-    map <C-p> :CtrlP<Return>
-else
-    let g:ctrlp_map = ''
-endif
+" if !has("lua")
+"     " Where lua is supported, Unite is used for buffer switching.
+"     map <C-p> :CtrlP<Return>
+" else
+"     let g:ctrlp_map = ''
+" endif
 
 " Unite
 call unite#custom#source('buffer', 'converters', 'converter_word_abbr')
 
 map <C-t> :Unite buffer<Return>
-if has("lua")
+" if has("lua")
 	" This is slow without lua support.
 	map <C-p> :Unite file_rec -start-insert<Return>
-endif
+" endif
 
 if executable('ag')
 	" Use ag (the silver searcher)
