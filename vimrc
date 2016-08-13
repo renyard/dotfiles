@@ -355,9 +355,6 @@ endif
 
 let g:indent_guides_enable_on_vim_startup = 1
 
-" Dash
-map h :Dash<Return>
-
 " CtrlP
 " if !has("lua")
 "     " Where lua is supported, Unite is used for buffer switching.
