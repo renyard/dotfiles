@@ -383,7 +383,7 @@ if executable('ag')
 endif
 
 function! UniteSearch(source, scope, pattern)
-	execute 'Unite ' . a:source . ':' . a:scope . '::' . a:pattern
+	execute 'Unite ' . a:source . ':' . a:scope . ':-F:' . a:pattern
 endfunction
 
 " Find in current buffer.
