@@ -78,9 +78,6 @@ fi
 echo "Installing Vim plugins..."
 vim +PluginInstall +qall > /dev/null
 
-cd ~/.vim/bundle/YouCompleteMe
-./install.py --tern-completer
-
 # Install tmux plugins.
 cd $df_dir/tmux/plugins/tpm/bin/
 ./install_plugins
