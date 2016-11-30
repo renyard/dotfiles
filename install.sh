@@ -76,7 +76,7 @@ fi
 
 # Install Vim plugins.
 echo "Installing Vim plugins..."
-vim +PluginInstall +qall > /dev/null
+MYVIMRC=$df_dir/plugins.vim vim +PluginInstall +qall > /dev/null
 
 # Install tmux plugins.
 cd $df_dir/tmux/plugins/tpm/bin/
