@@ -19,6 +19,9 @@ fi
 # Set defaults.
 EDITOR=vim
 
+# Fix tmux clipboard support.
+export EVENT_NOKQUEUE=1
+
 # Mouse support in less.
 LESS=RS
 
