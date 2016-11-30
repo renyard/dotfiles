@@ -1,5 +1,4 @@
 set nocompatible
-filetype off
 
 " Get the path of the this script.
 let s:root = expand("<sfile>:h")
@@ -20,7 +19,6 @@ Plugin 'tpope/vim-speeddating'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-unimpaired'
 Plugin 'tpope/vim-rsi'
-" Plugin 'kien/ctrlp.vim'
 Plugin 'shougo/neocomplete.vim'
 Plugin 'Shougo/deoplete.nvim'
 Plugin 'Shougo/neosnippet.vim'
@@ -30,8 +28,7 @@ Plugin 'Shougo/vimfiler.vim'
 Plugin 'Shougo/neoyank.vim'
 Plugin 'mhinz/vim-signify'
 Plugin 'Konfekt/FastFold'
-" Plugin 'scrooloose/syntastic'
-Plugin 'neomake/neomake'
+Plugin 'w0rp/ale'
 Plugin 'sjl/gundo.vim'
 Plugin 'Chiel92/vim-autoformat'
 Plugin 'nathanaelkane/vim-indent-guides'
@@ -234,22 +231,6 @@ else
     let g:loaded_deoplete = 1
 endif
 
-" Syntastic config.
-" set statusline+=%#warningmsg#
-" set statusline+=%{SyntasticStatuslineFlag()}
-" set statusline+=%*
-
-" let g:syntastic_always_populate_loc_list = 1
-" let g:syntastic_auto_loc_list = 0
-" let g:syntastic_check_on_open = 1
-" let g:syntastic_check_on_wq = 0
-
-" let g:tsuquyomi_disable_quickfix = 1
-" let g:syntastic_typescript_checkers = ['tsuquyomi']
-
-" Neomake
-autocmd! BufWritePost,BufEnter * Neomake
-
 " Toggles maximize and return to split window layout.
 nnoremap <C-W>O :call MaximizeToggle()<CR>
 nnoremap <C-W>o :call MaximizeToggle()<CR>
@@ -302,7 +283,7 @@ map <LEADER>\| :vsplit<CR>
 " Airline
 
 " Only enable required extensions.
-let g:airline_extensions = ['branch', 'unite', 'ycm']
+let g:airline_extensions = ['ale', 'branch', 'unite', 'ycm']
 
 if !exists('g:airline_symbols')
     let g:airline_symbols = {}
@@ -355,14 +336,6 @@ endif
 
 let g:indent_guides_enable_on_vim_startup = 1
 
-" CtrlP
-" if !has("lua")
-"     " Where lua is supported, Unite is used for buffer switching.
-"     map <C-p> :CtrlP<Return>
-" else
-"     let g:ctrlp_map = ''
-" endif
-
 " Unite
 call unite#custom#source('buffer', 'converters', 'converter_word_abbr')
 
@@ -382,14 +355,16 @@ if executable('ag')
 	let g:unite_source_grep_recursive_opt = ''
 endif
 
-function! UniteSearch(source, scope, pattern)
-	execute 'Unite ' . a:source . ':' . a:scope . ':-F:' . a:pattern
+function! UniteSearch(source, scope, opts, pattern)
+	execute 'Unite ' . a:source . ':' . a:scope . ':' . a:opts . ':' . a:pattern
 endfunction
 
 " Find in current buffer.
-command! -nargs=+ Find call UniteSearch('grep', '%', '<args>')
+command! -nargs=+ Search call UniteSearch('grep', '%', '', '<args>')
+command! -nargs=+ Fsearch call UniteSearch('grep', '%', '-F', '<args>')
 " Grep current working directory.
-command! -nargs=+ Grep call UniteSearch('grep', '.', '<args>')
+command! -nargs=+ Grep call UniteSearch('grep', '.', '', '<args>')
+command! -nargs=+ Fgrep call UniteSearch('grep', '.', '-F', '<args>')
 
 " Vim Filer
 nnoremap <C-o> :VimFiler<CR>
