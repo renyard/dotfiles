@@ -70,7 +70,7 @@ elif [[ $SHELL =~ "$zsh_re" ]]; then
 fi
 
 # Create .tern-config symlink.
-if [ ! -e ~/.tern-config ]; then
+if [ ! -L ~/.tern-config ]; then
     ln -s $df_dir/tern-config ~/.tern-config
 fi
 
