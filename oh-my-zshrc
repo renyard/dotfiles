@@ -48,7 +48,7 @@ ZSH_CUSTOM=$DF_DIR/oh-my-zsh-custom
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(brew cp debian git git-flow github grunt gulp node npm osx tmux vagrant zsh-navigation-tools zsh-syntax-highlighting)
+plugins=(cp debian git git-flow github grunt gulp node npm osx tmux vagrant zsh-navigation-tools zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
