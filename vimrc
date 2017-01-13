@@ -280,6 +280,7 @@ let g:indent_guides_enable_on_vim_startup = 1
 
 " Unite
 call unite#custom#source('buffer', 'converters', 'converter_word_abbr')
+call unite#custom#source('file_rec,file_rec/async', 'ignore_globs', ['./node_modules/**/*'])
 
 map <C-t> :Unite buffer<Return>
 " if has("lua")
