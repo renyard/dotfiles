@@ -48,6 +48,7 @@ Plugin 'christoomey/vim-tmux-navigator'
 
 " Depends on http://ctags.sourceforge.net/ and https://github.com/ramitos/jsctags for JS.
 Plugin 'majutsushi/tagbar'
+Plugin 'xolox/vim-easytags'
 Plugin 'ternjs/tern_for_vim'
 
 " Libraries required by other plugins.
