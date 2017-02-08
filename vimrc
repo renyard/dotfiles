@@ -196,6 +196,9 @@ endfunction
 
 " Native feature key bindings.
 
+" Map § to escape for a bigger target!
+imap § <Esc>
+
 " Navigation
 map! <C-b> <Left>
 map! <C-f> <Right>
