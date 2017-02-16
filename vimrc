@@ -271,6 +271,10 @@ let g:airline_section_y = '%{airline#util#wrap(airline#extensions#branch#get_hea
 " Ranger Explorer
 " nnoremap <C-o> :RangerExplorer<CR>
 
+" easytags
+set tags=./tags;
+let g:easytags_dynamic_files = 1
+
 " Indent Guides
 if !has("gui_running")
     let g:indent_guides_auto_colors = 0
