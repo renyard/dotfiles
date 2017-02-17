@@ -24,3 +24,6 @@ alias sdiff='svn diff --diff-cmd=diffwrap.sh'
 
 # Copy the previous command to the OS X clipboard.
 alias cpc='fc -ln -1 | pbcopy'
+
+# Git
+alias gai='git add --interactive'
