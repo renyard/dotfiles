@@ -74,6 +74,9 @@ set backspace=indent,eol,start
 set noswapfile
 set ignorecase
 
+" Improve performance in tmux.
+set lazyredraw
+
 " Check for file changes when focusing Vim.
 set autoread
 
