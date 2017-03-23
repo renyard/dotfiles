@@ -274,6 +274,9 @@ let g:airline_section_y = '%{airline#util#wrap(airline#extensions#branch#get_hea
 " Ranger Explorer
 " nnoremap <C-o> :RangerExplorer<CR>
 
+" dash.vim
+:nmap <silent> <LEADER>d <Plug>DashSearch
+
 " easytags
 set tags=./tags;
 let g:easytags_dynamic_files = 1
