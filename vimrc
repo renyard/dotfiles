@@ -1,3 +1,6 @@
+" vim: set fdm=marker fmr={{{,}}} fdl=0 :
+" System {{{
+
 set nocompatible
 
 filetype off
@@ -18,8 +21,12 @@ syntax on
 set background=dark
 colorscheme solarized
 
+" }}}
+
 " Font and text size.
 set guifont=Monaco:h12
+
+" GUI Settings {{{
 
 if has("gui_running")
     " Set window size for MacVim/GVim.
@@ -45,10 +52,9 @@ if has("gui_running")
     augroup END
 endif
 
-" Use the system clipboard by default.
-" if has('clipboard')
-"     set clipboard=unnamed
-" endif
+" }}}
+
+" Native Vim Opts {{{
 
 " Send all x deletions to the black hole register.
 noremap x "_x
@@ -145,38 +151,10 @@ let &t_te.="\e[0 q"
 " Completion
 set ofu=syntaxcomplete#Complete
 
-" When editing a file, make screen display the name of the file you are editing
-function! SetTitle()
-    if $TERM =~ "^screen"
-        let l:title = 'vim: ' . expand('%:t')
+" }}}
 
-        if (l:title != 'vim: __Tag_List__')
-            let l:truncTitle = strpart(l:title, 0, 30)
-            silent exe '!echo -e -n "\033k' . l:truncTitle . '\033\\"'
-        endif
-    endif
-endfunction
+" Toggles maximize and return to split window layout {{{
 
-" Run it every time we change buffers
-" autocmd BufEnter,BufFilePost * call SetTitle()
-
-" Neovim specific config.
-if has('nvim')
-    " Pipe cursor for insert mode.
-    let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
-
-    " Fix tmux navigation.
-    " https://github.com/christoomey/vim-tmux-navigator#it-doesnt-work-in-neovim-specifically-c-h
-    nnoremap <silent> <BS> :TmuxNavigateLeft<cr>
-
-    " Disable incompatible plugins.
-    let g:loaded_neocomplete = 1
-else
-    " Disable Neovim specific plugins.
-    let g:loaded_deoplete = 1
-endif
-
-" Toggles maximize and return to split window layout.
 nnoremap <C-W>O :call MaximizeToggle()<CR>
 nnoremap <C-W>o :call MaximizeToggle()<CR>
 nnoremap <C-W><C-O> :call MaximizeToggle()<CR>
@@ -197,7 +175,9 @@ function! MaximizeToggle()
     endif
 endfunction
 
-" Native feature key bindings.
+" }}}
+
+" Native feature key bindings {{{
 
 " Map § to escape for a bigger target!
 imap § <Esc>
@@ -226,9 +206,11 @@ map <C-j> :bprev<CR>
 map <LEADER>- :split<CR>
 map <LEADER>\| :vsplit<CR>
 
-" Plugin config & key bindings.
+" }}}
 
-" Airline
+" Plugin config & key bindings {{{
+
+" Airline {{{
 
 " Only enable required extensions.
 let g:airline_extensions = ['ale', 'branch', 'unite', 'ycm']
@@ -271,14 +253,31 @@ let g:airline_section_b = ''
 let g:airline_section_x = '%{airline#util#wrap(airline#parts#filetype(),0)}'
 let g:airline_section_y = '%{airline#util#wrap(airline#extensions#branch#get_head(),0)}'
 
-" Ranger Explorer
-" nnoremap <C-o> :RangerExplorer<CR>
+" }}}
 
-" easytags
+" ALE {{{
+
+let g:ale_linters = {
+\   'javascript': ['jshint'],
+\}
+
+" }}}
+
+" easytags {{{
+
 set tags=./tags;
 let g:easytags_dynamic_files = 1
 
-" Indent Guides
+let g:easytags_languages = {
+\   'javascript': {
+\     'cmd': 'ctags'
+\   }
+\}
+
+" }}}
+
+" Indent Guides {{{
+
 if !has("gui_running")
     let g:indent_guides_auto_colors = 0
 
@@ -288,7 +287,10 @@ endif
 
 let g:indent_guides_enable_on_vim_startup = 1
 
-" Unite
+" }}}
+
+" Unite {{{
+
 call unite#custom#source('buffer', 'converters', 'converter_word_abbr')
 call unite#custom#source('file_rec,file_rec/async', 'ignore_globs', ['node_modules/**/*'])
 
@@ -319,33 +321,40 @@ command! -nargs=+ Fsearch call UniteSearch('grep', '%', '-F', '<args>')
 command! -nargs=+ Grep call UniteSearch('grep', '.', '', '<args>')
 command! -nargs=+ Fgrep call UniteSearch('grep', '.', '-F', '<args>')
 
-" Vim Filer
+" }}}
+
+" Vim Filer {{{
+
 nnoremap <C-o> :VimFiler<CR>
 " Forces VimFiler to close instead of hide.
 autocmd FileType vimfiler :autocmd BufLeave <buffer> :bd
 
-" Signify
+" }}}
+
+" Signify {{{
+
 let g:signify_update_on_focusgained = 1
 
-" Gundo
+" }}}
+
+" Gundo {{{
+
 let g:gundo_right = 1
 let g:gundo_preview_bottom = 1
 let g:gundo_close_on_revert = 1
 nnoremap <C-g> :GundoToggle<CR>
 
-" NERDTree
+" }}}
+
+" NERDTree {{{
+
 " nnoremap <C-o> :NERDTreeToggle<CR>
 let NERDTreeQuitOnOpen = 1
 
-" netrw
-" nnoremap <C-o> :Explore<CR>
-" Default to tree style view.
-let g:netrw_liststyle = 3
+" }}}
 
-" TagBar
-" nnoremap <C-t> :Tagbar<CR>
+" YouCompleteMe {{{
 
-" YouCompleteMe
 " let g:ycm_autoclose_preview_window_after_completion = 1
 " let g:ycm_complete_in_comments = 1
 " let g:ycm_collect_identifiers_from_comments_and_strings = 1
@@ -356,7 +365,10 @@ let g:netrw_liststyle = 3
 " endif
 " let g:ycm_semantic_triggers['typescript'] = ['.']
 
-" Neocomplete
+" }}}
+
+" Neocomplete {{{
+
 if has('lua')
     let g:neocomplete#enable_at_startup = 1
     let g:neocomplete#enable_smart_case = 1
@@ -372,28 +384,10 @@ else
     let g:neocomplete#enable_at_startup = 0
 endif
 
-" Deoplete
-if has('nvim')
-    let g:deoplete#enable_at_startup = 1
-    let g:deoplete#enable_smart_case = 1
-    inoremap <silent><expr> <TAB>
-		\ pumvisible() ? "\<C-n>" :
-		\ <SID>check_back_space() ? "\<TAB>" :
-		\ deoplete#mappings#manual_complete()
-    function! s:check_back_space() abort "{{{
-		let col = col('.') - 1
-		return !col || getline('.')[col - 1]  =~ '\s'
-    endfunction"}}}
-endif
+" }}}
 
-" Enable omni completion.
-autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
-autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
-autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
-autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
-autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+" Neosnippet {{{
 
-" Neosnippet
 let g:neosnippet#enable_snipmate_compatibility = 1
 let g:neosnippet#snippets_directory='~/.vim/bundle/vim-snippets/snippets'
 " SuperTab like snippets behavior.
@@ -411,13 +405,22 @@ autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 
-" EditorConfig
+" }}}
+
+" EditorConfig {{{
+
 let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']
 
-" UltiSnips
+" }}}
+
+" UltiSnips {{{
+
 let g:UltiSnipsExpandTrigger = "<C-k>"
 
-" Fugitive
+" }}}
+
+" Fugitive {{{
+
 command! -nargs=* Gst Gstatus <f-args>
 command! -nargs=* Gc Gcommit -v <f-args>
 command! -nargs=* Gca Gcommit -av <f-args>
@@ -425,6 +428,13 @@ command! -nargs=* Gd Gvdiff <f-args>
 command! -nargs=* Gl Gpull <f-args>
 command! -nargs=* Gp Gpush <f-args>
 
-" Session
+" }}}
+
+" Session {{{
+
 let g:session_autosave = 'yes'
 let g:session_autoload = 'yes'
+
+" }}}
+
+" }}}
