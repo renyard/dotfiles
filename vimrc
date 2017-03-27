@@ -21,10 +21,10 @@ syntax on
 set background=dark
 colorscheme solarized
 
-" }}}
-
 " Font and text size.
 set guifont=Monaco:h12
+
+" }}}
 
 " GUI Settings {{{
 
@@ -261,8 +261,10 @@ let g:ale_linters = {
 \   'javascript': ['jshint'],
 \}
 
-" }}}
+let g:ale_lint_on_save = 1
+let g:ale_lint_on_text_changed = 0
 
+" }}}
 
 " dash.vim {{{
 
