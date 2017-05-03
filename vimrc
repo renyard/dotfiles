@@ -97,7 +97,7 @@ nnoremap <Space> za
 
 " Current line highlight.
 set cursorline
-:highlight CursorLine cterm=none ctermbg=237
+" :highlight CursorLine cterm=none ctermbg=237
 
 " Enable the mouse in terminal mode.
 set mouse=a
