@@ -276,6 +276,7 @@ let g:ale_lint_on_text_changed = 0
 
 set tags=./tags;
 let g:easytags_dynamic_files = 1
+let g:easytags_suppress_report = 1
 
 let g:easytags_languages = {
 \   'javascript': {
