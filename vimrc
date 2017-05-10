@@ -91,7 +91,7 @@ set autoindent
 filetype plugin indent on
 
 " Code folding.
-" set foldmethod=syntax
+set foldmethod=syntax
 set foldlevel=999
 nnoremap <Space> za
 
