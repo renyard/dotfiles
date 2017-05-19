@@ -5,9 +5,18 @@
     "ecma5",
     "ecma6"
   ],
+  "dontLoad": ["node_modules/**/*"],
+  "loadEagerly": [
+    "src/**/*.js",
+    "lib/**/*.js"
+  ],
   "ecmaVersion": 6,
   "plugins": {
     "es_modules": {},
-    "node": {}
+    "node": {},
+    "requirejs": {
+      "basePath": "./",
+      "paths": {}
+    }
   }
 }
