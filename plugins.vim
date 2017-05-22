@@ -1,64 +1,58 @@
-" set the runtime path to include Vundle and initialize
-set rtp+=~/dotfiles/vim/vundle
-call vundle#begin()
+" Source plug.vim and initialize
+exec "source " . expand("<sfile>:h") . "/vim/vim-plug/plug.vim"
+" source ~/dotfiles/vim/vim-plug/plug.vim
+call plug#begin()
 
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-Plugin 'renyard/vim-git-flow-format'
-Plugin 'renyard/vim-rangerexplorer'
-Plugin 'tpope/vim-commentary'
-Plugin 'tpope/vim-dispatch'
-Plugin 'tpope/vim-fugitive'
-Plugin 'tpope/vim-repeat'
-Plugin 'tpope/vim-speeddating'
-Plugin 'tpope/vim-surround'
-Plugin 'tpope/vim-unimpaired'
-Plugin 'tpope/vim-rsi'
-Plugin 'shougo/neocomplete.vim'
-Plugin 'Shougo/deoplete.nvim'
-Plugin 'Shougo/neosnippet.vim'
-Plugin 'Shougo/neosnippet-snippets'
-Plugin 'Shougo/unite.vim'
-Plugin 'Shougo/vimfiler.vim'
-Plugin 'Shougo/neoyank.vim'
-" Plugin 'mhinz/vim-signify'
-Plugin 'airblade/vim-gitgutter'
-" Plugin 'Konfekt/FastFold'
-Plugin 'w0rp/ale'
-Plugin 'sjl/gundo.vim'
-Plugin 'Chiel92/vim-autoformat'
-Plugin 'nathanaelkane/vim-indent-guides'
-Plugin 'rizzatti/dash.vim'
-Plugin 'Raimondi/delimitMate'
-Plugin 'kshenoy/vim-signature'
-" Plugin 'Valloric/YouCompleteMe'
-" Plugin 'SirVer/ultisnips'
-" Plugin 'honza/vim-snippets'
-Plugin 'editorconfig/editorconfig-vim'
-Plugin 'tpope/vim-obsession'
-Plugin 'dhruvasagar/vim-prosession'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'renyard/vim-git-flow-format'
+Plug 'renyard/vim-rangerexplorer'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-dispatch'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-speeddating'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-unimpaired'
+Plug 'tpope/vim-rsi'
+Plug 'shougo/neocomplete.vim'
+Plug 'Shougo/neosnippet.vim'
+Plug 'Shougo/neosnippet-snippets'
+Plug 'Shougo/unite.vim'
+Plug 'Shougo/vimfiler.vim'
+Plug 'airblade/vim-gitgutter'
+Plug 'w0rp/ale'
+Plug 'sjl/gundo.vim'
+Plug 'Chiel92/vim-autoformat'
+Plug 'nathanaelkane/vim-indent-guides'
+Plug 'rizzatti/dash.vim'
+Plug 'Raimondi/delimitMate'
+Plug 'kshenoy/vim-signature'
+" Plug 'Valloric/YouCompleteMe'
+Plug 'editorconfig/editorconfig-vim'
+Plug 'tpope/vim-obsession'
+Plug 'dhruvasagar/vim-prosession'
 
-" Filetype specific plugins
-Plugin 'pangloss/vim-javascript'
-Plugin 'elzr/vim-json'
-Plugin 'leafgarland/typescript-vim'
-" Plugin 'Quramy/tsuquyomi'
+" Filetype specific Plugs
+Plug 'pangloss/vim-javascript'
+Plug 'elzr/vim-json'
 
 " tmux integration
-Plugin 'tmux-plugins/vim-tmux-focus-events'
-Plugin 'christoomey/vim-tmux-navigator'
+Plug 'tmux-plugins/vim-tmux-focus-events'
+Plug 'christoomey/vim-tmux-navigator'
 
 " Depends on http://ctags.sourceforge.net/ and https://github.com/ramitos/jsctags for JS.
-Plugin 'majutsushi/tagbar'
-Plugin 'xolox/vim-easytags'
-Plugin 'ternjs/tern_for_vim'
+Plug 'vim-scripts/taglist.vim'
+Plug 'xolox/vim-easytags'
 
-" Libraries required by other plugins.
-Plugin 'xolox/vim-misc'
-Plugin 'rizzatti/funcoo.vim'
-Plugin 'Shougo/vimproc.vim' " Dependency of Shougo/unite.vim
+Plug 'ternjs/tern_for_vim'
+
+" Libraries required by other Plugs.
+Plug 'xolox/vim-misc'
+Plug 'rizzatti/funcoo.vim'
+Plug 'Shougo/vimproc.vim' " Dependency of Shougo/unite.vim
 
 " Colour scheme
-Plugin 'altercation/vim-colors-solarized'
+Plug 'altercation/vim-colors-solarized'
 
-call vundle#end()
+call plug#end()
