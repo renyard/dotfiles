@@ -151,6 +151,11 @@ let &t_te.="\e[0 q"
 " Completion
 set ofu=syntaxcomplete#Complete
 
+augroup omnicomplete
+  autocmd!
+    autocmd FileType javascript setlocal omnifunc=tern#Complete
+augroup END
+
 " }}}
 
 " Toggles maximize and return to split window layout {{{
@@ -385,6 +390,9 @@ let NERDTreeQuitOnOpen = 1
 if has('lua')
     let g:neocomplete#enable_at_startup = 1
     let g:neocomplete#enable_smart_case = 1
+    let g:neocomplete#enable_fuzzy_completion = 1
+    let g:neocomplete_enable_fuzzy_completion_start_length = 2
+
     " <TAB>: completion.
     inoremap <expr><TAB>  pumvisible() ? "\<C-n>" :
         \ <SID>check_back_space() ? "\<TAB>" :
