@@ -211,6 +211,12 @@ map <C-j> :bprev<CR>
 map <LEADER>- :split<CR>
 map <LEADER>\| :vsplit<CR>
 
+" Close the location list on selection.
+augroup lclose
+    autocmd!
+    autocmd FileType qf nmap <buffer> <cr> <cr>:lcl<cr>
+augroup END
+
 " }}}
 
 " Plugin config & key bindings {{{
