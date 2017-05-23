@@ -19,11 +19,12 @@ Plug 'Shougo/neosnippet.vim'
 Plug 'Shougo/neosnippet-snippets'
 Plug 'Shougo/unite.vim'
 Plug 'Shougo/vimfiler.vim'
+Plug 'scrooloose/nerdtree', {'on': ['NERDTree', 'NERDTreeToggle']}
+Plug 'Xuyuanp/nerdtree-git-plugin', {'on': ['NERDTree', 'NERDTreeToggle']}
 Plug 'airblade/vim-gitgutter'
 Plug 'w0rp/ale'
 Plug 'sjl/gundo.vim', {'on': 'Gundo'}
 Plug 'Chiel92/vim-autoformat'
-Plug 'nathanaelkane/vim-indent-guides'
 Plug 'rizzatti/dash.vim'
 Plug 'Raimondi/delimitMate'
 Plug 'kshenoy/vim-signature'
@@ -31,7 +32,7 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'tpope/vim-obsession'
 Plug 'dhruvasagar/vim-prosession'
 
-" Filetype specific Plugs
+" Filetype specific plugins
 Plug 'ternjs/tern_for_vim', {'do': 'npm install'}
 Plug 'pangloss/vim-javascript'
 Plug 'elzr/vim-json'
@@ -47,7 +48,7 @@ Plug 'xolox/vim-easytags'
 " Libraries required by other Plugs.
 Plug 'xolox/vim-misc'
 Plug 'rizzatti/funcoo.vim'
-Plug 'Shougo/vimproc.vim' " Dependency of Shougo/unite.vim
+Plug 'Shougo/vimproc.vim', {'do': ':VimProcInstall'} " Dependency of Shougo/unite.vim
 
 " Colour scheme
 Plug 'altercation/vim-colors-solarized'
