@@ -18,7 +18,7 @@ if !system("uname -s") =~ "Darwin"
 endif
 
 syntax on
-set background=dark
+set background=light
 colorscheme solarized
 
 " Font and text size.
@@ -40,9 +40,9 @@ if has("gui_running")
     set guioptions-=L
 
     " Set tranparency. (MacVim specific option)
-    if has("transparency")
-        set transparency=10
-    endif
+    " if has("transparency")
+    "     set transparency=10
+    " endif
 
     " Prevent cursor moving to click location on window focus.
     augroup NO_CURSOR_MOVE_ON_FOCUS
