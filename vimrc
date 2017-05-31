@@ -349,7 +349,7 @@ command! -nargs=+ Fgrep call UniteSearch('grep', '.', '-F', '<args>')
 
 " Vim Filer {{{
 
-nnoremap <C-o> :VimFiler<CR>
+" nnoremap <C-o> :VimFiler<CR>
 " Forces VimFiler to close instead of hide.
 autocmd FileType vimfiler :autocmd BufLeave <buffer> :bd
 
@@ -372,7 +372,7 @@ nnoremap <C-g> :GundoToggle<CR>
 
 " NERDTree {{{
 
-" nnoremap <C-o> :NERDTreeToggle<CR>
+nnoremap <C-o> :NERDTreeFind<CR>
 let NERDTreeQuitOnOpen = 1
 
 " }}}
