@@ -18,8 +18,6 @@ if !system("uname -s") =~ "Darwin"
 endif
 
 syntax on
-set background=light
-colorscheme solarized
 
 " Font and text size.
 set guifont=Monaco:h12
@@ -29,6 +27,9 @@ set guifont=Monaco:h12
 " GUI Settings {{{
 
 if has("gui_running")
+    set background=light
+    colorscheme solarized
+
     " Set window size for MacVim/GVim.
     set lines=60 columns=120
 
