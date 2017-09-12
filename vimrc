@@ -30,8 +30,9 @@ if has("gui_running")
     set background=light
     colorscheme solarized
 
+    set guifont=Monaco:h16
     " Set window size for MacVim/GVim.
-    set lines=60 columns=120
+    set lines=60 columns=80
 
     " Hide toolbar.
     set guioptions-=T
