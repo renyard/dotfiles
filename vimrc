@@ -19,16 +19,12 @@ endif
 
 syntax on
 
-" Font and text size.
-set guifont=Monaco:h12
-
 " }}}
 
 " GUI Settings {{{
 
 if has("gui_running")
     set background=light
-    colorscheme solarized
 
     set guifont=Monaco:h16
     " Set window size for MacVim/GVim.
@@ -41,6 +37,11 @@ if has("gui_running")
     set guioptions-=r
     set guioptions-=L
 
+    " Split navigation.
+    nmap <silent> <C-Up> :wincmd k<CR>
+    nmap <silent> <C-Down> :wincmd j<CR>
+    nmap <silent> <C-Left> :wincmd h<CR>
+    nmap <silent> <C-Right> :wincmd l<CR>
     " Set tranparency. (MacVim specific option)
     " if has("transparency")
     "     set transparency=10
@@ -61,6 +62,8 @@ endif
 " Send all x deletions to the black hole register.
 noremap x "_x
 vnoremap x "_x
+
+colorscheme solarized
 
 " Misc. Options.
 set hidden
@@ -83,7 +86,7 @@ set noswapfile
 set ignorecase
 
 " Improve performance in tmux.
-set lazyredraw
+" set lazyredraw
 
 " Check for file changes when focusing Vim.
 set autoread
@@ -95,11 +98,12 @@ filetype plugin indent on
 " Code folding.
 set foldmethod=syntax
 set foldlevel=999
+" set nofoldenable
 nnoremap <Space> za
 
 " Current line highlight.
 set cursorline
-" :highlight CursorLine cterm=none ctermbg=237
+" highlight CursorLine cterm=none ctermbg=237
 
 " Enable the mouse in terminal mode.
 set mouse=a
@@ -271,7 +275,7 @@ let g:airline_section_y = '%{airline#util#wrap(airline#extensions#branch#get_hea
 " ALE {{{
 
 let g:ale_linters = {
-\   'javascript': ['jshint'],
+\   'javascript': ['eslint'],
 \}
 
 let g:ale_lint_on_save = 1
@@ -318,7 +322,7 @@ let g:indent_guides_enable_on_vim_startup = 1
 " Unite {{{
 
 call unite#custom#source('buffer', 'converters', 'converter_word_abbr')
-call unite#custom#source('file_rec,file_rec/async', 'ignore_globs', ['node_modules/**/*'])
+call unite#custom#source('file_rec,file_rec/async', 'ignore_globs', ['node_modules/**/*', 'reports/**/*'])
 
 map <C-t> :Unite buffer -no-split<Return>
 " if has("lua")

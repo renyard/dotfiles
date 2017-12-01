@@ -6,6 +6,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'renyard/vim-git-flow-format'
 Plug 'renyard/vim-rangerexplorer', {'on': 'RangerExplorer'}
+Plug 'will133/vim-dirdiff'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-fugitive'
@@ -23,6 +24,7 @@ Plug 'scrooloose/nerdtree', {'on': ['NERDTree', 'NERDTreeToggle', 'NERDTreeFind'
 Plug 'Xuyuanp/nerdtree-git-plugin', {'on': ['NERDTree', 'NERDTreeToggle']}
 Plug 'airblade/vim-gitgutter'
 Plug 'w0rp/ale'
+Plug 'janko-m/vim-test'
 Plug 'sjl/gundo.vim', {'on': 'Gundo'}
 Plug 'Chiel92/vim-autoformat'
 Plug 'rizzatti/dash.vim'
