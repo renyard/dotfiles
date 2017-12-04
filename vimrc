@@ -319,6 +319,13 @@ let g:indent_guides_enable_on_vim_startup = 1
 
 " }}}
 
+" vim-jsx {{{
+
+" Do not require .jsx extension for JSX syntax.
+let g:jsx_ext_required = 0
+
+" }}}
+
 " Unite {{{
 
 call unite#custom#source('buffer', 'converters', 'converter_word_abbr')

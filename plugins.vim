@@ -37,6 +37,7 @@ Plug 'dhruvasagar/vim-prosession'
 " Filetype specific plugins
 Plug 'ternjs/tern_for_vim', {'do': 'npm install'}
 Plug 'pangloss/vim-javascript'
+Plug 'mxw/vim-jsx'
 Plug 'elzr/vim-json'
 
 " tmux integration
