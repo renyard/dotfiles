@@ -292,6 +292,10 @@ let g:ale_set_quikfix = 0
 
 " }}}
 
+" delimitMate {{{
+    let delimitMate_expand_cr = 1
+" }}}
+
 " easytags {{{
 
 set tags=./tags;
