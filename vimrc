@@ -37,16 +37,6 @@ if has("gui_running")
     set guioptions-=r
     set guioptions-=L
 
-    " Split navigation.
-    nmap <silent> <C-Up> :wincmd k<CR>
-    nmap <silent> <C-Down> :wincmd j<CR>
-    nmap <silent> <C-Left> :wincmd h<CR>
-    nmap <silent> <C-Right> :wincmd l<CR>
-    " Set tranparency. (MacVim specific option)
-    " if has("transparency")
-    "     set transparency=10
-    " endif
-
     " Prevent cursor moving to click location on window focus.
     augroup NO_CURSOR_MOVE_ON_FOCUS
         au!
@@ -192,6 +182,12 @@ endfunction
 
 " Map § to escape for a bigger target!
 imap § <Esc>
+
+" Split navigation.
+nmap <silent> <C-Up> :wincmd k<CR>
+nmap <silent> <C-Down> :wincmd j<CR>
+nmap <silent> <C-Left> :wincmd h<CR>
+nmap <silent> <C-Right> :wincmd l<CR>
 
 " Navigation
 map! <C-b> <Left>
