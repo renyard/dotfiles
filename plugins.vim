@@ -15,7 +15,7 @@ Plug 'tpope/vim-speeddating'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-rsi'
-Plug 'shougo/neocomplete.vim'
+Plug 'Valloric/YouCompleteMe', {'do': './install.py --js-completer && cd ./third_party/ycmd/third_party/tern_runtime/ && npm install --production'}
 Plug 'Shougo/neosnippet.vim'
 Plug 'Shougo/neosnippet-snippets'
 Plug 'Shougo/unite.vim'
