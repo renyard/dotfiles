@@ -19,7 +19,7 @@ Plug 'Shougo/neosnippet.vim'
 Plug 'Shougo/neosnippet-snippets'
 Plug 'Valloric/YouCompleteMe', {'do': './install.py --js-completer && cd third_party/ycmd/third_party/tern_runtime && rm -rf node_modules && npm install --production'}
 Plug 'Shougo/unite.vim'
-Plug 'Shougo/vimfiler.vim'
+Plug 'Shougo/vimfiler.vim', {'on': 'VimFiler'}
 Plug 'scrooloose/nerdtree', {'on': ['NERDTree', 'NERDTreeToggle', 'NERDTreeFind']}
 Plug 'Xuyuanp/nerdtree-git-plugin', {'on': ['NERDTree', 'NERDTreeToggle']}
 Plug 'airblade/vim-gitgutter'
