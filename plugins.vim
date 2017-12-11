@@ -15,9 +15,9 @@ Plug 'tpope/vim-speeddating'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-rsi'
-Plug 'Valloric/YouCompleteMe', {'do': './install.py --js-completer && cd ./third_party/ycmd/third_party/tern_runtime/ && npm install --production'}
 Plug 'Shougo/neosnippet.vim'
 Plug 'Shougo/neosnippet-snippets'
+Plug 'Valloric/YouCompleteMe', {'do': './install.py --js-completer && cd third_party/ycmd/third_party/tern_runtime && rm -rf node_modules && npm install --production'}
 Plug 'Shougo/unite.vim'
 Plug 'Shougo/vimfiler.vim'
 Plug 'scrooloose/nerdtree', {'on': ['NERDTree', 'NERDTreeToggle', 'NERDTreeFind']}
