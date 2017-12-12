@@ -405,6 +405,42 @@ let g:ycm_semantic_triggers['typescript'] = ['.']
 
 " }}}
 
+" UltiSnips {{{
+
+let g:UltiSnipsExpandTrigger = "<Tab>"
+let g:UltiSnipsJumpForwardTrigger = "<Tab>"
+let g:UltiSnipsJumpBackwardTrigger = "<S-Tab>"
+
+" }}}
+
+" YouCompleteMe & UltiSnips integration {{{
+
+" https://github.com/Valloric/YouCompleteMe/issues/36#issuecomment-15451411
+" https://github.com/Valloric/YouCompleteMe/issues/36#issuecomment-40921899
+
+" UltiSnips completion function that tries to expand a snippet. If there's no
+" snippet for expanding, it checks for completion window and if it's
+" shown, selects first element. If there's no completion window it tries to
+" jump to next placeholder. If there's no placeholder it just returns TAB key 
+function! g:UltiSnips_Complete()
+    call UltiSnips#ExpandSnippet()
+    if g:ulti_expand_res == 0
+        if pumvisible()
+            return "\<C-n>"
+        else
+            call UltiSnips#JumpForwards()
+            if g:ulti_jump_forwards_res == 0
+               return "\<TAB>"
+            endif
+        endif
+    endif
+    return ""
+endfunction
+
+au InsertEnter * exec "inoremap <silent> " . g:UltiSnipsExpandTrigger . " <C-R>=g:UltiSnips_Complete()<cr>"
+
+" }}}
+
 " deoplete.nvim {{{
 
 let g:deoplete#enable_at_startup = 1
@@ -457,12 +493,6 @@ autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 " EditorConfig {{{
 
 let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']
-
-" }}}
-
-" UltiSnips {{{
-
-let g:UltiSnipsExpandTrigger = "<C-k>"
 
 " }}}
 
