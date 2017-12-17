@@ -3,9 +3,16 @@
 # Exit on error.
 set -e
 
-df_dir="~/dotfiles"
-bashrc="~/.bashrc"
-vimrc="~/.vimrc"
+if [ -z "${DOTFILES}" ]; then
+    df_dir="~/dotfiles"
+else
+    df_dir="${DOTFILES}"
+fi
+
+bashrc="${HOME}/.bashrc"
+zshrc="${HOME}/.zshrc"
+vimrc="${HOME}/.vimrc"
+tmuxconf="${HOME}/.tmux.conf"
 bash_re="/bash$/"
 zsh_re="/zsh$/"
 
@@ -20,53 +27,83 @@ git submodule update
 # .zshrc
 
 # Create .zshrc if required.
-if [ ! -e ~/.zshrc ]; then
+if [ ! -e $zshrc ]; then
 	echo 'Creating ~/.zshrc...'
-	touch ~/.zshrc
+	touch $zshrc
 fi
 
 # Add source lines to .zshrc.
 echo 'Linking .zshrc...'
-zshrc="[ -d $df_dir ] && . $df_dir/zshrc";
-if ! grep -Fxq "$zshrc" ~/.zshrc; then
-	echo $zshrc >> ~/.zshrc
+zshrc_line="[ -d $df_dir ] && . $df_dir/zshrc";
+if ! grep -Fxq "$zshrc_line" $zshrc; then
+	echo $zshrc_line >> $zshrc
 fi
 
 # .bashrc
 
 # Create .bashrc, if required.
-if [ ! -e ~/.bashrc ]; then
+if [ ! -e $bashrc ]; then
 	echo 'Creating ~/.bashrc...'
-	touch ~/.bashrc
+	touch $bashrc
 fi
 
 # Add source lines to .bashrc.
 echo 'Linking .bashrc...'
-bashrc="[ -d $df_dir ] && . $df_dir/bashrc";
-if ! grep -Fxq "$bashrc" ~/.bashrc; then
-	echo $bashrc >> ~/.bashrc
+bashrc_line="[ -d $df_dir ] && . $df_dir/bashrc";
+if ! grep -Fxq "$bashrc_line" $bashrc; then
+	echo $bashrc_line >> $bashrc
 fi
 
 # .vimrc
 
 # Create .vimrc, if required.
-if [ ! -e ~/.vimrc ]; then
+if [ ! -e $vimrc ]; then
 	echo 'Creating ~/.vimrc...'
-	touch ~/.vimrc
+	touch $vimrc
 fi
 
 # Add source lines to .vimrc.
 echo 'Linking .vimrc...'
-vimrc="source $df_dir/vimrc"
-if ! grep -Fxq "$vimrc" ~/.vimrc; then
-	echo $vimrc >> ~/.vimrc
+vimrc_line="source $df_dir/vimrc"
+if ! grep -Fxq "$vimrc_line" $vimrc; then
+	echo $vimrc_line >> $vimrc
 fi
+
+# .tmux.conf
+
+# Create .tmux.conf, if required.
+if [ ! -e $tmuxconf ]; then
+	echo 'Creating ~/.tmux.conf...'
+	touch $tmuxconf
+fi
+
+# Add source lines to .tmux.conf.
+echo 'Linking .tmux.conf...'
+tmuxconf_line="source $df_dir/tmux.conf"
+if ! grep -Fxq "$tmuxconf_line" $tmuxconf; then
+	echo $tmuxconf_line >> $tmuxconf
+fi
+
+# # Create ~/.config directory.
+# if [ ! -d ~/.config ]; then
+#     mkdir -p ~/.config
+# fi
+
+# # Link neovim directory to vim's.
+# if [ ! -L ~/.config/nvim ]; then
+#     ln -s ~/.vim ~/.config/nvim
+# fi
+
+# # Link neovim init.vim to .vimrc.
+# if [ ! -L ~/.config/nvim/init.vim ]; then
+#     ln -s ~/.vimrc ~/.config/nvim/init.vim
+# fi
 
 # Source shell config.
 if [[ $SHELL =~ "$bash_re" ]]; then
-	source ~/.bashrc
+	source $bashrc
 elif [[ $SHELL =~ "$zsh_re" ]]; then
-	source ~/.zshrc
+	source $zshrc
 fi
 
 # Create .tern-config symlink.
@@ -76,7 +113,8 @@ fi
 
 # Install Vim plugins.
 echo "Installing Vim plugins..."
-vim -u plugins.vim +nocompatible +PlugInstall +qall > /dev/null
+# vim -u plugins.vim +nocompatible +PlugInstall +qall > /dev/null
+vim -Nu plugins.vim +PlugInstall +qall
 
 # Install tmux plugins.
 cd $df_dir/tmux/plugins/tpm/bin/
