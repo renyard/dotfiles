@@ -8,12 +8,18 @@ DF_DIR="$( cd "$( dirname "$0" )" && pwd )"
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets root)
 
 # Source oh my zsh config.
-if [ -f $DF_DIR/oh-my-zshrc ]; then
-	. $DF_DIR/oh-my-zshrc
+# if [ -f $DF_DIR/oh-my-zshrc ]; then
+# 	. $DF_DIR/oh-my-zshrc
+# fi
+
+# Source Antigen.
+if [ -f $DF_DIR/antigen/bin/antigen.zsh ]; then
+	source $DF_DIR/antigen/bin/antigen.zsh
+    source $DF_DIR/antigenrc
 fi
 
 if [ -f $DF_DIR/zsh_functions ]; then
-	. $DF_DIR/zsh_functions
+	source $DF_DIR/zsh_functions
 fi
 
 # Set defaults.
