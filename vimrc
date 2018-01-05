@@ -327,15 +327,26 @@ let g:jsx_ext_required = 0
 
 " }}}
 
+" Denite {{{
+
+map <C-t> :Denite buffer<Return>
+map <C-p> :Denite file_rec<Return>
+
+call denite#custom#filter('matcher_ignore_globs', 'ignore_globs',
+    \ [ '.git/', 'node_modules/', 'reports/',
+    \ 'images/', '*.min.*', 'img/', 'fonts/'])
+
+" }}}
+
 " Unite {{{
 
 call unite#custom#source('buffer', 'converters', 'converter_word_abbr')
 call unite#custom#source('file_rec,file_rec/async', 'ignore_globs', ['node_modules/**/*', 'reports/**/*'])
 
-map <C-t> :Unite buffer -no-split<Return>
+" map <C-t> :Unite buffer -no-split<Return>
 " if has("lua")
 	" This is slow without lua support.
-	map <C-p> :Unite file_rec/async -start-insert -no-split<Return>
+	" map <C-p> :Unite file_rec/async -start-insert -no-split<Return>
 " endif
 
 if executable('ag')
