@@ -333,8 +333,21 @@ map <C-t> :Denite buffer<Return>
 map <C-p> :Denite file_rec<Return>
 
 call denite#custom#filter('matcher_ignore_globs', 'ignore_globs',
-    \ [ '.git/', 'node_modules/', 'reports/',
+    \ [ '.git/', 'node_modules/', 'reports/', 'coverage/',
     \ 'images/', '*.min.*', 'img/', 'fonts/'])
+
+call denite#custom#map(
+    \ 'insert',
+    \ '<Down>',
+    \ '<denite:move_to_next_line>',
+    \ 'noremap'
+    \)
+call denite#custom#map(
+    \ 'insert',
+    \ '<Up>',
+    \ '<denite:move_to_previous_line>',
+    \ 'noremap'
+    \)
 
 " }}}
 
