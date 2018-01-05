@@ -20,8 +20,8 @@ Plug 'honza/vim-snippets'
 Plug 'Valloric/YouCompleteMe', {'do': './install.py --js-completer && cd third_party/ycmd/third_party/tern_runtime && rm -rf node_modules && npm install --production'}
 Plug 'Shougo/unite.vim'
 Plug 'Shougo/vimfiler.vim', {'on': 'VimFiler'}
-Plug 'scrooloose/nerdtree', {'on': ['NERDTree', 'NERDTreeToggle', 'NERDTreeFind']}
-Plug 'Xuyuanp/nerdtree-git-plugin', {'on': ['NERDTree', 'NERDTreeToggle']}
+" Plug 'scrooloose/nerdtree', {'on': ['NERDTree', 'NERDTreeToggle', 'NERDTreeFind']}
+" Plug 'Xuyuanp/nerdtree-git-plugin', {'on': ['NERDTree', 'NERDTreeToggle']}
 Plug 'airblade/vim-gitgutter'
 Plug 'w0rp/ale'
 Plug 'janko-m/vim-test'
@@ -33,6 +33,11 @@ Plug 'kshenoy/vim-signature'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'tpope/vim-obsession'
 Plug 'dhruvasagar/vim-prosession'
+Plug 'shumphrey/fugitive-gitlab.vim'
+
+Plug 'Shougo/denite.nvim'
+Plug 'chemzqm/vim-easygit'
+Plug 'chemzqm/denite-git'
 
 " Filetype specific plugins
 Plug 'ternjs/tern_for_vim', {'do': 'npm install'}
