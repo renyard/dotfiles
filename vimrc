@@ -54,6 +54,7 @@ noremap x "_x
 vnoremap x "_x
 
 colorscheme solarized
+set background=dark
 
 " Misc. Options.
 set hidden
