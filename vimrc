@@ -348,6 +348,12 @@ call denite#custom#map(
     \ '<denite:move_to_previous_line>',
     \ 'noremap'
     \)
+call denite#custom#map(
+    \ 'insert',
+    \ '<C-d>',
+    \ '<denite:do_action:delete>',
+    \ 'noremap'
+    \)
 
 " }}}
 
