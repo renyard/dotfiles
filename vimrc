@@ -336,6 +336,13 @@ call denite#custom#filter('matcher_ignore_globs', 'ignore_globs',
     \ [ '.git/', 'node_modules/', 'reports/', 'coverage/',
     \ 'images/', '*.min.*', 'img/', 'fonts/'])
 
+call denite#custom#var('file_rec', 'command',
+    \ ['find', '-L', ':directory',
+    \ '-path', '*/.git/*', '-prune', '-o',
+    \ '-path', '*/node_modules/*', '-prune', '-o',
+    \ '-type', 'l', '-print', '-o', '-type', 'f', '-print']
+    \ )
+
 call denite#custom#map(
     \ 'insert',
     \ '<Down>',
