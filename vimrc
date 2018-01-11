@@ -362,6 +362,10 @@ call denite#custom#map(
     \ 'noremap'
     \)
 
+call denite#custom#option('_', 'highlight_mode_insert', 'CursorLine')
+call denite#custom#option('_', 'highlight_matched_range', 'None')
+call denite#custom#option('_', 'highlight_matched_char', 'None')
+
 " }}}
 
 " Unite {{{
