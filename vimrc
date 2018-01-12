@@ -227,7 +227,7 @@ augroup END
 " Airline {{{
 
 " Only enable required extensions.
-let g:airline_extensions = ['ale', 'branch', 'unite', 'ycm']
+let g:airline_extensions = ['ale', 'denite', 'branch', 'ycm']
 
 if !exists('g:airline_symbols')
     let g:airline_symbols = {}
@@ -338,8 +338,9 @@ call denite#custom#filter('matcher_ignore_globs', 'ignore_globs',
 
 call denite#custom#var('file_rec', 'command',
     \ ['find', '-L', ':directory',
-    \ '-path', '*/.git/*', '-prune', '-o',
+    \ '-path', '*/.*/*', '-prune', '-o',
     \ '-path', '*/node_modules/*', '-prune', '-o',
+    \ '-path', '*/coverage/*', '-prune', '-o',
     \ '-type', 'l', '-print', '-o', '-type', 'f', '-print']
     \ )
 
@@ -370,44 +371,44 @@ call denite#custom#option('_', 'highlight_matched_char', 'None')
 
 " Unite {{{
 
-call unite#custom#source('buffer', 'converters', 'converter_word_abbr')
-call unite#custom#source('file_rec,file_rec/async', 'ignore_globs', ['node_modules/**/*', 'reports/**/*'])
+" call unite#custom#source('buffer', 'converters', 'converter_word_abbr')
+" call unite#custom#source('file_rec,file_rec/async', 'ignore_globs', ['node_modules/**/*', 'reports/**/*'])
 
-" map <C-t> :Unite buffer -no-split<Return>
-" if has("lua")
-	" This is slow without lua support.
-	" map <C-p> :Unite file_rec/async -start-insert -no-split<Return>
+" " map <C-t> :Unite buffer -no-split<Return>
+" " if has("lua")
+" 	" This is slow without lua support.
+" 	" map <C-p> :Unite file_rec/async -start-insert -no-split<Return>
+" " endif
+
+" if executable('ag')
+" 	" Use ag (the silver searcher)
+" 	" https://github.com/ggreer/the_silver_searcher
+" 	let g:unite_source_grep_command = 'ag'
+" 	let g:unite_source_grep_default_opts =
+" 	\ '-i --vimgrep --hidden --ignore ' .
+" 	\ '''.hg'' --ignore ''.svn'' --ignore ''.git'' --ignore ''.bzr'''
+" 	let g:unite_source_grep_recursive_opt = ''
 " endif
 
-if executable('ag')
-	" Use ag (the silver searcher)
-	" https://github.com/ggreer/the_silver_searcher
-	let g:unite_source_grep_command = 'ag'
-	let g:unite_source_grep_default_opts =
-	\ '-i --vimgrep --hidden --ignore ' .
-	\ '''.hg'' --ignore ''.svn'' --ignore ''.git'' --ignore ''.bzr'''
-	let g:unite_source_grep_recursive_opt = ''
-endif
+" function! UniteSearch(source, scope, opts, pattern)
+" 	execute 'Unite ' . a:source . ':' . a:scope . ':' . a:opts . ':' . a:pattern
+" endfunction
 
-function! UniteSearch(source, scope, opts, pattern)
-	execute 'Unite ' . a:source . ':' . a:scope . ':' . a:opts . ':' . a:pattern
-endfunction
-
-" Find in current buffer.
-command! -nargs=+ Search call UniteSearch('grep', '%', '', '<args>')
-command! -nargs=+ Fsearch call UniteSearch('grep', '%', '-F', '<args>')
-" Grep current working directory.
-command! -nargs=+ Grep call UniteSearch('grep', '.', '', '<args>')
-command! -nargs=+ Fgrep call UniteSearch('grep', '.', '-F', '<args>')
+" " Find in current buffer.
+" command! -nargs=+ Search call UniteSearch('grep', '%', '', '<args>')
+" command! -nargs=+ Fsearch call UniteSearch('grep', '%', '-F', '<args>')
+" " Grep current working directory.
+" command! -nargs=+ Grep call UniteSearch('grep', '.', '', '<args>')
+" command! -nargs=+ Fgrep call UniteSearch('grep', '.', '-F', '<args>')
 
 " }}}
 
 " Vim Filer {{{
 
-nnoremap <C-o> :VimFiler<CR>
-" Forces VimFiler to close instead of hide.
-autocmd FileType vimfiler :autocmd BufLeave <buffer> :bd
-let g:vimfiler_ignore_pattern = '^\%(\.git\|\.DS_Store\|node_modules\)$'
+" nnoremap <C-o> :VimFiler<CR>
+" " Forces VimFiler to close instead of hide.
+" autocmd FileType vimfiler :autocmd BufLeave <buffer> :bd
+" let g:vimfiler_ignore_pattern = '^\%(\.git\|\.DS_Store\|node_modules\)$'
 
 " }}}
 
@@ -430,6 +431,8 @@ nnoremap <C-g> :GundoToggle<CR>
 
 " nnoremap <C-o> :NERDTreeFind<CR>
 let NERDTreeQuitOnOpen = 1
+
+nnoremap <C-o> :NERDTree<CR>
 
 " }}}
 
