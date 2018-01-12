@@ -38,6 +38,7 @@ Plug 'shumphrey/fugitive-gitlab.vim'
 Plug 'Shougo/denite.nvim'
 Plug 'chemzqm/vim-easygit'
 Plug 'chemzqm/denite-git'
+Plug 'chemzqm/unite-location'
 
 " Filetype specific plugins
 Plug 'ternjs/tern_for_vim', {'do': 'npm install'}
@@ -49,12 +50,7 @@ Plug 'elzr/vim-json'
 Plug 'tmux-plugins/vim-tmux-focus-events'
 Plug 'christoomey/vim-tmux-navigator'
 
-" Depends on http://ctags.sourceforge.net/ and https://github.com/ramitos/jsctags for JS.
-Plug 'vim-scripts/taglist.vim'
-Plug 'xolox/vim-easytags'
-
 " Libraries required by other Plugs.
-Plug 'xolox/vim-misc'
 Plug 'rizzatti/funcoo.vim'
 Plug 'Shougo/vimproc.vim', {'do': ':VimProcInstall'} " Dependency of Shougo/unite.vim
 
