@@ -9,7 +9,7 @@ antigen bundle npm
 antigen bundle osx
 antigen bundle yarn
 
-# Syntax highlighting bundle.
+antigen bundle akoenig/npm-run.plugin.zsh
 antigen bundle zsh-users/zsh-syntax-highlighting
 
 # Load the theme.
