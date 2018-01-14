@@ -16,6 +16,12 @@ done
 alias ll='ls -l'
 alias la='ls -la'
 
+# Default to MacVim executable.
+if [[ -x /Applications/MacVim.app/Contents/bin/vim ]]
+then
+    alias vim='/Applications/MacVim.app/Contents/bin/vim'
+fi
+
 # Use Vim in place of Vi.
 alias vi='vim'
 
