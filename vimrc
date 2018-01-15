@@ -333,7 +333,7 @@ map <C-t> :Denite buffer<Return>
 map <C-p> :Denite file_rec<Return>
 
 call denite#custom#filter('matcher_ignore_globs', 'ignore_globs',
-    \ [ '.git/', 'node_modules/', 'reports/', 'coverage/',
+    \ [ '.git/', 'node_modules/', 'reports/', 'coverage/', 'logs/',
     \ 'images/', '*.min.*', 'img/', 'fonts/'])
 
 call denite#custom#var('file_rec', 'command',
