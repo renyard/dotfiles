@@ -45,6 +45,9 @@ Plug 'ternjs/tern_for_vim', {'do': 'npm install'}
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
 Plug 'elzr/vim-json'
+Plug 'iamcco/markdown-preview.vim'
+Plug 'godlygeek/tabular' " Dependency of vim-markdown
+Plug 'plasticboy/vim-markdown'
 
 " tmux integration
 Plug 'tmux-plugins/vim-tmux-focus-events'

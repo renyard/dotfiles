@@ -327,6 +327,14 @@ let g:jsx_ext_required = 0
 
 " }}}
 
+" Vim Markdown {{{
+
+let g:vim_markdown_no_default_key_mappings = 1
+let g:vim_markdown_toc_autofit = 1
+let g:vim_markdown_conceal = 0
+
+" }}}
+
 " Denite {{{
 
 map <C-t> :Denite buffer<Return>
