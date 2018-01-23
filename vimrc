@@ -558,6 +558,8 @@ command! -nargs=* Gd Gvdiff <f-args>
 command! -nargs=* Gl Gpull <f-args>
 command! -nargs=* Gp Gpush <f-args>
 
+autocmd FileType gitcommit map <buffer> <Esc> q
+
 " }}}
 
 " Session {{{
