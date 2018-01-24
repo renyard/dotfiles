@@ -33,8 +33,12 @@ Plug 'kshenoy/vim-signature'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'tpope/vim-obsession'
 Plug 'dhruvasagar/vim-prosession'
-Plug 'shumphrey/fugitive-gitlab.vim'
 
+" Git
+Plug 'shumphrey/fugitive-gitlab.vim'
+Plug 'junegunn/gv.vim'
+
+" Denite
 Plug 'Shougo/denite.nvim'
 Plug 'chemzqm/vim-easygit'
 Plug 'chemzqm/denite-git'
