@@ -30,6 +30,10 @@ Plug 'Chiel92/vim-autoformat'
 Plug 'rizzatti/dash.vim'
 Plug 'Raimondi/delimitMate'
 Plug 'kshenoy/vim-signature'
+
+Plug 'Shougo/deol.nvim'
+
+" Session
 Plug 'editorconfig/editorconfig-vim'
 Plug 'tpope/vim-obsession'
 Plug 'dhruvasagar/vim-prosession'
