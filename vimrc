@@ -214,10 +214,16 @@ map <C-j> :bprev<CR>
 map <LEADER>- :split<CR>
 map <LEADER>\| :vsplit<CR>
 
-" Close the location list on selection.
+" Terminal
+" Escape to switch to normal mode.
+tnoremap <Esc> <C-W>N
+
 augroup lclose
     autocmd!
+    " Close the location list on selection.
     autocmd FileType qf nmap <buffer> <cr> <cr>:lcl<cr>
+    " " Map Esc to close location list.
+    " autocmd FileType qf nmap <buffer> <Esc> :lcl<cr>
 augroup END
 
 " }}}
