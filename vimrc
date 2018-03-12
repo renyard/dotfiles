@@ -584,4 +584,10 @@ let g:tern_show_argument_hints = 'on_hold'
 
 " }}}
 
+" Filetypes {{{
+
+autocmd BufNewFile,BufRead Jenkinsfile,*.Jenkinsfile set syntax=groovy
+
+" }}}
+
 silent! so .lvimrc
