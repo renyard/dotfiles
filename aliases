@@ -33,4 +33,4 @@ alias cpc='fc -ln -1 | pbcopy'
 
 # Git
 alias gai='git add --interactive'
-alias cpb='git symbolic-ref --short HEAD | pbcopy'
+alias cpb='git symbolic-ref --short HEAD | xargs echo -n | pbcopy'
