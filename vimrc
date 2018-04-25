@@ -313,6 +313,12 @@ let g:easytags_languages = {
 
 " }}}
 
+" FZF {{{
+
+map <C-t> :Buffers<Return>
+
+" }}}
+
 " Indent Guides {{{
 
 if !has("gui_running")
@@ -343,7 +349,7 @@ let g:vim_markdown_conceal = 0
 
 " Denite {{{
 
-map <C-t> :Denite buffer<Return>
+" map <C-t> :Denite buffer<Return>
 map <C-p> :Denite file_rec<Return>
 
 call denite#custom#filter('matcher_ignore_globs', 'ignore_globs',
@@ -446,7 +452,7 @@ nnoremap <C-g> :GundoToggle<CR>
 " nnoremap <C-o> :NERDTreeFind<CR>
 let NERDTreeQuitOnOpen = 1
 
-nnoremap <C-o> :NERDTree<CR>
+nnoremap <C-o> :NERDTreeFind<CR>
 
 " }}}
 

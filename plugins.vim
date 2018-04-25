@@ -9,7 +9,6 @@ Plug 'renyard/vim-rangerexplorer', {'on': 'RangerExplorer'}
 Plug 'will133/vim-dirdiff'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-dispatch'
-Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-speeddating'
 Plug 'tpope/vim-surround'
@@ -33,12 +32,16 @@ Plug 'kshenoy/vim-signature'
 
 Plug 'Shougo/deol.nvim'
 
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
+
 " Session
 Plug 'editorconfig/editorconfig-vim'
 Plug 'tpope/vim-obsession'
 Plug 'dhruvasagar/vim-prosession'
 
 " Git
+Plug 'tpope/vim-fugitive'
 Plug 'shumphrey/fugitive-gitlab.vim'
 Plug 'junegunn/gv.vim'
 
@@ -54,6 +57,7 @@ Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
 Plug 'elzr/vim-json'
 Plug 'iamcco/markdown-preview.vim'
+Plug 'ap/vim-css-color'
 Plug 'godlygeek/tabular' " Dependency of vim-markdown
 Plug 'plasticboy/vim-markdown'
 
