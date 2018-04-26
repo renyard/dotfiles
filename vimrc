@@ -316,6 +316,7 @@ let g:easytags_languages = {
 " FZF {{{
 
 map <C-t> :Buffers<Return>
+map <C-p> :Files<Return>
 
 " }}}
 
@@ -350,7 +351,7 @@ let g:vim_markdown_conceal = 0
 " Denite {{{
 
 " map <C-t> :Denite buffer<Return>
-map <C-p> :Denite file_rec<Return>
+" map <C-p> :Denite file_rec<Return>
 
 call denite#custom#filter('matcher_ignore_globs', 'ignore_globs',
     \ [ '.git/', 'node_modules/', 'reports/', 'coverage/', 'logs/',

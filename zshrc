@@ -81,15 +81,19 @@ setopt histignorespace
 # Display CPU usage for commands taking longer than 10 seconds.
 export REPORTTIME=10
 
-# VCS info.
-if function_exists vcs_info; then
-	autoload -Uz vcs_info
-	zstyle ':vcs_info:*' enable git svn
+# FZF
+export FZF_DEFAULT_COMMAND='fd --type f'
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
-	precmd() {
-		vcs_info 'prompt'
-	}
-fi
+# VCS info.
+# if function_exists vcs_info; then
+# 	autoload -Uz vcs_info
+# 	zstyle ':vcs_info:*' enable git svn
+
+# 	precmd() {
+# 		vcs_info 'prompt'
+# 	}
+# fi
 
 # Custom prompt.
 #setopt prompt_subst
