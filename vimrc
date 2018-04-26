@@ -289,6 +289,12 @@ let g:ale_set_quikfix = 0
 
 " }}}
 
+" bufkill {{{
+
+:nmap <silent> <LEADER>bd :BD<Return>
+
+" }}}
+
 " dash.vim {{{
 
 :nmap <silent> <LEADER>d <Plug>DashSearch
