@@ -324,6 +324,15 @@ let g:easytags_languages = {
 map <C-t> :Buffers<Return>
 map <C-p> :Files<Return>
 
+command! -bang -nargs=? -complete=dir Files
+  \ call fzf#vim#files(<q-args>, fzf#vim#with_preview('right'), <bang>0)
+
+command! -bang -nargs=* Ag
+  \ call fzf#vim#ag(<q-args>,
+  \                 <bang>0 ? fzf#vim#with_preview('right:50%:hidden', '?')
+  \                         : fzf#vim#with_preview('right:50%'),
+  \                 <bang>0)
+
 " }}}
 
 " Indent Guides {{{
