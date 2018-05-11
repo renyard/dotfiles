@@ -43,6 +43,9 @@ Plug 'dhruvasagar/vim-prosession'
 " Buffer Management
 Plug 'qpkorr/vim-bufkill'
 
+" Javascript
+Plug 'moll/vim-node'
+
 " Git
 Plug 'tpope/vim-fugitive'
 Plug 'shumphrey/fugitive-gitlab.vim'
