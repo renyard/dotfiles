@@ -44,7 +44,7 @@ bindkey -M viins '^e' end-of-line
 bindkey -M viins '^k' kill-line
 
 # Add script dir to PATH.
-export PATH=/usr/local/bin:/usr/local/share/npm/bin:$PATH:$DIR/bin
+export PATH=~/bin:$DF_DIR/bin:$DF_DIR/node_modules/.bin:/usr/local/bin:/usr/local/share/npm/bin:$PATH
 
 # Tab completion
 autoload -U compinit
