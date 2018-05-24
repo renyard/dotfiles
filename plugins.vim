@@ -23,7 +23,6 @@ Plug 'scrooloose/nerdtree', {'on': ['NERDTree', 'NERDTreeToggle', 'NERDTreeFind'
 Plug 'Xuyuanp/nerdtree-git-plugin', {'on': ['NERDTree', 'NERDTreeToggle']}
 Plug 'airblade/vim-gitgutter'
 Plug 'w0rp/ale'
-Plug 'janko-m/vim-test'
 Plug 'sjl/gundo.vim', {'on': 'Gundo'}
 Plug 'Chiel92/vim-autoformat'
 Plug 'rizzatti/dash.vim'
@@ -50,6 +49,10 @@ Plug 'moll/vim-node'
 Plug 'tpope/vim-fugitive'
 Plug 'shumphrey/fugitive-gitlab.vim'
 Plug 'junegunn/gv.vim'
+
+" Testing
+Plug 'janko-m/vim-test'
+Plug 'ruanyl/coverage.vim'
 
 " Denite
 Plug 'Shougo/denite.nvim'
