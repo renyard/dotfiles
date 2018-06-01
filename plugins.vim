@@ -47,6 +47,7 @@ Plug 'qpkorr/vim-bufkill'
 
 " Javascript
 Plug 'moll/vim-node'
+Plug 'myhere/vim-nodejs-complete'
 
 " Git
 Plug 'tpope/vim-fugitive'
