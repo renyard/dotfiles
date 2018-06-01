@@ -34,6 +34,9 @@ Plug 'Shougo/deol.nvim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 
+" UI
+Plug 'ryanoasis/vim-devicons'
+
 " Session
 Plug 'editorconfig/editorconfig-vim'
 Plug 'tpope/vim-obsession'
