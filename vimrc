@@ -472,6 +472,21 @@ nnoremap <C-o> :NERDTreeFind<CR>
 
 " }}}
 
+" NERDTree Syntax Highlight {{{
+
+let NERDTreeHighlightCursorline = 0
+
+let g:NERDTreeFileExtensionHighlightFullName = 1
+let g:NERDTreeExactMatchHighlightFullName = 1
+let g:NERDTreePatternMatchHighlightFullName = 1
+
+let g:NERDTreeSyntaxDisableDefaultExtensions = 1
+let g:NERDTreeDisableExactMatchHighlight = 1
+let g:NERDTreeDisablePatternMatchHighlight = 1
+let g:NERDTreeSyntaxEnabledExtensions = ['css', 'html', 'js', 'json', 'jsx', 'md']
+
+" }}}
+
 " YouCompleteMe {{{
 
 let g:ycm_autoclose_preview_window_after_completion = 1
