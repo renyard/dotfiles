@@ -189,6 +189,14 @@ nmap <silent> <C-Up> :wincmd k<CR>
 nmap <silent> <C-Down> :wincmd j<CR>
 nmap <silent> <C-Left> :wincmd h<CR>
 nmap <silent> <C-Right> :wincmd l<CR>
+" tunmap <C-Up>
+" tunmap <C-Down>
+" tunmap <C-Left>
+" tunmap <C-Right>
+tmap <silent> <C-Up> :wincmd k<CR>
+tmap <silent> <C-Down> :wincmd j<CR>
+tmap <silent> <C-Left> :wincmd h<CR>
+tmap <silent> <C-Right> :wincmd l<CR>
 
 " Navigation
 map! <C-b> <Left>
@@ -405,6 +413,15 @@ call denite#custom#option('_', 'highlight_matched_char', 'None')
 
 " }}}
 
+" Unite Location {{{
+
+" augroup quickfix_location
+" autocmd!
+"     autocmd FileType qf :Denite location_list
+" augroup END
+
+" }}}
+
 " Unite {{{
 
 " call unite#custom#source('buffer', 'converters', 'converter_word_abbr')
@@ -503,9 +520,15 @@ let g:ycm_semantic_triggers['typescript'] = ['.']
 
 " UltiSnips {{{
 
-let g:UltiSnipsExpandTrigger = "<Tab>"
-let g:UltiSnipsJumpForwardTrigger = "<Tab>"
-let g:UltiSnipsJumpBackwardTrigger = "<S-Tab>"
+" let g:UltiSnipsExpandTrigger = "<Tab>"
+" let g:UltiSnipsJumpForwardTrigger = "<Tab>"
+" let g:UltiSnipsJumpBackwardTrigger = "<S-Tab>"
+
+let g:ultisnips_javascript = {
+  \ 'keyword-spacing': 'always',
+  \ 'semi': 'always',
+  \ 'space-before-function-paren': 'always',
+  \ }
 
 " }}}
 
@@ -518,22 +541,22 @@ let g:UltiSnipsJumpBackwardTrigger = "<S-Tab>"
 " snippet for expanding, it checks for completion window and if it's
 " shown, selects first element. If there's no completion window it tries to
 " jump to next placeholder. If there's no placeholder it just returns TAB key 
-function! g:UltiSnips_Complete()
-    call UltiSnips#ExpandSnippet()
-    if g:ulti_expand_res == 0
-        if pumvisible()
-            return "\<C-n>"
-        else
-            call UltiSnips#JumpForwards()
-            if g:ulti_jump_forwards_res == 0
-               return "\<TAB>"
-            endif
-        endif
-    endif
-    return ""
-endfunction
+" function! g:UltiSnips_Complete()
+"     call UltiSnips#ExpandSnippet()
+"     if g:ulti_expand_res == 0
+"         if pumvisible()
+"             return "\<C-n>"
+"         else
+"             call UltiSnips#JumpForwards()
+"             if g:ulti_jump_forwards_res == 0
+"                return "\<TAB>"
+"             endif
+"         endif
+"     endif
+"     return ""
+" endfunction
 
-au InsertEnter * exec "inoremap <silent> " . g:UltiSnipsExpandTrigger . " <C-R>=g:UltiSnips_Complete()<cr>"
+" au InsertEnter * exec "inoremap <silent> " . g:UltiSnipsExpandTrigger . " <C-R>=g:UltiSnips_Complete()<cr>"
 
 " }}}
 
@@ -601,7 +624,7 @@ command! -nargs=* Gd Gvdiff <f-args>
 command! -nargs=* Gl Gpull <f-args>
 command! -nargs=* Gp Gpush <f-args>
 
-autocmd FileType gitcommit map <buffer> <Esc> q
+" autocmd FileType gitcommit nnoremap <buffer> <Esc> :q<CR>
 
 " }}}
 

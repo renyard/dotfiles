@@ -5,7 +5,10 @@
 DF_DIR="$( cd "$( dirname "$0" )" && pwd )"
 
 # Syntax highlighting config.
-ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets root)
+export ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets root)
+
+# Disable auto rename.
+export DISABLE_AUTO_TITLE=true
 
 # Source oh my zsh config.
 # if [ -f $DF_DIR/oh-my-zshrc ]; then
@@ -31,7 +34,7 @@ export EVENT_NOKQUEUE=1
 # Mouse support in less.
 LESS=RS
 
-# Set Vi key bindings.
+# 
 # bindkey -v
 export KEYTIMEOUT=1
 # Ctrl-r acts the same as the default emacs bindings.
@@ -65,7 +68,7 @@ zstyle ':completion:*:killall:*' command 'ps -u $USER -o cmd'
 
 # Spelling correction.
 setopt correct
-setopt correctall
+# setopt correctall
 
 # Shared history for all shells.
 HISTFILE=~/.zhistory
@@ -82,6 +85,7 @@ setopt histignorespace
 export REPORTTIME=10
 
 # FZF
+# export FZF_DEFAULT_OPTS='--preview'
 export FZF_DEFAULT_COMMAND='fd --type f'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
