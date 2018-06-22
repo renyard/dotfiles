@@ -15,4 +15,7 @@
 	url = https://github.com/junegunn/vim-plug.git
 [submodule "antigen"]
 	path = antigen
-	url = https://github.com/zsh-users/antigen.git
+	url = https://github.com/zsh-users/antigen
+[submodule "bin/git-log-compact"]
+	path = bin/git-log-compact
+	url = https://github.com/mackyle/git-log-compact.git
