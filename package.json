@@ -17,6 +17,6 @@
   },
   "homepage": "https://github.com/renyard/dotfiles#readme",
   "dependencies": {
-    "jsctags": "^5.2.0"
+    "jsctags": "^5.2.2"
   }
 }

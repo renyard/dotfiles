@@ -36,7 +36,7 @@ Plug 'junegunn/fzf.vim'
 
 " UI
 Plug 'ryanoasis/vim-devicons'
-Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+" Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 
 " Session
 Plug 'editorconfig/editorconfig-vim'
