@@ -19,3 +19,6 @@
 [submodule "bin/git-log-compact"]
 	path = bin/git-log-compact
 	url = https://github.com/mackyle/git-log-compact.git
+[submodule "nvm"]
+	path = nvm
+	url = https://github.com/creationix/nvm.git
