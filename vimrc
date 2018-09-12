@@ -26,7 +26,7 @@ syntax on
 if has("gui_running")
     set background=light
 
-    set guifont=Monaco:h16
+    set guifont=FuraCode\ Nerd\ Font:h16
     " Set window size for MacVim/GVim.
     set lines=60 columns=80
 
