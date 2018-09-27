@@ -71,7 +71,7 @@ setopt correct
 # setopt correctall
 
 # Shared history for all shells.
-HISTFILE=~/.zhistory
+[ -z "$HISTFILE" ] && HISTFILE=~/.zhistory
 HISTSIZE=SAVEHIST=10000
 setopt incappendhistory 
 setopt sharehistory
