@@ -68,6 +68,8 @@ Plug 'chemzqm/unite-location'
 " Filetype specific plugins
 Plug 'ternjs/tern_for_vim', {'do': 'npm install'}
 Plug 'pangloss/vim-javascript'
+Plug 'leafgarland/typescript-vim'
+Plug 'Quramy/tsuquyomi'
 Plug 'mxw/vim-jsx'
 Plug 'elzr/vim-json'
 Plug 'iamcco/markdown-preview.vim'
