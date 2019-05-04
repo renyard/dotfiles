@@ -13,12 +13,12 @@
 [submodule "vim/vim-plug"]
 	path = vim/vim-plug
 	url = https://github.com/junegunn/vim-plug.git
-[submodule "antigen"]
-	path = antigen
-	url = https://github.com/zsh-users/antigen
 [submodule "bin/git-log-compact"]
 	path = bin/git-log-compact
 	url = https://github.com/mackyle/git-log-compact.git
 [submodule "nvm"]
 	path = nvm
 	url = https://github.com/creationix/nvm.git
+[submodule "antigen"]
+	path = antigen
+	url = https://github.com/zsh-users/antigen.git
