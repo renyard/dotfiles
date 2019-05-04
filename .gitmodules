@@ -18,7 +18,7 @@
 	url = https://github.com/mackyle/git-log-compact.git
 [submodule "nvm"]
 	path = nvm
-	url = https://github.com/creationix/nvm.git
+	url = https://github.com/nvm-sh/nvm.git
 [submodule "antigen"]
 	path = antigen
 	url = https://github.com/zsh-users/antigen.git
