@@ -23,8 +23,8 @@ Plug 'scrooloose/nerdtree', {'on': ['NERDTree', 'NERDTreeToggle', 'NERDTreeFind'
 Plug 'Xuyuanp/nerdtree-git-plugin', {'on': ['NERDTree', 'NERDTreeToggle']}
 Plug 'airblade/vim-gitgutter'
 Plug 'w0rp/ale'
-Plug 'sjl/gundo.vim', {'on': 'Gundo'}
-Plug 'Chiel92/vim-autoformat'
+" Plug 'sjl/gundo.vim', {'on': 'Gundo'}
+" Plug 'Chiel92/vim-autoformat'
 Plug 'rizzatti/dash.vim'
 Plug 'Raimondi/delimitMate'
 Plug 'kshenoy/vim-signature'
@@ -56,19 +56,19 @@ Plug 'shumphrey/fugitive-gitlab.vim'
 Plug 'junegunn/gv.vim'
 
 " Testing
-Plug 'janko-m/vim-test'
-Plug 'ruanyl/coverage.vim'
+" Plug 'janko-m/vim-test'
+" Plug 'ruanyl/coverage.vim'
 
 " Unite/Denite
 Plug 'Shougo/unite.vim'
 Plug 'Shougo/denite.nvim', {'do': 'pip3 install --user pynvim'}
-Plug 'chemzqm/vim-easygit'
+" Plug 'chemzqm/vim-easygit'
 Plug 'chemzqm/denite-git'
 Plug 'chemzqm/unite-location'
 Plug 'Shougo/unite-outline'
 
 " Filetype specific plugins
-Plug 'ternjs/tern_for_vim', {'do': 'npm install'}
+" Plug 'ternjs/tern_for_vim', {'do': 'npm install'}
 Plug 'pangloss/vim-javascript'
 Plug 'leafgarland/typescript-vim'
 Plug 'Quramy/tsuquyomi'
@@ -76,7 +76,6 @@ Plug 'mxw/vim-jsx'
 Plug 'elzr/vim-json'
 Plug 'iamcco/markdown-preview.vim'
 Plug 'ap/vim-css-color'
-Plug 'godlygeek/tabular' " Dependency of vim-markdown
 Plug 'plasticboy/vim-markdown'
 
 " tmux integration
@@ -88,6 +87,7 @@ Plug 'rizzatti/funcoo.vim'
 Plug 'Shougo/vimproc.vim', {'do': ':VimProcInstall'} " Dependency of Shougo/unite.vim
 Plug 'roxma/nvim-yarp' " Dependency of denite
 Plug 'roxma/vim-hug-neovim-rpc' " Dependency of denite
+Plug 'godlygeek/tabular' " Dependency of vim-markdown
 
 " Colour scheme
 Plug 'altercation/vim-colors-solarized'
