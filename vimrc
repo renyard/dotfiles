@@ -287,6 +287,7 @@ let g:airline_section_y = '%{airline#util#wrap(airline#extensions#branch#get_hea
 
 let g:ale_linters = {
 \   'javascript': ['eslint'],
+\   'typescript': ['typescript'],
 \}
 
 let g:ale_lint_on_save = 1
@@ -380,7 +381,7 @@ call denite#custom#filter('matcher_ignore_globs', 'ignore_globs',
     \ [ '.git/', 'node_modules/', 'reports/', 'coverage/', 'logs/',
     \ 'images/', '*.min.*', 'img/', 'fonts/'])
 
-call denite#custom#var('file_rec', 'command',
+call denite#custom#var('file/rec', 'command',
     \ ['find', '-L', ':directory',
     \ '-path', '*/.*/*', '-prune', '-o',
     \ '-path', '*/node_modules/*', '-prune', '-o',
@@ -506,7 +507,7 @@ let g:NERDTreeSyntaxEnabledExtensions = ['css', 'html', 'js', 'json', 'jsx', 'md
 
 " YouCompleteMe {{{
 
-let g:ycm_autoclose_preview_window_after_completion = 1
+" let g:ycm_autoclose_preview_window_after_completion = 1
 let g:ycm_complete_in_comments = 1
 let g:ycm_collect_identifiers_from_comments_and_strings = 1
 let g:ycm_seed_identifiers_with_syntax = 1
@@ -644,6 +645,7 @@ let g:tern_show_argument_hints = 'on_hold'
 
 " Tsuquyomi {{{
 
+let g:tsuquyomi_disable_quickfix = 1
 let g:tsuquyomi_completion_preview = 1
 let g:tsuquyomi_javascript_support = 1
 
