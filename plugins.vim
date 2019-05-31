@@ -59,11 +59,13 @@ Plug 'junegunn/gv.vim'
 Plug 'janko-m/vim-test'
 Plug 'ruanyl/coverage.vim'
 
-" Denite
-Plug 'Shougo/denite.nvim'
+" Unite/Denite
+Plug 'Shougo/unite.vim'
+Plug 'Shougo/denite.nvim', {'do': 'pip3 install --user pynvim'}
 Plug 'chemzqm/vim-easygit'
 Plug 'chemzqm/denite-git'
 Plug 'chemzqm/unite-location'
+Plug 'Shougo/unite-outline'
 
 " Filetype specific plugins
 Plug 'ternjs/tern_for_vim', {'do': 'npm install'}
@@ -84,6 +86,8 @@ Plug 'christoomey/vim-tmux-navigator'
 " Libraries required by other Plugs.
 Plug 'rizzatti/funcoo.vim'
 Plug 'Shougo/vimproc.vim', {'do': ':VimProcInstall'} " Dependency of Shougo/unite.vim
+Plug 'roxma/nvim-yarp' " Dependency of denite
+Plug 'roxma/vim-hug-neovim-rpc' " Dependency of denite
 
 " Colour scheme
 Plug 'altercation/vim-colors-solarized'
