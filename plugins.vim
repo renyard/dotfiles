@@ -32,7 +32,7 @@ Plug 'rking/ag.vim'
 
 " Plug 'Shougo/deol.nvim'
 
-" Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 
 " UI

@@ -331,7 +331,7 @@ let g:easytags_languages = {
 " FZF {{{
 
 map <C-t> :Buffers<Return>
-" map <C-p> :Files<Return>
+map <C-p> :Files<Return>
 
 command! -bang -nargs=? -complete=dir Files
   \ call fzf#vim#files(<q-args>, fzf#vim#with_preview('right'), <bang>0)
@@ -375,7 +375,7 @@ let g:vim_markdown_conceal = 0
 " Denite {{{
 
 " map <C-t> :Denite buffer<Return>
-map <C-p> :Denite file/rec<Return>
+" map <C-p> :Denite file/rec<Return>
 
 call denite#custom#filter('matcher_ignore_globs', 'ignore_globs',
     \ [ '.git/', 'node_modules/', 'reports/', 'coverage/', 'logs/',
