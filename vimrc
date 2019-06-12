@@ -330,7 +330,7 @@ let g:easytags_languages = {
 
 " FZF {{{
 
-" map <C-t> :Buffers<Return>
+map <C-t> :Buffers<Return>
 " map <C-p> :Files<Return>
 
 command! -bang -nargs=? -complete=dir Files
@@ -374,7 +374,7 @@ let g:vim_markdown_conceal = 0
 
 " Denite {{{
 
-map <C-t> :Denite buffer<Return>
+" map <C-t> :Denite buffer<Return>
 map <C-p> :Denite file/rec<Return>
 
 call denite#custom#filter('matcher_ignore_globs', 'ignore_globs',
@@ -382,36 +382,23 @@ call denite#custom#filter('matcher_ignore_globs', 'ignore_globs',
     \ 'images/', '*.min.*', 'img/', 'fonts/'])
 
 call denite#custom#var('file/rec', 'command',
-    \ ['find', '-L', ':directory',
-    \ '-path', '*/.*/*', '-prune', '-o',
-    \ '-path', '*/node_modules/*', '-prune', '-o',
-    \ '-path', '*/coverage/*', '-prune', '-o',
-    \ '-type', 'l', '-print', '-o', '-type', 'f', '-print']
-    \ )
+    \ ['ag', '--follow', '--nocolor', '--nogroup', '-g', ''])
+" call denite#custom#var('file/rec', 'command',
+"     \ ['find', '-L', ':directory',
+"     \ '-path', '*/.*/*', '-prune', '-o',
+"     \ '-path', '*/node_modules/*', '-prune', '-o',
+"     \ '-path', '*/coverage/*', '-prune', '-o',
+"     \ '-type', 'l', '-print', '-o', '-type', 'f', '-print']
+"     \ )
+call denite#custom#option('file/rec', {'start_filter': v:true})
 
-call denite#custom#map(
-    \ 'insert',
-    \ '<Down>',
-    \ '<denite:move_to_next_line>',
-    \ 'noremap'
-    \)
-call denite#custom#map(
-    \ 'insert',
-    \ '<Up>',
-    \ '<denite:move_to_previous_line>',
-    \ 'noremap'
-    \)
-call denite#custom#map(
-    \ 'insert',
-    \ '<C-d>',
-    \ '<denite:do_action:delete>',
-    \ 'noremap'
-    \)
+" call denite#custom#var('grep', 'command', ['ag'])
+" call denite#custom#var('grep', 'default_opts',
+"     \ ['-i', '--vimgrep'])
 
-call denite#custom#option('_', 'highlight_mode_insert', 'CursorLine')
-call denite#custom#option('_', 'highlight_matched_range', 'None')
-call denite#custom#option('_', 'highlight_matched_char', 'None')
-" call denite#custom#option('_', {'start_filter': v:true})
+" call denite#custom#option('_', 'highlight_mode_insert', 'CursorLine')
+" call denite#custom#option('_', 'highlight_matched_range', 'None')
+" call denite#custom#option('_', 'highlight_matched_char', 'None')
 
 autocmd FileType denite call s:denite_my_settings()
 function! s:denite_my_settings() abort
@@ -446,8 +433,8 @@ endfunction
 
 " " map <C-t> :Unite buffer -no-split<Return>
 " " if has("lua")
-" 	" This is slow without lua support.
-" 	" map <C-p> :Unite file_rec/async -start-insert -no-split<Return>
+" " 	" This is slow without lua support.
+" " 	map <C-p> :Unite file_rec/async -start-insert -no-split<Return>
 " " endif
 
 " if executable('ag')
