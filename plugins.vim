@@ -16,7 +16,8 @@ Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-rsi'
 " Plug 'SirVer/ultisnips'
 " Plug 'honza/vim-snippets'
-Plug 'Valloric/YouCompleteMe', {'do': './install.py'}
+" Plug 'Valloric/YouCompleteMe', {'do': './install.py'}
+Plug 'neoclide/coc.nvim', {'tag': '*', 'branch': 'release'}
 " Plug 'Shougo/unite.vim'
 " Plug 'Shougo/vimfiler.vim', {'on': 'VimFiler'}
 Plug 'scrooloose/nerdtree', {'on': ['NERDTree', 'NERDTreeToggle', 'NERDTreeFind']}
@@ -28,7 +29,7 @@ Plug 'w0rp/ale'
 " Plug 'rizzatti/dash.vim'
 Plug 'Raimondi/delimitMate'
 " Plug 'kshenoy/vim-signature'
-Plug 'rking/ag.vim'
+" Plug 'rking/ag.vim'
 
 " Plug 'Shougo/deol.nvim'
 
@@ -72,7 +73,7 @@ Plug 'Shougo/denite.nvim', {'do': 'pip3 install --user pynvim'}
 " Plug 'ternjs/tern_for_vim', {'do': 'npm install'}
 Plug 'pangloss/vim-javascript'
 Plug 'leafgarland/typescript-vim'
-Plug 'Quramy/tsuquyomi'
+" Plug 'Quramy/tsuquyomi'
 " Plug 'mxw/vim-jsx'
 " Plug 'elzr/vim-json'
 " Plug 'iamcco/markdown-preview.vim'

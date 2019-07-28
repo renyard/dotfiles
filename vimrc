@@ -304,6 +304,26 @@ let g:ale_set_quikfix = 0
 
 " }}}
 
+" Coc {{{
+
+" Use tab for trigger completion with characters ahead and navigate.
+" Use command ':verbose imap <tab>' to make sure tab is not mapped by other plugin.
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
+" nmap <silent> <C-]> <Plug>(coc-definition)
+" nmap <silent> <C-[> <Plug>(coc-references)
+
+" }}}
+
 " dash.vim {{{
 
 :nmap <silent> <LEADER>d <Plug>DashSearch
@@ -330,8 +350,8 @@ let g:easytags_languages = {
 
 " FZF {{{
 
-map <C-t> :Buffers<Return>
-map <C-p> :Files<Return>
+nmap <C-t> :Buffers<Return>
+nmap <C-p> :Files<Return>
 
 command! -bang -nargs=? -complete=dir Files
   \ call fzf#vim#files(<q-args>, fzf#vim#with_preview('right'), <bang>0)
@@ -572,37 +592,37 @@ let g:deoplete#enable_at_startup = 1
 
 " Neocomplete {{{
 
-if has('lua')
-    let g:neocomplete#enable_at_startup = 1
-    let g:neocomplete#enable_smart_case = 1
-    let g:neocomplete#enable_fuzzy_completion = 1
-    let g:neocomplete_enable_fuzzy_completion_start_length = 2
+" if has('lua')
+"     let g:neocomplete#enable_at_startup = 1
+"     let g:neocomplete#enable_smart_case = 1
+"     let g:neocomplete#enable_fuzzy_completion = 1
+"     let g:neocomplete_enable_fuzzy_completion_start_length = 2
 
-    " <TAB>: completion.
-    inoremap <expr><TAB>  pumvisible() ? "\<C-n>" :
-        \ <SID>check_back_space() ? "\<TAB>" :
-        \ neocomplete#start_manual_complete()
-    function! s:check_back_space() "{{{
-        let col = col('.') - 1
-        return !col || getline('.')[col - 1]  =~ '\s'
-    endfunction"}}}
-else
-    let g:neocomplete#enable_at_startup = 0
-endif
+"     " <TAB>: completion.
+"     inoremap <expr><TAB>  pumvisible() ? "\<C-n>" :
+"         \ <SID>check_back_space() ? "\<TAB>" :
+"         \ neocomplete#start_manual_complete()
+"     function! s:check_back_space() "{{{
+"         let col = col('.') - 1
+"         return !col || getline('.')[col - 1]  =~ '\s'
+"     endfunction"}}}
+" else
+"     let g:neocomplete#enable_at_startup = 0
+" endif
 
 " }}}
 
 " Neosnippet {{{
 
-let g:neosnippet#enable_snipmate_compatibility = 1
-let g:neosnippet#snippets_directory='~/.vim/bundle/vim-snippets/snippets'
-" SuperTab like snippets behavior.
-imap <expr><TAB> neosnippet#expandable_or_jumpable() ?
-    \ "\<Plug>(neosnippet_expand_or_jump)"
-    \: pumvisible() ? "\<C-n>" : "\<TAB>"
-smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
-    \ "\<Plug>(neosnippet_expand_or_jump)"
-    \: "\<TAB>"
+" let g:neosnippet#enable_snipmate_compatibility = 1
+" let g:neosnippet#snippets_directory='~/.vim/bundle/vim-snippets/snippets'
+" " SuperTab like snippets behavior.
+" imap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+"     \ "\<Plug>(neosnippet_expand_or_jump)"
+"     \: pumvisible() ? "\<C-n>" : "\<TAB>"
+" smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+"     \ "\<Plug>(neosnippet_expand_or_jump)"
+"     \: "\<TAB>"
 
 set completeopt=longest,menuone
 autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
@@ -648,14 +668,14 @@ let g:tern_show_argument_hints = 'on_hold'
 
 " Tsuquyomi {{{
 
-let g:tsuquyomi_disable_quickfix = 1
-let g:tsuquyomi_completion_preview = 1
-let g:tsuquyomi_javascript_support = 1
+" let g:tsuquyomi_disable_quickfix = 1
+" let g:tsuquyomi_completion_preview = 1
+" let g:tsuquyomi_javascript_support = 1
 
-nmap <C-[>] <Plug>(TsuquyomiGoBack)
-autocmd FileType typescript nmap <buffer> <Leader>t :
-    \ <C-u>echo tsuquyomi#hint()<CR>
-autocmd FileType typescript setlocal completeopt+=preview
+" nmap <C-[>] <Plug>(TsuquyomiGoBack)
+" autocmd FileType typescript nmap <buffer> <Leader>t :
+"     \ <C-u>echo tsuquyomi#hint()<CR>
+" autocmd FileType typescript setlocal completeopt+=preview
 
 " }}}
 
