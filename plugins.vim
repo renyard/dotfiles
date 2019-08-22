@@ -17,7 +17,7 @@ Plug 'tpope/vim-rsi'
 " Plug 'SirVer/ultisnips'
 " Plug 'honza/vim-snippets'
 " Plug 'Valloric/YouCompleteMe', {'do': './install.py'}
-Plug 'neoclide/coc.nvim', {'tag': '*', 'branch': 'release'}
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Plug 'Shougo/unite.vim'
 " Plug 'Shougo/vimfiler.vim', {'on': 'VimFiler'}
 Plug 'scrooloose/nerdtree', {'on': ['NERDTree', 'NERDTreeToggle', 'NERDTreeFind']}
@@ -92,6 +92,6 @@ Plug 'roxma/vim-hug-neovim-rpc' " Dependency of denite
 " Plug 'godlygeek/tabular' " Dependency of vim-markdown
 
 " Colour scheme
-Plug 'altercation/vim-colors-solarized'
+" Plug 'altercation/vim-colors-solarized'
 
 call plug#end()
