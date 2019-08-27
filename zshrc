@@ -45,6 +45,8 @@ bindkey -M vicmd '/' history-incremental-search-backward
 bindkey -M viins '^a' beginning-of-line
 bindkey -M viins '^e' end-of-line
 bindkey -M viins '^k' kill-line
+bindkey "\e[1;3C" forward-word
+bindkey "\e[1;3D" backward-word
 
 # Add script dir to PATH.
 export PATH=~/bin:$DF_DIR/bin:$DF_DIR/node_modules/.bin:/usr/local/bin:/usr/local/share/npm/bin:$PATH
